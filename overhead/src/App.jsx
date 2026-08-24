@@ -101,6 +101,7 @@ const defaultSession = {
 const emptyBackendState = {
   health: null,
   customers: [],
+  customerSync: { status: 'Not synchronized', last_synced_at: '', message: '' },
   tasks: [],
   supportTickets: [],
   legalDocuments: [],
@@ -860,6 +861,7 @@ function LoginScreen({ draftSession, updateDraft, signIn, theme, setTheme, backe
             setVerification={setVerification}
             verifyEmail={verifyEmail}
             backendError={backendError}
+            returnToSignIn={() => { setVerification({ email: '', code: '', delivery: null }); setAuthMode('team') }}
           />
         ) : isHelp ? (
           <PublicHelp />
@@ -915,16 +917,17 @@ function LoginScreen({ draftSession, updateDraft, signIn, theme, setTheme, backe
   )
 }
 
-function VerificationPanel({ verification, setVerification, verifyEmail, backendError }) {
+function VerificationPanel({ verification, setVerification, verifyEmail, backendError, returnToSignIn }) {
+  const sharedVerification = verification.delivery?.channel === 'firebase-link'
   return (
     <>
       <h2>Check your email</h2>
-      <p>Enter the 6-digit code sent to {verification.email || 'your email'} before the desk opens.</p>
+      <p>{sharedVerification ? `We sent a verification link to ${verification.email || 'your email'}. Open it in your default browser, then return and sign in again.` : `Enter the 6-digit code sent to ${verification.email || 'your email'} before the desk opens.`}</p>
       {verification.delivery?.channel === 'local-outbox' && (
         <p className="form-error">Email is queued locally because SMTP is not connected: {verification.delivery.outboxPath}</p>
       )}
-      <FormField label="Verification code" value={verification.code} onChange={(value) => setVerification((current) => ({ ...current, code: value }))} placeholder="6-digit code" />
-      <button className="primary-action full" type="button" onClick={verifyEmail}>Verify And Open</button>
+      {!sharedVerification && <><FormField label="Verification code" value={verification.code} onChange={(value) => setVerification((current) => ({ ...current, code: value }))} placeholder="6-digit code" /><button className="primary-action full" type="button" onClick={verifyEmail}>Verify And Open</button></>}
+      {sharedVerification && <button className="primary-action full" type="button" onClick={returnToSignIn}>Return To Sign In</button>}
       {backendError && <p className="form-error">{backendError}</p>}
     </>
   )
@@ -1457,6 +1460,16 @@ function AutomationsSection({ backendState, refreshBackend, setOperationNotice }
     } catch (error) { setAutomationError(userFacingError(error, 'The first-day setup plan could not be prepared.')) }
   }
 
+  async function retryJob(jobId) {
+    try {
+      if (!window.overheadBackend?.retryWorkflowJob) throw new Error('The workflow retry service is not available.')
+      await window.overheadBackend.retryWorkflowJob({ jobId })
+      setAutomationError('')
+      setOperationNotice('Dead-letter job returned to the queue for a fresh retry.')
+      await refreshBackend()
+    } catch (error) { setAutomationError(userFacingError(error, 'The workflow job could not be retried.')) }
+  }
+
   return (
     <section className="panel page-panel">
       <div className="section-head">
@@ -1471,7 +1484,7 @@ function AutomationsSection({ backendState, refreshBackend, setOperationNotice }
       </div>
       <div className="queue-controls automation-controls">
         <div className="queue-filters" role="group" aria-label="Filter workflow jobs">
-          {['Queued', 'Complete', 'All'].map((filter) => <button className={jobFilter === filter ? 'active' : ''} type="button" key={filter} onClick={() => setJobFilter(filter)}>{filter}{filter !== 'All' && ` (${jobCounts[filter] || 0})`}</button>)}
+          {['Queued', 'Complete', 'Dead Letter', 'All'].map((filter) => <button className={jobFilter === filter ? 'active' : ''} type="button" key={filter} onClick={() => setJobFilter(filter)}>{filter}{filter !== 'All' && ` (${jobCounts[filter] || 0})`}</button>)}
         </div>
         <input value={jobQuery} onChange={(event) => setJobQuery(event.target.value)} placeholder="Search automations" />
       </div>
@@ -1508,6 +1521,13 @@ function AutomationsSection({ backendState, refreshBackend, setOperationNotice }
         {!displayedJobs.length && <span>No automation jobs match that filter.</span>}
       </div>
       <div className="feature-list">
+        {displayedJobs.filter((job) => job.status === 'Dead Letter').map((job) => (
+          <div className="backend-health" key={`retry-${job.id}`}>
+            <strong>{job.title}</strong>
+            <span>{job.last_error || 'This workflow job needs a manual retry.'}</span>
+            <button className="ghost-button" type="button" onClick={() => retryJob(job.id)}>Retry Job</button>
+          </div>
+        ))}
         {marketableFeatures.filter((feature) => ['Operations', 'Revenue', 'Productivity', 'Integration'].includes(feature.category)).slice(0, 12).map((feature) => (
           <FeatureItem feature={feature} key={feature.name} />
         ))}
@@ -2544,6 +2564,7 @@ function SquareSection({ backendState, refreshBackend, setOperationNotice }) {
 function SecuritySection({ backendState, refreshBackend, setOperationNotice }) {
   const [reset, setReset] = useState({ email: 'owner@overhead.local', recoveryPhrase: '', newPassword: '' })
   const [dataRequest, setDataRequest] = useState({ requestType: 'export', subjectEmail: 'owner@overhead.local', notes: '' })
+  const [deletionConfirmation, setDeletionConfirmation] = useState('')
 
   async function resetPassword() {
     if (!window.overheadBackend?.resetPassword) return
@@ -2556,6 +2577,15 @@ function SecuritySection({ backendState, refreshBackend, setOperationNotice }) {
     if (!window.overheadBackend?.createDataRequest) return
     await window.overheadBackend.createDataRequest(dataRequest)
     setOperationNotice('Privacy data request created.')
+    await refreshBackend()
+  }
+
+  async function completeDeletion(requestId) {
+    if (deletionConfirmation !== 'DELETE') return setOperationNotice('Type DELETE before completing local data deletion.')
+    if (!window.overheadBackend?.completeDataDeletion) return
+    const result = await window.overheadBackend.completeDataDeletion({ requestId, confirmation: deletionConfirmation })
+    setDeletionConfirmation('')
+    setOperationNotice(`Local deletion completed. Safety backup: ${result.safetyBackupPath}`)
     await refreshBackend()
   }
 
@@ -2619,6 +2649,14 @@ function SecuritySection({ backendState, refreshBackend, setOperationNotice }) {
             <FormField label="Notes" value={dataRequest.notes} onChange={(value) => updateDataRequest('notes', value)} placeholder="Request notes" />
             <button className="ghost-button" type="button" onClick={createDataRequest}>Create Request</button>
             <small>Confirm the requester, applicable retention duties, and the exact records in scope before acting on a request.</small>
+            {(backendState.dataRequests || []).filter((request) => request.request_type === 'delete' && request.status === 'Open').map((request) => (
+              <div className="backend-health" key={request.id}>
+                <strong>Open local deletion: {request.subject_email}</strong>
+                <span>{request.notes || 'No notes supplied.'}</span>
+                <input value={deletionConfirmation} onChange={(event) => setDeletionConfirmation(event.target.value)} placeholder="Type DELETE to confirm" />
+                <button className="ghost-button" type="button" onClick={() => completeDeletion(request.id)}>Complete Local Deletion</button>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -2626,8 +2664,32 @@ function SecuritySection({ backendState, refreshBackend, setOperationNotice }) {
   )
 }
 
-function SettingsSection({ theme, setTheme, privacyMode, setPrivacyMode, draftSession, updateDraft, signIn, backendState, refreshBackend, operationNotice, setOperationNotice }) {
+function SettingsSection({ theme, setTheme, privacyMode, setPrivacyMode, session, draftSession, updateDraft, signIn, backendState, refreshBackend, operationNotice, setOperationNotice }) {
   const [restorePath, setRestorePath] = useState('')
+  const [restoreConfirmation, setRestoreConfirmation] = useState('')
+  const [updater, setUpdater] = useState({ status: 'not-checked', autoCheck: true, message: 'Update status is loading.' })
+  const [developerTools, setDeveloperTools] = useState({ configured: false, workspacePath: '', preferredEditor: 'auto', editors: [] })
+
+  useEffect(() => {
+    let active = true
+    if (window.overheadBackend?.updaterStatus) {
+      window.overheadBackend.updaterStatus().then((status) => {
+        if (active) setUpdater(status)
+      }).catch((error) => {
+        if (active) setUpdater({ status: 'unavailable', autoCheck: true, message: userFacingError(error, 'Update status is unavailable.') })
+      })
+    }
+    return () => { active = false }
+  }, [])
+
+  useEffect(() => {
+    if (session.role !== 'Owner' || !window.overheadBackend?.developerWorkspace) return
+    let active = true
+    Promise.all([window.overheadBackend.developerWorkspace(), window.overheadBackend.developerEditors?.() || []])
+      .then(([workspace, editors]) => { if (active) setDeveloperTools({ ...workspace, editors }) })
+      .catch((error) => { if (active) setOperationNotice(userFacingError(error, 'Developer tools are unavailable.')) })
+    return () => { active = false }
+  }, [session.role, setOperationNotice])
 
   async function createBackup() {
     if (window.overheadBackend?.createBackup) {
@@ -2661,11 +2723,70 @@ function SettingsSection({ theme, setTheme, privacyMode, setPrivacyMode, draftSe
     }
   }
 
+  async function restoreWorkspace() {
+    if (restoreConfirmation !== 'RESTORE') return setOperationNotice('Type RESTORE before replacing the local workspace.')
+    if (!window.overheadBackend?.restoreFromPackage || !restorePath) return
+    const result = await window.overheadBackend.restoreFromPackage({ filePath: restorePath, confirmation: restoreConfirmation })
+    setOperationNotice(`Workspace restored. Safety backup: ${result.safetyBackupPath}. Sign in again to continue.`)
+    window.setTimeout(() => window.location.reload(), 800)
+  }
+
   async function updateToggle(key, value) {
     if (!window.overheadBackend?.updateToggle) return
     await window.overheadBackend.updateToggle({ key, value })
     setOperationNotice(`${formatToggleName(key)} ${value ? 'enabled' : 'disabled'}.`)
     await refreshBackend()
+  }
+
+  async function checkForUpdates() {
+    if (!window.overheadBackend?.checkForUpdates) return
+    const status = await window.overheadBackend.checkForUpdates()
+    setUpdater(status)
+    setOperationNotice(status.message || 'Update check started.')
+  }
+
+  async function setAutoCheck(enabled) {
+    if (!window.overheadBackend?.setAutoCheck) return
+    const status = await window.overheadBackend.setAutoCheck({ enabled })
+    setUpdater(status)
+    setOperationNotice(status.message || `Auto-Check ${enabled ? 'enabled' : 'disabled'}.`)
+  }
+
+  async function installUpdate() {
+    if (!window.overheadBackend?.installDownloadedUpdate) return
+    const result = await window.overheadBackend.installDownloadedUpdate()
+    setOperationNotice(result.message || (result.installing ? 'Installing downloaded update.' : 'No downloaded update is ready.'))
+  }
+
+  async function syncCustomers() {
+    if (!window.overheadBackend?.syncCustomers) return
+    const status = await window.overheadBackend.syncCustomers()
+    setOperationNotice(status.message || 'Customer synchronization completed.')
+    await refreshBackend()
+  }
+
+  async function chooseDeveloperWorkspace() {
+    try {
+      const workspace = await window.overheadBackend?.chooseDeveloperWorkspace?.()
+      if (!workspace) return
+      setDeveloperTools((current) => ({ ...current, ...workspace }))
+      setOperationNotice(workspace.configured ? 'Developer source workspace saved.' : 'Developer source folder was not changed.')
+    } catch (error) { setOperationNotice(userFacingError(error, 'The selected folder is not an OverHead source workspace.')) }
+  }
+
+  async function setDeveloperEditor(preferredEditor) {
+    try {
+      const workspace = await window.overheadBackend?.setDeveloperEditor?.({ preferredEditor })
+      setDeveloperTools((current) => ({ ...current, ...workspace }))
+      setOperationNotice('Preferred code editor saved.')
+    } catch (error) { setOperationNotice(userFacingError(error, 'Could not save the preferred code editor.')) }
+  }
+
+  async function openDeveloperWorkspace() {
+    try {
+      const result = await window.overheadBackend?.openDeveloperWorkspace?.()
+      setOperationNotice(`${result.editor} opened the OverHead source workspace.`)
+    } catch (error) { setOperationNotice(userFacingError(error, 'Could not open the source workspace.')) }
   }
 
   return (
@@ -2708,11 +2829,49 @@ function SettingsSection({ theme, setTheme, privacyMode, setPrivacyMode, draftSe
             {operationNotice && <small>{operationNotice}</small>}
           </div>
           <div className="backend-health">
-            <strong>Restore validation</strong>
-            <span>Checks an OverHead store file before any replacement is allowed. Validation does not replace a tested recovery plan.</span>
+            <strong>Restore workspace</strong>
+            <span>Validate first. Restoring replaces the local workspace, creates a safety backup, and signs you out.</span>
             <input value={restorePath} onChange={(event) => setRestorePath(event.target.value)} placeholder="Path to .secure or .json store file" />
-            <button className="ghost-button" type="button" onClick={validateRestore}>Validate Restore</button>
+            <div className="button-row"><button className="ghost-button" type="button" onClick={validateRestore}>Validate Restore</button></div>
+            <input value={restoreConfirmation} onChange={(event) => setRestoreConfirmation(event.target.value)} placeholder="Type RESTORE to replace local workspace" />
+            <button className="ghost-button" type="button" onClick={restoreWorkspace}>Restore Local Workspace</button>
           </div>
+          <div className="backend-health update-check-panel">
+            <strong>Updates</strong>
+            <span>{updater.message || 'Choose Check to look for an update.'}</span>
+            <small>{updater.configured ? `Installed: ${updater.currentVersion || 'unknown'} - Available: ${updater.version || 'not checked'} - Channel: ${updater.channel || 'latest'}${updater.checkedAt ? ` - last checked ${new Date(updater.checkedAt).toLocaleString()}` : ''}` : 'Install a packaged release to use the live update service.'}</small>
+            <div className="button-row">
+              <button className="primary-action" type="button" onClick={checkForUpdates}>Check</button>
+              <label className="checkbox-line update-auto-check">
+                <input type="checkbox" checked={updater.autoCheck !== false} onChange={(event) => setAutoCheck(event.target.checked)} />
+                Auto-Check
+              </label>
+              {updater.status === 'downloaded' && <button className="ghost-button" type="button" onClick={installUpdate}>Install Update</button>}
+            </div>
+          </div>
+          <div className="backend-health">
+            <strong>Customer synchronization</strong>
+            <span>{backendState.customerSync?.message || 'Automatic customer sync is waiting for a shared sign-in.'}</span>
+            <small>Status: {backendState.customerSync?.status || 'Not synchronized'}{backendState.customerSync?.last_synced_at ? ` - ${new Date(backendState.customerSync.last_synced_at).toLocaleString()}` : ''}</small>
+            <div className="button-row"><button className="ghost-button" type="button" onClick={syncCustomers}>Sync Now</button></div>
+          </div>
+          {session.role === 'Owner' && <div className="backend-health">
+            <strong>Developer hot-fix workspace</strong>
+            <span>Open only the selected OverHead source folder in Visual Studio Code or Code - OSS. A fresh verified OverHead staff sign-in with an active Management or Administrator credential is required. Customer records, backups, exports, and support bundles are never opened by this tool.</span>
+            <small>{developerTools.configured ? developerTools.workspacePath : developerTools.message || 'Choose the local OverHead source folder before opening an editor.'}</small>
+            <label>
+              Preferred editor
+              <select value={developerTools.preferredEditor || 'auto'} onChange={(event) => setDeveloperEditor(event.target.value)}>
+                <option value="auto">Auto (prefer VS Code)</option>
+                {developerTools.editors.some((editor) => editor.id === 'vscode') && <option value="vscode">Visual Studio Code</option>}
+                {developerTools.editors.some((editor) => editor.id === 'oss') && <option value="oss">Code - OSS / VSCodium</option>}
+              </select>
+            </label>
+            <div className="button-row">
+              <button className="ghost-button" type="button" onClick={chooseDeveloperWorkspace}>Choose Source Folder</button>
+              <button className="primary-action" type="button" onClick={openDeveloperWorkspace} disabled={!developerTools.configured}>Open In Code Editor</button>
+            </div>
+          </div>}
           <div className="backend-health">
             <strong>Operational controls</strong>
             <span>Controls that change how the workspace behaves. Change one intentionally, then check the current work queue and audit record.</span>

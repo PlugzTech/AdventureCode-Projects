@@ -4,6 +4,7 @@ const { autoUpdater } = require('electron-updater')
 const crypto = require('node:crypto')
 const fs = require('node:fs')
 const path = require('node:path')
+const { spawn, spawnSync } = require('node:child_process')
 const backend = require('./electron-backend.cjs')
 
 let mainWindow = null
@@ -18,6 +19,7 @@ const DEVELOPER_EMAIL = 'solidartentertainment@gmail.com'
 const DEPLOYMENT_MODE = process.env.OVERHEAD_DEPLOYMENT_MODE === 'cylinder' ? 'cylinder' : 'desktop'
 const UPDATE_FEED_URL = process.env.OVERHEAD_UPDATE_URL || `https://overhead-office.web.app/updates${DEPLOYMENT_MODE === 'cylinder' ? '/cylinder' : ''}`
 const STARTUP_UPDATE_TIMEOUT_MS = 2500
+const AUTO_UPDATE_CHECK_INTERVAL_MS = 6 * 60 * 60 * 1000
 const STARTUP_RECOVERY_HTML = 'data:text/html;charset=utf-8,' + encodeURIComponent([
   '<!doctype html><html><head><meta charset="utf-8"><title>OverHead Recovery</title>',
   '<style>body{font:16px system-ui,-apple-system,"Segoe UI",sans-serif;background:#edf1f4;color:#18212b;margin:0;display:grid;min-height:100vh;place-items:center}.card{max-width:520px;padding:32px;background:white;border-radius:18px;box-shadow:0 18px 50px #1a27301c}h1{margin-top:0}p{line-height:1.55}button{background:#152b3d;color:#fff;border:0;border-radius:9px;padding:11px 16px;font-weight:700;cursor:pointer}</style></head>',
@@ -30,11 +32,13 @@ const STARTUP_RECOVERY_HTML = 'data:text/html;charset=utf-8,' + encodeURICompone
 app.disableHardwareAcceleration()
 app.setPath('userData', path.join(app.getPath('appData'), DEPLOYMENT_MODE === 'cylinder' ? 'OverHead Cylinder' : 'OverHead'))
 const recoveryStatePath = path.join(app.getPath('userData'), 'runtime-recovery.json')
+const updatePreferencesPath = path.join(app.getPath('userData'), 'update-preferences.json')
 log.initialize()
 log.transports.file.level = 'info'
 autoUpdater.autoDownload = true
 autoUpdater.autoInstallOnAppQuit = true
 autoUpdater.autoRunAppAfterInstall = true
+let updatePreferences = readUpdatePreferences()
 let updateState = {
   status: 'not-checked',
   feedUrl: UPDATE_FEED_URL,
@@ -48,6 +52,38 @@ const watchedFiles = [
   'electron-preload.cjs',
   path.join('dist', 'index.html'),
 ]
+
+function editorCandidates() {
+  const localAppData = process.env.LOCALAPPDATA || ''
+  const programFiles = process.env.ProgramFiles || 'C:\\Program Files'
+  const programFilesX86 = process.env['ProgramFiles(x86)'] || 'C:\\Program Files (x86)'
+  const entries = [
+    { id: 'vscode', label: 'Visual Studio Code', command: path.join(localAppData, 'Programs', 'Microsoft VS Code', 'Code.exe') },
+    { id: 'vscode', label: 'Visual Studio Code', command: path.join(programFiles, 'Microsoft VS Code', 'Code.exe') },
+    { id: 'vscode', label: 'Visual Studio Code', command: path.join(programFilesX86, 'Microsoft VS Code', 'Code.exe') },
+    { id: 'oss', label: 'Code - OSS', command: path.join(localAppData, 'Programs', 'Code - OSS', 'Code - OSS.exe') },
+    { id: 'oss', label: 'Code - OSS', command: path.join(programFiles, 'Code - OSS', 'Code - OSS.exe') },
+    { id: 'oss', label: 'VSCodium (Code - OSS)', command: path.join(localAppData, 'Programs', 'VSCodium', 'VSCodium.exe') },
+    { id: 'oss', label: 'VSCodium (Code - OSS)', command: path.join(programFiles, 'VSCodium', 'VSCodium.exe') },
+  ]
+  const found = new Map()
+  for (const entry of entries) if (entry.command && fs.existsSync(entry.command) && !found.has(entry.id)) found.set(entry.id, entry)
+  for (const entry of [
+    { id: 'vscode', label: 'Visual Studio Code', command: 'code' },
+    { id: 'oss', label: 'Code - OSS', command: 'code-oss' },
+    { id: 'oss', label: 'VSCodium (Code - OSS)', command: 'codium' },
+  ]) {
+    const lookup = spawnSync('where.exe', [entry.command], { windowsHide: true, encoding: 'utf8' })
+    const command = String(lookup.stdout || '').split(/\r?\n/).find((candidate) => candidate.trim())?.trim()
+    if (lookup.status === 0 && command && !found.has(entry.id)) found.set(entry.id, { ...entry, command })
+  }
+  return [...found.values()]
+}
+
+function chooseEditor(preferredEditor) {
+  const editors = editorCandidates()
+  return editors.find((editor) => editor.id === preferredEditor) || editors.find((editor) => editor.id === 'vscode') || editors[0] || null
+}
 
 process.on('uncaughtException', (error) => {
   log.error('OverHead main-process exception', error)
@@ -64,6 +100,20 @@ function readRecoveryState() {
   } catch {
     return { launchAttempts: 0, rendererRecoveries: 0, lastIssue: '', updatedAt: '' }
   }
+}
+
+function readUpdatePreferences() {
+  try {
+    const saved = JSON.parse(fs.readFileSync(updatePreferencesPath, 'utf8'))
+    return { autoCheck: saved.autoCheck !== false }
+  } catch {
+    return { autoCheck: true }
+  }
+}
+
+function saveUpdatePreferences() {
+  fs.mkdirSync(path.dirname(updatePreferencesPath), { recursive: true })
+  fs.writeFileSync(updatePreferencesPath, JSON.stringify(updatePreferences, null, 2), 'utf8')
 }
 
 function writeRecoveryState(nextState) {
@@ -317,6 +367,10 @@ function createTray() {
       },
     },
     {
+      label: 'Check for Updates',
+      click: () => checkForUpdatesBeforeLaunch(),
+    },
+    {
       label: 'Install Downloaded Update',
       click: () => installDownloadedUpdate(),
     },
@@ -334,14 +388,26 @@ function createTray() {
 function updaterStatus() {
   return {
     enabled: true,
+    currentVersion: app.getVersion(),
     autoDownload: autoUpdater.autoDownload,
     channel: autoUpdater.channel || 'latest',
     configured: app.isPackaged,
+    autoCheck: updatePreferences.autoCheck,
     ...updateState,
     note: app.isPackaged
-      ? 'OverHead checks for updates before opening. Downloaded updates install when you close the app.'
+      ? (updatePreferences.autoCheck ? 'Auto-Check runs at startup and every six hours. Downloaded updates install when you close the app.' : 'Auto-Check is off. Use Check to look for updates when you choose.')
       : 'Source mode skips live update checks. Packaged releases check before the main window opens.',
   }
+}
+
+async function setAutoCheck(payload = {}) {
+  updatePreferences.autoCheck = payload.enabled !== false
+  saveUpdatePreferences()
+  setUpdateState(updatePreferences.autoCheck ? 'auto-check-enabled' : 'auto-check-disabled', {
+    message: updatePreferences.autoCheck ? 'Auto-Check is enabled.' : 'Auto-Check is disabled. Use Check whenever you want to look for an update.',
+  })
+  if (updatePreferences.autoCheck) await checkForUpdatesBeforeLaunch()
+  return updaterStatus()
 }
 
 function setUpdateState(status, details = {}) {
@@ -365,9 +431,11 @@ async function verifyUpdateFeed() {
   try {
     const response = await fetch(manifestUrl, { signal: controller.signal })
     const manifest = await response.text()
-    if (!response.ok || !/^version:\s*\S+/m.test(manifest)) {
+    const versionMatch = manifest.match(/^version:\s*(\S+)/m)
+    if (!response.ok || !versionMatch) {
       throw new Error('The update feed is not published yet.')
     }
+    return versionMatch[1]
   } finally {
     clearTimeout(timeout)
   }
@@ -379,9 +447,9 @@ async function checkForUpdatesBeforeLaunch() {
     return updaterStatus()
   }
   try {
-    await verifyUpdateFeed()
+    const availableVersion = await verifyUpdateFeed()
     autoUpdater.setFeedURL({ provider: 'generic', url: UPDATE_FEED_URL })
-    setUpdateState('checking')
+    setUpdateState('checking', { version: availableVersion, message: `Checking installed version ${app.getVersion()} against available version ${availableVersion}.` })
     const check = autoUpdater.checkForUpdates().catch((error) => {
       setUpdateState('unavailable', { message: error?.message || 'Update service could not be reached.' })
       return null
@@ -438,7 +506,11 @@ if (singleInstanceLock) app.whenReady().then(async () => {
       showStartupRecovery('OverHead detected repeated incomplete launches. The recovery screen is available instead of closing the app.')
       return
     }
-    await checkForUpdatesBeforeLaunch()
+    if (updatePreferences.autoCheck) {
+      await checkForUpdatesBeforeLaunch()
+    } else {
+      setUpdateState('auto-check-disabled', { message: 'Auto-Check is off. Use Check when you want to look for updates.' })
+    }
     try {
       backend.initBackend(app, {
         secureStore: {
@@ -467,12 +539,32 @@ if (singleInstanceLock) app.whenReady().then(async () => {
     ipcMain.handle('auth:remembered-sign-in', trustedHandler(() => backend.getRememberedSignIn()))
     ipcMain.handle('auth:resume-session', trustedHandler(() => backend.resumeRememberedSession()))
     ipcMain.handle('auth:verify-email', trustedHandler((_event, payload) => backend.verifyEmail(payload)))
+    ipcMain.handle('developer:workspace', trustedHandler(() => backend.getDeveloperWorkspace()))
+    ipcMain.handle('developer:choose-workspace', trustedHandler(async () => {
+      const result = await dialog.showOpenDialog({ title: 'Choose OverHead source folder', properties: ['openDirectory'] })
+      if (result.canceled || !result.filePaths[0]) return backend.getDeveloperWorkspace()
+      return backend.setDeveloperWorkspace({ workspacePath: result.filePaths[0] })
+    }))
+    ipcMain.handle('developer:set-editor', trustedHandler((_event, payload) => backend.setDeveloperEditor(payload)))
+    ipcMain.handle('developer:editors', trustedHandler(() => editorCandidates().map(({ id, label }) => ({ id, label }))))
+    ipcMain.handle('developer:open-workspace', trustedHandler(async () => {
+      const workspace = backend.getDeveloperWorkspace()
+      if (!workspace.configured) throw new Error(workspace.message || 'Choose the OverHead source folder before opening a code editor.')
+      const editor = chooseEditor(workspace.preferredEditor)
+      if (!editor) throw new Error('Install Visual Studio Code or Code - OSS, then try again.')
+      const child = spawn(editor.command, [workspace.workspacePath], { detached: true, stdio: 'ignore', windowsHide: true })
+      child.unref()
+      backend.recordDeveloperEditorLaunch(editor.label, workspace.workspacePath)
+      return { editor: editor.label, workspacePath: workspace.workspacePath }
+    }))
     ipcMain.handle('session:lock', trustedHandler((_event, sessionId) => backend.lockSession(sessionId)))
     ipcMain.handle('customers:list', trustedHandler(() => backend.listCustomers()))
+    ipcMain.handle('customers:sync', trustedHandler(() => backend.syncCustomersWithWorkspace()))
     ipcMain.handle('tasks:list', trustedHandler(() => backend.listTasks()))
     ipcMain.handle('tasks:update-status', trustedHandler((_event, payload) => backend.updateTaskStatus(payload)))
     ipcMain.handle('jobs:queue', trustedHandler((_event, payload) => backend.queueWorkflowJob(payload)))
     ipcMain.handle('jobs:process-due', trustedHandler(() => backend.processDueJobs()))
+    ipcMain.handle('jobs:retry', trustedHandler((_event, payload) => backend.retryWorkflowJob(payload)))
     ipcMain.handle('jobs:list', trustedHandler(() => backend.listWorkflowJobs()))
     ipcMain.handle('customers:create', trustedHandler((_event, payload) => backend.createCustomer(payload)))
     ipcMain.handle('documents:select-file', trustedHandler(async () => {
@@ -552,18 +644,25 @@ if (singleInstanceLock) app.whenReady().then(async () => {
     ipcMain.handle('pdf:create-operational', trustedHandler((_event, payload) => backend.createOperationalDocument(payload)))
     ipcMain.handle('billing:create-receipt', trustedHandler(() => backend.createSubscriptionReceipt()))
     ipcMain.handle('compliance:create-data-request', trustedHandler((_event, payload) => backend.createDataRequest(payload)))
+    ipcMain.handle('compliance:complete-data-deletion', trustedHandler((_event, payload) => backend.completeDataDeletion(payload)))
     ipcMain.handle('compliance:summary', trustedHandler(() => backend.getComplianceSummary()))
     ipcMain.handle('audit:list', trustedHandler((_event, limit) => backend.listAuditEvents(limit)))
     ipcMain.handle('settings:update', trustedHandler((_event, payload) => backend.updateSetting(payload)))
     ipcMain.handle('backup:create', trustedHandler(() => backend.createBackup()))
     ipcMain.handle('export:create', trustedHandler(() => backend.createDataExport()))
     ipcMain.handle('restore:validate', trustedHandler((_event, filePath) => backend.validateRestorePackage(filePath)))
+    ipcMain.handle('restore:execute', trustedHandler((_event, payload) => backend.restoreFromPackage(payload)))
     ipcMain.handle('support:create-bundle', trustedHandler(() => backend.createSupportBundle(integrityReport())))
     ipcMain.handle('updater:status', trustedHandler(() => updaterStatus()))
+    ipcMain.handle('updater:check', trustedHandler(() => checkForUpdatesBeforeLaunch()))
+    ipcMain.handle('updater:set-auto-check', trustedHandler((_event, payload) => setAutoCheck(payload)))
     ipcMain.handle('updater:install', trustedHandler(() => installDownloadedUpdate()))
     ipcMain.handle('app:power-cycle', trustedHandler(() => powerCycle()))
     createWindow()
     createTray()
+    setInterval(() => {
+      if (updatePreferences.autoCheck) checkForUpdatesBeforeLaunch()
+    }, AUTO_UPDATE_CHECK_INTERVAL_MS)
     appReady = true
     app.on('activate', () => {
       if (BrowserWindow.getAllWindows().length === 0) createWindow()

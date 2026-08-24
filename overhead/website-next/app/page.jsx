@@ -69,25 +69,6 @@ const revenueLeakSignals = [
   ["Unassigned work", "Tasks that can quietly become nobody's responsibility."],
 ];
 
-const firstWinSteps = [
-  [
-    "Bring in one active customer",
-    "Start with the person, job, or account that needs attention today.",
-  ],
-  [
-    "Name the next action",
-    "Turn a loose note, open quote, or unpaid invoice into a visible follow-up.",
-  ],
-  [
-    "Give it an owner",
-    "Make responsibility clear before another handoff creates delay.",
-  ],
-  [
-    "Review what is waiting",
-    "See approvals and priority work before the end of the day.",
-  ],
-];
-
 const officeFits = [
   [
     "Owner-led service businesses",
@@ -162,14 +143,6 @@ export default function HomePage() {
               customer work with no clear next step, then assign it, review it,
               or follow through. Start with one list—not a complicated rollout.
             </p>
-            <div className="home-proof-actions">
-              <Link className="primary" href={downloadHref}>
-                Get the Windows workspace
-              </Link>
-              <Link className="text-link" href="#get-started">
-                See the four-step setup
-              </Link>
-            </div>
           </div>
           <div className="revenue-check-list">
             {revenueLeakSignals.map(([title, body], index) => (
@@ -179,27 +152,6 @@ export default function HomePage() {
                   <strong>{title}</strong>
                   <p>{body}</p>
                 </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="section first-win-section">
-          <div>
-            <p className="eyebrow">Your first useful hour</p>
-            <h2>Do not migrate the whole office. Prove the habit first.</h2>
-            <p className="section-copy">
-              The fastest way to judge OverHead is to use it on work already in
-              motion. Start with one active customer, one revenue follow-up, and
-              one decision that needs an owner.
-            </p>
-          </div>
-          <div className="first-win-grid">
-            {firstWinSteps.map(([title, body], index) => (
-              <article key={title}>
-                <span>Step {index + 1}</span>
-                <strong>{title}</strong>
-                <p>{body}</p>
               </article>
             ))}
           </div>
@@ -266,14 +218,6 @@ export default function HomePage() {
               readiness, and key controls into one place. The screenshots below
               are from the installed product.
             </p>
-            <div className="home-proof-actions">
-              <Link className="primary" href={downloadHref}>
-                Get the Windows download
-              </Link>
-              <Link className="text-link" href="/support/">
-                See installation help
-              </Link>
-            </div>
           </div>
           <figure>
             <img
@@ -310,6 +254,10 @@ export default function HomePage() {
               <p>
                 OverHead currently runs on Windows. The ZIP is the official
                 manual download; use the checksum if you want to verify it.
+              </p>
+              <p className="platform-teaser">
+                <strong>Coming soon:</strong> Android, Linux, macOS, and iOS
+                editions.
               </p>
             </div>
             <div>

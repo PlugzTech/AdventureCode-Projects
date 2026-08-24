@@ -38,6 +38,7 @@ export function Footer() {
         <Link href="/careers/">Careers</Link>
         <Link href={cylinderPageHref}>Cylinder</Link>
         <Link href="/support/">Support</Link>
+        <Link href="/feedback/">Feedback</Link>
         <Link href="/legal/">Legal</Link>
         <Link href={checksumHref}>Checksums</Link>
       </div>

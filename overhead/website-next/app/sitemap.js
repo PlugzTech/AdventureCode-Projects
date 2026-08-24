@@ -6,6 +6,7 @@ export default function sitemap() {
     ['/about/', 0.8],
     ['/careers/', 0.6],
     ['/contact/', 0.7],
+    ['/feedback/', 0.7],
     ['/faq/', 0.7],
     ['/investors/', 0.6],
     ['/legal/', 0.4],
