@@ -1,16 +1,24 @@
 import Link from "next/link";
+import { plugzSiteLinks } from "../lib/merch";
 import { ThemeToggle } from "./theme-toggle";
 
 const footerGroups = [
   {
-    title: "Services",
+    title: "Branches",
+    links: [
+      { href: "/multimedia", label: "Black Lion Multimedia" },
+      { href: "/tech-development", label: "Black Lion Tech Development" },
+      { href: "/fashion", label: "Black Lion Lion Fashion" },
+      { href: "/models", label: "Model sub-site" }
+    ]
+  },
+  {
+    title: "Service Routes",
     links: [
       { href: "/photography", label: "Photography" },
       { href: "/videography", label: "Videography" },
       { href: "/dj-services", label: "DJ services" },
       { href: "/beat-sessions", label: "Beat sessions" },
-      { href: "/models", label: "Model Sign-up" },
-      { href: "/models/faq", label: "Model FAQ" },
       { href: "/pc-tech-support", label: "PC tech support" },
       { href: "/membership-sites", label: "Membership sites" }
     ]
@@ -19,7 +27,7 @@ const footerGroups = [
     title: "Client",
     links: [
       { href: "/book", label: "Book service" },
-      { href: "/#service-estimation", label: "Service Estimation" },
+      { href: "/services#service-estimation", label: "Service Estimation" },
       { href: "/portal", label: "Create account" },
       { href: "/dashboard", label: "Dashboard" },
       { href: "/messages", label: "Messages" },
@@ -30,6 +38,8 @@ const footerGroups = [
     title: "Studio",
     links: [
       { href: "/store", label: "Merch store" },
+      { href: plugzSiteLinks.home, label: "Plugz UNTD", external: true },
+      { href: "/models/faq", label: "Model FAQ" },
       { href: "/booking-manager", label: "Manager access" },
       { href: "/support", label: "Support" },
       { href: "/ad-expansion", label: "Ad expansion" },
@@ -57,8 +67,7 @@ export function SiteFooter() {
         <div className="footer-brand-block">
           <p className="brand-signature brand-mark">Black Lion Studios</p>
           <p>
-            Photography, video, audio, DJ services, tech help, merch, and project follow-up in one
-            place.
+            Multimedia, tech development, fashion, modeling, merch, and project follow-up in one place.
           </p>
           <div className="footer-actions">
             <ThemeToggle />
@@ -72,11 +81,22 @@ export function SiteFooter() {
           {footerGroups.map((group) => (
             <div className="footer-link-column" key={group.title}>
               <strong>{group.title}</strong>
-              {group.links.map((link) => (
-                <Link href={link.href} key={`${group.title}-${link.label}`}>
-                  {link.label}
-                </Link>
-              ))}
+              {group.links.map((link) =>
+                link.external ? (
+                  <a
+                    href={link.href}
+                    key={`${group.title}-${link.label}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link href={link.href} key={`${group.title}-${link.label}`}>
+                    {link.label}
+                  </Link>
+                )
+              )}
             </div>
           ))}
         </div>

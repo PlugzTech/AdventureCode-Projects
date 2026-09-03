@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { lastUpdated, termsSections } from "../../lib/legal-content";
 
+export const metadata = {
+  title: "Terms of Use",
+  description:
+    "Terms for using Black Lion Studios public pages, portal access, Service Estimation, Square appointments, store activity, payments, and project coordination."
+};
+
 export default function TermsPage() {
   return (
     <div className="page-shell">

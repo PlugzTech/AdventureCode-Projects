@@ -1,4 +1,5 @@
 import { PortalConversionStrip, PortalSigninComponentSuite } from "../shared-ui";
+import { BackendStatusNotice } from "../backend-status-notice";
 import { PortalAccessPanel } from "./portal-access-panel";
 import { signinComponentGroups } from "./portal-data";
 import { PortalHeroPanel } from "./portal-hero-panel";
@@ -13,6 +14,8 @@ export function PortalContent({ requiresAuth = false, idleReason = false }) {
           <PortalHeroPanel />
           <PortalAccessPanel requiresAuth={requiresAuth} idleReason={idleReason} />
         </section>
+
+        <BackendStatusNotice context="account and request" />
 
         <PortalServicesPanel />
 

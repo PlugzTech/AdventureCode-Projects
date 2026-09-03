@@ -11,6 +11,27 @@ Live production URL:
 - `https://black-lion-studios.web.app`
 - Current Firebase Hosting URL: `https://black-lion-media-studio.web.app`
 
+## 2026-09-02 Black Lion branch split and splash landing
+
+- Reorganized the public site into three primary branches: `Black Lion Multimedia` at `/multimedia`, `Black Lion Tech Development` at `/tech-development`, and `Black Lion Lion Fashion` at `/fashion`.
+- Built `lib/business-lines.js` as the shared branch map so the homepage, services page, portal prompts, support routing, and branch pages use one category source.
+- Moved Photos & Video language and child routes under Multimedia: `/photography`, `/videography`, `/dj-services`, and `/beat-sessions`.
+- Moved Software & Web Development language and child routes under Tech Development: `/membership-sites` and `/pc-tech-support`.
+- Moved Fashion, merch, product/fashion visuals, and modeling language under Black Lion Lion Fashion. The modeling sub-site remains separate at `/models` with the model FAQ at `/models/faq`.
+- Rebuilt `/` as a splash landing page focused on choosing the correct branch. Detailed tools were moved off the splash path: service estimation belongs on `/services` and branch CTAs, appointment booking belongs on `/book`, legal/compliance belongs on `/legal`, FAQ belongs on `/faq`, and help routing belongs on `/support`.
+- Updated metadata, sitemap, service-ad pages, the public service directory, store page, model pages, portal copy, support page, booking page, contact/about/work/portfolio copy, and estimator labels so each page uses language matching its branch.
+- Added public fallback notices so visitors are told to use Square Appointments or `contact@blacklionstudios.com` when Firebase account/API tools are unavailable.
+- Updated static Hosting preparation so generated metadata body files such as sitemap and robots are copied into the static deployment bundle.
+- Deployment note: the public static site was deployed with `npm run deploy:static-fast`. Full framework/function deployment remains blocked while Firebase billing is disabled for the project, which currently makes `/api/**` and protected account routes return 503 from the existing SSR function.
+
+## 2026-09-02 logged-in idle timeout update
+
+- Changed the logged-in workspace inactivity timeout from 20 minutes to 5 minutes in `lib/auth-events.js`.
+- Kept the existing pre-timeout warning/countdown and logout flow in `components/client-nav.js`.
+- Updated the client auth form to read `auth=required` and `reason=idle` from the portal URL while keeping `/portal` eligible for static hosting.
+- Updated the idle return notice into a pop-up style alert that says the site logged the user out after 5 minutes with no activity.
+- Documentation note: this is separate from the public Model Sign-up tab/draft inactivity safeguard, which still closes/exits after 20 minutes on `/models`.
+
 ## 2026-06-12 ad traffic readiness
 
 - Added sitewide canonical, robots, Open Graph, and Twitter card metadata.
@@ -68,6 +89,7 @@ Live production URL:
 - Added travel/gas handling: the first 30 miles are included, and miles over 30 are a separate independent extra charge outside the service subtotal, market multipliers, and first-time discount.
 - Added 50% required-deposit disclosure and estimator math once selected services are requested, so clients see the seriousness/scheduling commitment before submitting.
 - Updated service baselines with 2026 market-rate research and displayed each sub-service reference range in the estimator UI.
+- 2026-07-01 update: refreshed all listed service prices and estimator benchmark baselines after current public market-rate research across photography, videography, DJ/event work, web/membership support, PC support, music production, recording, mixing, mastering, planning, travel, revisions, and add-ons.
 - Consolidated the public quote workflow: `/quote` now permanently redirects to `/#service-estimation`, old quick-quote links point to the landing estimator, and `/quote` was removed from the sitemap.
 - Reduced landing-page redundancy so the main page is focused on the hero, Service Estimation, booking, services, FAQ, and conversion. Detailed legal/compliance text remains on dedicated policy pages linked from the footer.
 - Updated FAQ, Terms of Use, Privacy Policy, DMCA/Copyright Claims, Government Compliance, disclaimers, and site metadata for Service Estimation, multi-service selection, benchmark market-rate language, local estimate storage, 50% deposit expectations, and non-binding quote disclaimers.
@@ -140,7 +162,7 @@ Live production URL:
 - service selection populates descriptive service details
 - users can submit authenticated requests tied to their account
 - users can send authenticated messages to Black Lion Studios
-- inactivity signs users out after 20 minutes without activity
+- inactivity signs logged-in users out after 5 minutes without activity
 - sign-in and sign-out changes propagate across the site and session-aware pages
 - unauthenticated users are blocked from protected purchase and client-only routes before client UI loads
 - theme preference persists locally and updates the whole site shell
@@ -225,7 +247,8 @@ Current architecture:
 Work completed:
 
 - Added `components/black-lion-media-suite.js`.
-- Installed `BlackLionMediaComponentSuite` into `components/dashboard-app.js`.
+- Originally installed `BlackLionMediaComponentSuite` into `components/dashboard-app.js`.
+- 2026-07-01 update: removed it from the dashboard so those reusable modules can be placed on more appropriate operations or service-reference surfaces instead.
 - Added 40 named reusable module exports covering intake, creative production,
   technical support, billing, delivery, compliance, analytics, security, client
   account management, manager queue work, and follow-up.
@@ -304,7 +327,7 @@ Backup archive:
 Work completed:
 
 - `lib/auth-events.js` now exports idle timeout constants and cross-tab activity event utilities.
-- `components/client-nav.js` now schedules a warning one minute before the 20-minute idle logout.
+- `components/client-nav.js` now schedules a warning one minute before the 5-minute idle logout.
 - The warning includes countdown text, a stay-signed-in button, and a manual logout button.
 - Activity resets are shared across tabs through localStorage and BroadcastChannel, with throttling to avoid excessive writes during mouse movement.
 - Idle logout now routes to `/portal?auth=required&reason=idle` so the user sees why they were sent back to sign-in.

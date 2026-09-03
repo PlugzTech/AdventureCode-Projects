@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { LandingProofStrip, ProcessSteps } from "../../components/shared-ui";
+import { LandingProofStrip, ProcessSteps, ShortcutRail } from "../../components/shared-ui";
+import { businessLines } from "../../lib/business-lines";
 
 export const metadata = {
   title: "About",
-  description: "About Black Lion Studios and the creative, technical, and merch support available through the client portal.",
+  description: "About Black Lion Studios and its Multimedia, Tech Development, and Fashion branches.",
   alternates: { canonical: "/about" }
 };
 
@@ -15,11 +16,11 @@ export default function AboutPage() {
           <div className="hero-grid">
             <div className="hero-copy">
               <p className="eyebrow brand-signature">Black Lion Studios</p>
-              <h1>Creative production and practical tech support in one place.</h1>
+              <h1>Three Black Lion branches with one client handoff.</h1>
               <p>
-                Black Lion Studios supports creators, small businesses, and returning clients with
-                photography, video, music, DJ services, membership sites, PC support, and merch
-                coordination.
+                Black Lion Studios routes public work through Black Lion Multimedia, Black Lion
+                Tech Development, and Black Lion Lion Fashion so visitors can choose the right
+                branch before sending details.
               </p>
               <div className="hero-actions">
                 <Link href="/portal" className="button">Start a request</Link>
@@ -29,10 +30,22 @@ export default function AboutPage() {
           </div>
         </section>
         <section className="panel">
+          <p className="label">Branches</p>
+          <ShortcutRail
+            items={businessLines.map((line) => ({
+              href: line.href,
+              label: line.eyebrow,
+              value: line.name,
+              note: line.summary
+            }))}
+            className="ui-shortcut-tight"
+          />
+        </section>
+        <section className="panel">
           <p className="label">How it works</p>
           <ProcessSteps
             items={[
-              "Choose the service lane that fits the project.",
+              "Choose Multimedia, Tech Development, or Fashion.",
               "Create an account so contact details and messages stay together.",
               "Send the request and keep scheduling, billing, and follow-up in one portal."
             ]}
@@ -43,8 +56,9 @@ export default function AboutPage() {
           <p className="label">What clients get</p>
           <LandingProofStrip
             items={[
-              { title: "Creative range", copy: "Photo, video, music, DJ, and campaign support for practical projects." },
-              { title: "Tech lane", copy: "Membership-site support and PC service requests with clear next steps." },
+              { title: "Black Lion Multimedia", copy: "Photo, video, music, DJ, event, and campaign support." },
+              { title: "Black Lion Tech Development", copy: "Software, web, membership-site, maintenance, and PC support." },
+              { title: "Black Lion Lion Fashion", copy: "Merch, fashion content, model sign-up, and campaign visuals." },
               { title: "Saved context", copy: "Requests, profile details, billing context, and messages stay connected." }
             ]}
           />

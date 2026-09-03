@@ -9,50 +9,50 @@ const includedTravelMiles = 30;
 const includedRevisionRounds = 2;
 
 const microServices = [
-  { id: "portrait-session", label: "Portrait session", category: "Photography", base: 375, unit: "session", service: "Photography", marketRange: "$250-$1,500 package" },
-  { id: "event-photo", label: "Event photo coverage", category: "Photography", base: 900, unit: "event block", service: "Photography", marketRange: "$150-$500/hr" },
-  { id: "product-photos", label: "Product or merch photos", category: "Photography", base: 650, unit: "set", service: "Photography", marketRange: "$500-$2,500 half-day" },
-  { id: "headshot-mini", label: "Headshot mini-session", category: "Photography", base: 225, unit: "session", service: "Photography", marketRange: "$150-$500 session" },
-  { id: "brand-lifestyle", label: "Brand lifestyle set", category: "Photography", base: 800, unit: "set", service: "Photography", marketRange: "$800-$5,000 day" },
-  { id: "real-estate-photo", label: "Real estate photo set", category: "Photography", base: 350, unit: "property", service: "Photography", marketRange: "$150-$500 shoot" },
-  { id: "photo-retouching", label: "Photo retouching pack", category: "Photography", base: 175, unit: "pack", service: "Photography", marketRange: "$25-$175 image" },
-  { id: "promo-video", label: "Promo video", category: "Videography", base: 1250, unit: "project", service: "Videography", marketRange: "$500-$5,000 project" },
-  { id: "social-reels", label: "Short-form reels", category: "Videography", base: 450, unit: "bundle", service: "Videography", marketRange: "$250+ per video" },
-  { id: "event-video", label: "Event video capture", category: "Videography", base: 1800, unit: "event block", service: "Videography", marketRange: "$1,500-$4,500 event" },
-  { id: "interview-video", label: "Interview or testimonial video", category: "Videography", base: 900, unit: "project", service: "Videography", marketRange: "$750-$3,000 project" },
-  { id: "music-video", label: "Music video capture", category: "Videography", base: 1500, unit: "project", service: "Videography", marketRange: "$1,000-$10,000+" },
-  { id: "highlight-recap", label: "Event highlight recap", category: "Videography", base: 700, unit: "edit", service: "Videography", marketRange: "$400-$1,500 edit" },
-  { id: "video-edit-only", label: "Video edit-only package", category: "Videography", base: 500, unit: "edit", service: "Videography", marketRange: "$75-$350/hr" },
-  { id: "dj-set", label: "DJ event set", category: "Music and events", base: 750, unit: "booking", service: "DJ Services", marketRange: "$400-$1,800 booking" },
-  { id: "beat-session", label: "Beat creation session", category: "Music and events", base: 500, unit: "session", service: "Beat Creation Session", marketRange: "$200-$1,500+ song" },
-  { id: "audio-edit", label: "Audio edit or cleanup", category: "Music and events", base: 225, unit: "edit", service: "Beat Creation Session", marketRange: "$75-$200/hr" },
-  { id: "sound-setup", label: "Sound setup support", category: "Music and events", base: 300, unit: "setup", service: "DJ Services", marketRange: "$150-$750 setup" },
-  { id: "playlist-curation", label: "Playlist curation", category: "Music and events", base: 125, unit: "list", service: "DJ Services", marketRange: "$75-$250 list" },
-  { id: "recording-session", label: "Recording session support", category: "Music and events", base: 350, unit: "session", service: "Beat Creation Session", marketRange: "$50-$200/hr" },
-  { id: "mix-master", label: "Mixing or mastering pass", category: "Music and events", base: 350, unit: "track", service: "Beat Creation Session", marketRange: "$150-$1,000 track" },
-  { id: "membership-page", label: "Membership page setup", category: "Web and tech", base: 850, unit: "page set", service: "Membership Sites & Support", marketRange: "$50-$250/hr" },
-  { id: "site-maintenance", label: "Site maintenance block", category: "Web and tech", base: 300, unit: "month", service: "Membership Sites & Support", marketRange: "$35-$650/mo" },
-  { id: "pc-support", label: "PC support visit", category: "Web and tech", base: 125, unit: "visit", service: "PC Tech Services", marketRange: "$79-$250 repair" },
-  { id: "landing-page-build", label: "Landing page build", category: "Web and tech", base: 950, unit: "page", service: "Membership Sites & Support", marketRange: "$1,000-$5,000 site" },
-  { id: "form-automation", label: "Form or automation setup", category: "Web and tech", base: 425, unit: "workflow", service: "Membership Sites & Support", marketRange: "$75-$200/hr" },
-  { id: "analytics-setup", label: "Analytics or tracking setup", category: "Web and tech", base: 250, unit: "setup", service: "Membership Sites & Support", marketRange: "$150-$750 setup" },
-  { id: "pc-tuneup", label: "PC tune-up and cleanup", category: "Web and tech", base: 150, unit: "device", service: "PC Tech Services", marketRange: "$89-$250 repair" },
-  { id: "hardware-upgrade", label: "Hardware upgrade labor", category: "Web and tech", base: 175, unit: "device", service: "PC Tech Services", marketRange: "$59-$179 labor" },
-  { id: "content-planning", label: "Creative planning call", category: "Planning", base: 125, unit: "call", service: "Photography", marketRange: "$75-$200/hr" },
-  { id: "shot-list", label: "Shot list and production brief", category: "Planning", base: 175, unit: "brief", service: "Photography", marketRange: "$75-$200/hr" },
-  { id: "content-calendar", label: "Content calendar setup", category: "Planning", base: 275, unit: "calendar", service: "Videography", marketRange: "$250-$1,000 plan" },
-  { id: "brand-review", label: "Brand or campaign review", category: "Planning", base: 225, unit: "review", service: "Photography", marketRange: "$100-$250/hr" },
-  { id: "production-roadmap", label: "Production roadmap", category: "Planning", base: 350, unit: "roadmap", service: "Videography", marketRange: "$300-$1,500 plan" },
-  { id: "rush-edit", label: "Rush edit window", category: "Add-ons", base: 250, unit: "rush block", service: "Videography", marketRange: "15%-35% rush lift" },
-  { id: "extra-revisions", label: "Revision pack", category: "Add-ons", base: 125, unit: "pack", service: "Videography", marketRange: "$75-$200/hr" },
-  { id: "extra-location", label: "Extra location", category: "Add-ons", base: 150, unit: "location", service: "Photography", marketRange: "$75-$300 add-on" },
-  { id: "same-day-teaser", label: "Same-day teaser delivery", category: "Add-ons", base: 300, unit: "teaser", service: "Videography", marketRange: "$250-$1,000 add-on" },
-  { id: "raw-file-delivery", label: "Raw file delivery", category: "Add-ons", base: 200, unit: "handoff", service: "Videography", marketRange: "$100-$750 add-on" },
-  { id: "usage-license-extension", label: "Usage license extension", category: "Add-ons", base: 350, unit: "license", service: "Photography", marketRange: "$250-$10,000 usage" },
-  { id: "assistant-operator", label: "Assistant or second operator", category: "Add-ons", base: 450, unit: "day", service: "Videography", marketRange: "$300-$800 day" }
+  { id: "portrait-session", label: "Portrait session", category: "Black Lion Multimedia", base: 450, unit: "session", service: "Photography", marketRange: "$250-$1,500 package" },
+  { id: "event-photo", label: "Event photo coverage", category: "Black Lion Multimedia", base: 1200, unit: "event block", service: "Photography", marketRange: "$150-$500/hr" },
+  { id: "product-photos", label: "Product or merch photos", category: "Black Lion Lion Fashion", base: 900, unit: "set", service: "Photography", marketRange: "$35-$175/image or $800-$5,000 day" },
+  { id: "headshot-mini", label: "Headshot mini-session", category: "Black Lion Multimedia", base: 275, unit: "session", service: "Photography", marketRange: "$150-$350/hr or $250-$1,500 package" },
+  { id: "brand-lifestyle", label: "Brand lifestyle set", category: "Black Lion Lion Fashion", base: 1200, unit: "set", service: "Photography", marketRange: "$800-$5,000 day" },
+  { id: "real-estate-photo", label: "Real estate photo set", category: "Black Lion Multimedia", base: 300, unit: "property", service: "Photography", marketRange: "$150-$500 listing" },
+  { id: "photo-retouching", label: "Photo retouching pack", category: "Black Lion Multimedia", base: 250, unit: "pack", service: "Photography", marketRange: "$35-$175/image" },
+  { id: "promo-video", label: "Promo video", category: "Black Lion Multimedia", base: 2500, unit: "project", service: "Videography", marketRange: "$2,500-$7,000 short-form branded" },
+  { id: "social-reels", label: "Short-form reels", category: "Black Lion Multimedia", base: 750, unit: "bundle", service: "Videography", marketRange: "$500-$5,000 per short video" },
+  { id: "event-video", label: "Event video capture", category: "Black Lion Multimedia", base: 2200, unit: "event block", service: "Videography", marketRange: "$1,500-$4,500 event" },
+  { id: "interview-video", label: "Interview or testimonial video", category: "Black Lion Multimedia", base: 1500, unit: "project", service: "Videography", marketRange: "$1,500-$3,500 project" },
+  { id: "music-video", label: "Music video capture", category: "Black Lion Multimedia", base: 2500, unit: "project", service: "Videography", marketRange: "$2,000-$7,000+ project" },
+  { id: "highlight-recap", label: "Event highlight recap", category: "Black Lion Multimedia", base: 900, unit: "edit", service: "Videography", marketRange: "$400-$2,000 edit" },
+  { id: "video-edit-only", label: "Video edit-only package", category: "Black Lion Multimedia", base: 650, unit: "edit", service: "Videography", marketRange: "$75-$350/hr" },
+  { id: "dj-set", label: "DJ event set", category: "Black Lion Multimedia", base: 1600, unit: "booking", service: "DJ Services", marketRange: "$800-$2,700 wedding quartiles" },
+  { id: "beat-session", label: "Beat creation session", category: "Black Lion Multimedia", base: 750, unit: "session", service: "Beat Creation Session", marketRange: "$400-$1,000 developing producer/song" },
+  { id: "audio-edit", label: "Audio edit or cleanup", category: "Black Lion Multimedia", base: 250, unit: "edit", service: "Beat Creation Session", marketRange: "$75-$150/hr mid-level" },
+  { id: "sound-setup", label: "Sound setup support", category: "Black Lion Multimedia", base: 450, unit: "setup", service: "DJ Services", marketRange: "$150-$750 setup" },
+  { id: "playlist-curation", label: "Playlist curation", category: "Black Lion Multimedia", base: 175, unit: "list", service: "DJ Services", marketRange: "$75-$250 list" },
+  { id: "recording-session", label: "Recording session support", category: "Black Lion Multimedia", base: 450, unit: "session", service: "Beat Creation Session", marketRange: "$75-$150/hr mid-level" },
+  { id: "mix-master", label: "Mixing or mastering pass", category: "Black Lion Multimedia", base: 450, unit: "track", service: "Beat Creation Session", marketRange: "$200-$600 mix or $80-$200 master" },
+  { id: "membership-page", label: "Membership page setup", category: "Black Lion Tech Development", base: 1200, unit: "page set", service: "Membership Sites & Support", marketRange: "$125-$300/hr US agency" },
+  { id: "site-maintenance", label: "Site maintenance block", category: "Black Lion Tech Development", base: 350, unit: "month", service: "Membership Sites & Support", marketRange: "$35-$650/mo SMB maintenance" },
+  { id: "pc-support", label: "PC support visit", category: "Black Lion Tech Development", base: 150, unit: "visit", service: "PC Tech Services", marketRange: "$119-$169 national repair average" },
+  { id: "landing-page-build", label: "Landing page build", category: "Black Lion Tech Development", base: 1800, unit: "page", service: "Membership Sites & Support", marketRange: "$125-$300/hr US agency" },
+  { id: "form-automation", label: "Form or automation setup", category: "Black Lion Tech Development", base: 600, unit: "workflow", service: "Membership Sites & Support", marketRange: "$125-$300/hr US agency" },
+  { id: "analytics-setup", label: "Analytics or tracking setup", category: "Black Lion Tech Development", base: 450, unit: "setup", service: "Membership Sites & Support", marketRange: "$125-$300/hr US agency" },
+  { id: "pc-tuneup", label: "PC tune-up and cleanup", category: "Black Lion Tech Development", base: 150, unit: "device", service: "PC Tech Services", marketRange: "$119-$169 national repair average" },
+  { id: "hardware-upgrade", label: "Hardware upgrade labor", category: "Black Lion Tech Development", base: 175, unit: "device", service: "PC Tech Services", marketRange: "$119-$226 repair/labor range" },
+  { id: "content-planning", label: "Creative planning call", category: "Black Lion Multimedia", base: 175, unit: "call", service: "Photography", marketRange: "$125-$300/hr production planning" },
+  { id: "shot-list", label: "Shot list and production brief", category: "Black Lion Multimedia", base: 250, unit: "brief", service: "Photography", marketRange: "$125-$300/hr production planning" },
+  { id: "content-calendar", label: "Content calendar setup", category: "Black Lion Multimedia", base: 350, unit: "calendar", service: "Videography", marketRange: "$250-$1,000 plan" },
+  { id: "brand-review", label: "Brand or campaign review", category: "Black Lion Lion Fashion", base: 300, unit: "review", service: "Photography", marketRange: "$125-$300/hr strategy review" },
+  { id: "production-roadmap", label: "Production roadmap", category: "Black Lion Multimedia", base: 500, unit: "roadmap", service: "Videography", marketRange: "$300-$1,500 plan" },
+  { id: "rush-edit", label: "Rush edit window", category: "Black Lion Multimedia", base: 400, unit: "rush block", service: "Videography", marketRange: "15%-35% rush lift" },
+  { id: "extra-revisions", label: "Revision pack", category: "Black Lion Multimedia", base: 150, unit: "pack", service: "Videography", marketRange: "$75-$350/hr" },
+  { id: "extra-location", label: "Extra location", category: "Black Lion Multimedia", base: 200, unit: "location", service: "Photography", marketRange: "$75-$300 add-on" },
+  { id: "same-day-teaser", label: "Same-day teaser delivery", category: "Black Lion Multimedia", base: 500, unit: "teaser", service: "Videography", marketRange: "$400-$2,000 add-on" },
+  { id: "raw-file-delivery", label: "Raw file delivery", category: "Black Lion Multimedia", base: 300, unit: "handoff", service: "Videography", marketRange: "$100-$750 add-on" },
+  { id: "usage-license-extension", label: "Usage license extension", category: "Black Lion Lion Fashion", base: 500, unit: "license", service: "Photography", marketRange: "$250-$10,000 usage" },
+  { id: "assistant-operator", label: "Assistant or second operator", category: "Black Lion Multimedia", base: 600, unit: "day", service: "Videography", marketRange: "$300-$800 day" }
 ];
 
-const mainServiceLanes = ["Photography", "Videography", "Music and events", "Web and tech", "Planning", "Add-ons"];
+const mainServiceLanes = ["Black Lion Multimedia", "Black Lion Tech Development", "Black Lion Lion Fashion"];
 const usageOptions = [
   { label: "Personal / internal", multiplier: 1 },
   { label: "Social content", multiplier: 1.08 },
@@ -196,7 +196,7 @@ export function ServiceQuoteBuilder({
   sendingQuote = false
 }) {
   const [selectedIds, setSelectedIds] = useState(["portrait-session"]);
-  const [selectedLanes, setSelectedLanes] = useState(["Photography"]);
+  const [selectedLanes, setSelectedLanes] = useState(["Black Lion Multimedia"]);
   const [usage, setUsage] = useState(usageOptions[1].label);
   const [timeline, setTimeline] = useState(timelineOptions[1].label);
   const [location, setLocation] = useState(locationOptions[0].label);
@@ -496,7 +496,7 @@ export function ServiceQuoteBuilder({
 
           <div className="micro-service-groups">
             <div className="micro-service-group">
-              <strong>{selectedLanes.length ? "Selected main-service sub-services" : "Select a main service to show sub-services"}</strong>
+              <strong>{selectedLanes.length ? "Selected branch services" : "Select a branch to show services"}</strong>
               <div className="micro-service-list">
                 {visibleServices.map((item) => (
                   <label className="micro-service-option" key={item.id}>
@@ -635,8 +635,8 @@ export function ServiceQuoteBuilder({
           </div>
           <p className="quote-summary">{estimate.summary}</p>
           <p className="quote-disclaimer">
-            Estimate only. Baselines use 2026 market-rate research for comparable U.S. creative,
-            web, audio, DJ, and PC-support work. Final quote can change after schedule, venue,
+            Estimate only. Baselines use 2026 market-rate research for comparable U.S. multimedia,
+            software, web, fashion, DJ, and PC-support work. Final quote can change after schedule, venue,
             files, usage, travel, and delivery needs are reviewed. Travel under 30 miles is
             included; travel over 30 miles is an independent extra charge. Once selected services
             are requested, a 50% deposit is warranted and required to confirm seriousness and

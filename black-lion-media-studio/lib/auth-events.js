@@ -5,7 +5,7 @@ const AUTH_STORAGE_KEY = "bls-auth-state";
 const AUTH_CHANNEL_NAME = "bls-auth-channel";
 const AUTH_ACTIVITY_EVENT_NAME = "bls-auth-activity";
 const AUTH_ACTIVITY_STORAGE_KEY = "bls-auth-activity-state";
-const AUTH_IDLE_TIMEOUT_MS = 20 * 60 * 1000;
+const AUTH_IDLE_TIMEOUT_MS = 5 * 60 * 1000;
 const AUTH_IDLE_WARNING_MS = 60 * 1000;
 
 function getBroadcastChannel() {

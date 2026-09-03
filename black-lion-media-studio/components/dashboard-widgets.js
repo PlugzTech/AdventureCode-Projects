@@ -153,7 +153,7 @@ export function SignalGrid({ metrics }) {
       icon: Gauge,
       label: "Service Coverage",
       value: metrics.uniqueServicesCount ?? 0,
-      note: "Distinct service lanes used"
+      note: "Distinct branches and services used"
     },
     {
       icon: Clock3,

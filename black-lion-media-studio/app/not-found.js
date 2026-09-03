@@ -16,7 +16,7 @@ export default function NotFound() {
           <p className="label">Black Lion Studios</p>
           <h1>That page moved.</h1>
           <p>
-            Continue with the current service, contact, store, or portal paths instead of stopping
+            Continue with the current branch, contact, store, or portal paths instead of stopping
             at a dead end.
           </p>
           <div className="legal-action-row">

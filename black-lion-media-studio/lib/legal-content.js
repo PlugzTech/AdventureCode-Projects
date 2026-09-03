@@ -1,4 +1,4 @@
-export const lastUpdated = "June 27, 2026";
+export const lastUpdated = "July 1, 2026";
 
 export const faqItems = [
   {
@@ -9,7 +9,7 @@ export const faqItems = [
   {
     question: "Is the site meant for one-time jobs or ongoing support?",
     answer:
-      "Both. Clients can request one-time creative or technical work, then return later for updates, follow-up, new services, merch questions, invoices, or project support."
+      "Both. Clients can start with Black Lion Multimedia, Black Lion Tech Development, or Black Lion Lion Fashion, then return later for updates, follow-up, new services, merch questions, invoices, or project support."
   },
   {
     question: "Do I need an account before sending a request?",
@@ -100,6 +100,16 @@ export const faqItems = [
     question: "How does Black Lion Studios handle privacy?",
     answer:
       "Account data is used to provide services, communicate with clients, handle requests, schedule work, deliver orders, and protect accounts."
+  },
+  {
+    question: "Is Black Lion Studios ISO 27001 certified, SOC 2 audited, or HIPAA compliant?",
+    answer:
+      "Not by default. Black Lion Studios maintains an ISO 27001, SOC 2, and HIPAA readiness posture for policy, access-control, privacy, security, vendor, and incident-response planning. Formal ISO certification, a SOC 2 report, or HIPAA business-associate status requires separate audits, evidence, contracts, and procedures."
+  },
+  {
+    question: "Can I send health records or protected health information through the portal?",
+    answer:
+      "No. Do not submit health records, medical notes, insurance details, diagnosis information, or other protected health information through website forms, portal messages, model applications, or support requests unless Black Lion Studios has explicitly accepted a written HIPAA business-associate agreement and a secure workflow for that engagement."
   },
   {
     question: "What is Model Sign-up?",
@@ -230,7 +240,12 @@ export const legalReferenceLinks = [
   { href: "https://www.ada.gov/resources/2024-03-08-web-rule/", label: "U.S. DOJ 2024 web accessibility rule fact sheet" },
   { href: "https://oag.ca.gov/privacy/ccpa", label: "California CCPA privacy rights guidance" },
   { href: "https://cppa.ca.gov/regulations/", label: "California Privacy Protection Agency regulations" },
-  { href: "https://www.pcisecuritystandards.org/standards/", label: "PCI Security Standards Council payment data standards" }
+  { href: "https://www.pcisecuritystandards.org/standards/", label: "PCI Security Standards Council payment data standards" },
+  { href: "https://www.iso.org/standard/27001", label: "ISO/IEC 27001 information security management systems" },
+  { href: "https://www.aicpa-cima.com/resources/landing/system-and-organization-controls-soc-suite-of-services", label: "AICPA SOC suite of services" },
+  { href: "https://www.aicpa-cima.com/resources/download/get-description-criteria-for-your-organizations-soc-2-r-report", label: "AICPA SOC 2 description criteria" },
+  { href: "https://www.hhs.gov/hipaa/for-professionals/covered-entities/index.html", label: "HHS HIPAA covered entities and business associates" },
+  { href: "https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/business-associates/index.html", label: "HHS HIPAA business associate guidance" }
 ];
 
 export const complianceItems = [
@@ -248,6 +263,21 @@ export const complianceItems = [
     title: "Privacy and data security",
     copy:
       "The account area limits client information to service requests, messages, scheduling, billing follow-up, delivery, security, and support. The site discourages sensitive payment data, passwords, government IDs, and unrelated sensitive details in text fields."
+  },
+  {
+    title: "ISO 27001 readiness",
+    copy:
+      "Black Lion Studios uses ISO 27001 as a readiness framework for information-security management: asset inventory, access control, risk review, incident handling, vendor review, retention, and continual improvement. This is not a certification claim unless an accredited certification audit is completed."
+  },
+  {
+    title: "SOC 2 readiness",
+    copy:
+      "Black Lion Studios maps operational controls to SOC 2-style trust service areas including security, availability, processing integrity, confidentiality, and privacy. This is readiness language only; a SOC 2 report requires a CPA examination and supporting evidence."
+  },
+  {
+    title: "HIPAA guardrails",
+    copy:
+      "Black Lion Studios is not presented as a healthcare provider, health plan, clearinghouse, or HIPAA business associate by default. Clients should not submit PHI through the portal unless a written business-associate agreement and approved secure workflow are in place."
   },
   {
     title: "Model applicant privacy",
@@ -303,7 +333,8 @@ export const supportScopeSections = [
       "Account access, profile updates, messages, and portal navigation.",
       "Square appointment questions, schedule confusion, public availability status, and booking handoff.",
       "Service request context, quotes, deposits, invoices, receipts, merch questions, delivery status, and active project follow-up.",
-      "Privacy requests, accessibility help, copyright claim routing, and suspected account or payment-link abuse."
+      "Privacy requests, accessibility help, copyright claim routing, and suspected account or payment-link abuse.",
+      "Security-framework questions about ISO 27001 readiness, SOC 2 readiness, HIPAA guardrails, vendor handling, incident routing, or sensitive-data limits."
     ]
   },
   {
@@ -311,6 +342,7 @@ export const supportScopeSections = [
     items: [
       "Emergency help, legal advice, tax advice, medical advice, financial advice, or government-benefit advice.",
       "Full card numbers, bank passwords, Social Security numbers, health data, or unrelated sensitive records sent through text fields.",
+      "Protected health information or healthcare records unless a written HIPAA business-associate agreement and approved secure workflow exist for that specific engagement.",
       "Third-party platform account decisions that only Square, email providers, banks, carriers, or payment networks can resolve.",
       "Requests involving unlawful material, stolen content, malware, harassment, impersonation, or materials the client has no right to use."
     ]
@@ -319,6 +351,7 @@ export const supportScopeSections = [
     title: "Response priority",
     items: [
       "Security, payment-link, privacy, accessibility, and active appointment issues should be routed first.",
+      "Any suspected exposure of credentials, payment data, model-applicant data, client files, or possible health information should be treated as urgent and preserved for incident review.",
       "Active paid project and delivery questions come before general quote or portfolio questions.",
       "Missing context slows support; include the account email, appointment date, request name, invoice number, link, screenshot description, and the page where the issue happened.",
       "Support may move account-specific issues back into the portal so the record stays attached to the right client workspace."
@@ -369,6 +402,37 @@ export const governmentComplianceSections = [
       "Transport security, access controls, signed sessions, server-only database access, and limited data collection are the current operating posture; security practices should be reviewed as vendors or features change.",
       "Clients may request access, correction, deletion, or a copy of account information through portal messages or contact@blacklionstudios.com, subject to business records, fraud prevention, legal, tax, dispute, and security retention needs.",
       "If personal information is exposed, Black Lion Studios should preserve logs, contain the incident, identify affected records, review state breach-notice duties, and avoid making unsupported public claims before facts are known."
+    ]
+  },
+  {
+    title: "ISO 27001 readiness controls",
+    items: [
+      "ISO/IEC 27001 is treated as an information-security management framework for establishing, implementing, maintaining, and improving security controls, not as a public certification claim unless a formal accredited certification audit is completed.",
+      "The readiness scope should include the website, portal, Firebase/hosting stack, Square appointment and payment handoff, email, support channels, model-applicant records, Service Estimation records, merch/order context, and manager access.",
+      "Security ownership, risk assessment, asset inventory, access approval, least-privilege access, vendor review, data retention, backup expectations, incident response, change management, and periodic review should be documented and maintained.",
+      "Material changes to authentication, payment links, storage, email, analytics, model workflows, or manager dashboards should trigger a security and privacy review before deployment.",
+      "Evidence such as access reviews, deployment logs, vendor records, incident notes, policy updates, and training/acknowledgment records should be preserved if certification is pursued later."
+    ]
+  },
+  {
+    title: "SOC 2 readiness controls",
+    items: [
+      "SOC 2 is treated as readiness for an independent CPA examination over system controls; Black Lion Studios should not claim a SOC 2 Type I or Type II report unless that examination is completed.",
+      "Controls should map to SOC 2 trust service areas: security, availability, processing integrity, confidentiality, and privacy.",
+      "Security controls should cover authentication, authorization, session handling, manager access, rate limiting, security headers, database access, and protected admin workflows.",
+      "Availability controls should cover deploy process, live smoke checks, backup expectations, incident handling, service-provider outages, and recovery communications.",
+      "Processing integrity controls should cover request intake validation, Service Estimation handoff, Square appointment/payment handoff, message records, and manager approval workflows.",
+      "Confidentiality and privacy controls should cover client files, model-applicant records, invoices, account messages, retention, deletion, support routing, and vendor data handling."
+    ]
+  },
+  {
+    title: "HIPAA guardrails and PHI restrictions",
+    items: [
+      "Black Lion Studios is not presented as a HIPAA covered entity or business associate by default.",
+      "Clients, models, and visitors should not submit protected health information, medical records, diagnosis details, insurance information, therapy notes, or healthcare billing details through public forms, portal messages, model applications, support requests, or project notes.",
+      "If a healthcare client requests work that involves protected health information, Black Lion Studios should require a written business-associate agreement, approved scope, secure transfer path, minimum-necessary handling, access restrictions, retention plan, and incident-reporting process before receiving PHI.",
+      "If possible PHI is received unintentionally, support should avoid copying it, preserve the incident context, restrict access, delete or return it when appropriate, and document the response.",
+      "Creative, web, PC support, membership-site, photo/video, or marketing work for a healthcare-adjacent client does not by itself make Black Lion Studios HIPAA compliant; the actual data and contract relationship control the obligation."
     ]
   },
   {
@@ -435,7 +499,8 @@ export const governmentComplianceSections = [
       "PC tech support should be scoped to the specific device, account, software, setup, troubleshooting, tune-up, or upgrade requested by the client.",
       "Clients should not send passwords, recovery codes, private keys, full card data, government IDs, health data, or unrelated private files through the portal.",
       "If hands-on device work requires access, support should use the minimum access needed, avoid copying unrelated files, and return credentials or access decisions to the client.",
-      "Black Lion Studios should decline support requests involving unauthorized access, malware deployment, credential theft, bypassing security, pirated software, or activity that appears unlawful."
+      "Black Lion Studios should decline support requests involving unauthorized access, malware deployment, credential theft, bypassing security, pirated software, or activity that appears unlawful.",
+      "PC support for healthcare, therapy, insurance, or medical-office environments should avoid PHI access unless a written HIPAA business-associate agreement and approved secure support procedure exist."
     ]
   },
   {
@@ -464,8 +529,30 @@ export const governmentComplianceSections = [
     title: "Compliance maintenance",
     items: [
       "This page should be reviewed when services, pricing, payment tools, email/SMS marketing, analytics, data practices, ad campaigns, or applicable laws change.",
+      "ISO 27001, SOC 2, and HIPAA readiness notes should be reviewed when security tooling, vendors, data flows, client industries, manager access, support channels, or protected-data handling changes.",
       "Government links on this page are reference points for current compliance checks and should be revisited before major marketing, billing, privacy, or accessibility changes.",
       "This page is an operational policy summary, not a substitute for attorney review where a specific dispute, regulation, contract, or government inquiry is involved."
+    ]
+  }
+];
+
+export const securityFrameworkSections = [
+  {
+    title: "Current status",
+    items: [
+      "Black Lion Studios has added ISO 27001, SOC 2, and HIPAA readiness language and control mapping to the policy surface.",
+      "This is not a claim that Black Lion Studios is ISO 27001 certified, has a SOC 2 Type I or Type II report, or is HIPAA compliant for all uses.",
+      "Certification, attestation, or HIPAA business-associate status requires separate contracts, evidence, operational procedures, audit activity, and in some cases a written business-associate agreement."
+    ]
+  },
+  {
+    title: "Baseline controls installed in policy",
+    items: [
+      "Sensitive-data minimization: clients are told not to submit full card numbers, bank credentials, Social Security numbers, government IDs, health data, or unrelated confidential material.",
+      "Access control: account, profile, portal, manager, model-applicant, and support workflows are treated as restricted operational surfaces.",
+      "Incident response: suspected security, privacy, payment-link, model-data, credential, or PHI exposure is routed as urgent support and incident-review work.",
+      "Vendor handling: Square, Firebase, email, hosting, analytics, support, and payment workflows are treated as third-party/service-provider surfaces requiring review.",
+      "Evidence readiness: deployment checks, policy updates, access reviews, incident notes, vendor records, and support routing should be retained if a formal audit is pursued."
     ]
   }
 ];
@@ -482,7 +569,8 @@ export const privacySections = [
       "Locally saved Service Estimation records may be stored in the visitor's browser local storage when the visitor chooses to save an estimate. Local browser storage is not the same as a submitted request.",
       "Appointment details from Square or the website, such as date, time, status, contact details, service context, and scheduling metadata.",
       "Payment and invoice references such as Square customer, order, invoice, payment status, receipt, refund, chargeback, and balance information. Full payment card numbers should not be submitted through website text fields.",
-      "Site details needed for security, sign-in, abuse prevention, troubleshooting, and site operation."
+      "Site details needed for security, sign-in, abuse prevention, troubleshooting, and site operation.",
+      "Security-readiness and compliance evidence such as access-review notes, support-routing notes, incident records, vendor records, policy history, and deployment verification when needed for operations or audit preparation."
     ]
   },
   {
@@ -496,6 +584,7 @@ export const privacySections = [
       "Display public availability only as general time-block status such as Available, Reserved, or Not Available without exposing client names or appointment details.",
       "Send account, appointment, request, billing, support, and service updates.",
       "Maintain security, prevent abuse, troubleshoot issues, and improve the website experience.",
+      "Support ISO 27001, SOC 2, and HIPAA readiness controls, including access reviews, incident response, data minimization, vendor handling, retention, and evidence collection where appropriate.",
       "Comply with legal obligations, enforce terms, and respond to lawful requests."
     ]
   },
@@ -517,7 +606,8 @@ export const privacySections = [
       "Clients and model applicants may ask for account closure, but some appointment, application, invoice, tax, fraud-prevention, dispute, security, release, usage-rights, no-show, and business records may need to be retained.",
       "Visitors can clear locally saved Service Estimation records by clearing browser storage for the site. Submitted request records must be handled through account support or privacy request channels.",
       "Marketing emails should include an opt-out path where required. Transactional account, appointment, invoice, scheduling, delivery, and security messages may still be sent when needed to provide services.",
-      "Clients should not submit sensitive payment data, passwords, health information, government IDs, or unrelated confidential material in free-text fields."
+      "Clients should not submit sensitive payment data, passwords, health information, government IDs, or unrelated confidential material in free-text fields.",
+      "Clients should not submit protected health information unless Black Lion Studios has accepted a written business-associate agreement and approved secure workflow for that specific engagement."
     ]
   },
   {
@@ -549,7 +639,8 @@ export const privacySections = [
     items: [
       "The site follows a limited-collection approach: collect what is needed for account use, requests, messages, billing follow-up, scheduling, delivery, security, and support.",
       "Server-side access, signed sessions, security headers, and blocked direct Firestore client reads/writes are used to reduce unauthorized access risk.",
-      "If a security incident affects personal information, Black Lion Studios should preserve logs, contain the incident, assess notice obligations, notify affected people or regulators where required, and respond under applicable federal and state breach rules."
+      "If a security incident affects personal information, Black Lion Studios should preserve logs, contain the incident, assess notice obligations, notify affected people or regulators where required, and respond under applicable federal and state breach rules.",
+      "ISO 27001 and SOC 2 readiness records may be retained as operational evidence. HIPAA-related handling applies only if the studio knowingly performs work involving protected health information for a covered entity or business associate under an appropriate agreement."
     ]
   },
   {
@@ -603,7 +694,8 @@ export const termsSections = [
       "Deposits, invoice links, balances, receipts, refunds, chargebacks, and payment disputes should be handled through approved payment tools and written project communications.",
       "Once selected services are requested, a 50% deposit is warranted and required to confirm seriousness, scheduling, and production commitment unless a written accepted quote, invoice, or project agreement states otherwise.",
       "Cancellation, reschedule, no-show, refund, revision, and rush-fee decisions depend on the accepted terms, appointment window, work already performed, third-party costs, and project-specific facts.",
-      "Do not submit full card numbers, bank details, passwords, Social Security numbers, or unrelated sensitive information through messages, request forms, or profile notes."
+      "Do not submit full card numbers, bank details, passwords, Social Security numbers, or unrelated sensitive information through messages, request forms, or profile notes.",
+      "Do not submit protected health information through the site or portal unless a written HIPAA business-associate agreement and secure workflow have been accepted for that specific project."
     ]
   },
   {
@@ -630,7 +722,8 @@ export const termsSections = [
     items: [
       "Do not use the site to submit unlawful content, unauthorized private information, malware, stolen work, false claims, or material you do not have rights to use.",
       "Black Lion Studios may reject, pause, remove, or preserve requests and materials that create legal, payment, safety, fraud, accessibility, copyright, privacy, or security concerns.",
-      "Nothing on the site is legal, tax, medical, financial, or government-benefit advice."
+      "Nothing on the site is legal, tax, medical, financial, or government-benefit advice.",
+      "ISO 27001, SOC 2, and HIPAA references are readiness controls and policy guardrails, not certification, attestation, or healthcare-compliance guarantees."
     ]
   },
   {

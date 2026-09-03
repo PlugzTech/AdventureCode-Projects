@@ -4,7 +4,7 @@ import { servicePreview } from "./portal-data";
 export function PortalServicesPanel() {
   return (
     <section className="panel">
-      <p className="label">Services</p>
+      <p className="label">Branches</p>
       <PortalServicePreview items={servicePreview} />
     </section>
   );

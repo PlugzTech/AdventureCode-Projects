@@ -15,6 +15,10 @@ Next.js client portal, service storefront, and merch storefront for Black Lion S
 - backend persistence now uses Firestore through Firebase Admin
 - current Next.js version: `16.0.11`
 - current fast static/client-shell deploy path: `npm run deploy:static-fast`
+- root `/` is a splash landing page that routes visitors into the three public branches
+- branch routes are `/multimedia`, `/tech-development`, and `/fashion`
+- Fashion owns the separate model sub-site at `/models` and `/models/faq`
+- Firebase billing is currently required before a full framework/function redeploy can restore live `/api/**` and protected account-route behavior
 - public site includes day/night theme support
 - theme handling is centralized with early page-load detection, system-theme support, saved preference sync, and theme-aware browser chrome colors
 - tamper-resistance hardening is applied through consistent app and hosting security headers
@@ -25,6 +29,8 @@ Next.js client portal, service storefront, and merch storefront for Black Lion S
 ## Core features
 
 - splash landing page aligned to the service-company model
+- three public branch pages: `Black Lion Multimedia`, `Black Lion Tech Development`, and `Black Lion Lion Fashion`
+- branch-specific categorization for photos/video/audio/DJ, software/web/PC support, and fashion/merch/modeling work
 - splash landing page copy now pushes a clearer account-creation incentive for faster booking and saved project history
 - expanded FAQ section with a dedicated full FAQ route
 - splash landing page restructured to reduce repetitive layout rhythm
@@ -50,7 +56,7 @@ Next.js client portal, service storefront, and merch storefront for Black Lion S
 - landing page, portal, and dashboard now share a calmer editorial art direction with Arial body typography and isolated custom brand-name treatment
 - booking manager dashboard for reviewing all client requests
 - Firebase-backed user and request storage
-- 20-minute inactivity sign-out
+- 5-minute inactivity sign-out for logged-in users
 - site-wide auth-state sync after sign-in and sign-out
 - reduced auth-sync churn and lighter public/portal route behavior
 - protected purchase flow for unauthenticated users
@@ -94,7 +100,8 @@ Next.js client portal, service storefront, and merch storefront for Black Lion S
 ## 2026-05-27 Black Lion Media Studio component suite
 
 - Added `components/black-lion-media-suite.js` with 40 named reusable modules for intake, creative production, technical support, billing, delivery, compliance, analytics, security, client account management, manager queue work, and follow-up.
-- Wired `BlackLionMediaComponentSuite` into the authenticated client dashboard after the workflow panel.
+- Originally wired `BlackLionMediaComponentSuite` into the authenticated client dashboard after the workflow panel.
+- 2026-07-01 update: removed that suite from the dashboard so the dashboard stays focused on requests, messages, billing, and delivery. The reusable suite remains available for placement on more appropriate operations or service-reference surfaces.
 - Added responsive dashboard CSS for `.black-lion-suite`, `.black-lion-module-grid`, `.black-lion-module-card`, and shared `.ui-status-chip` rows.
 - Verified with `node --check components/black-lion-media-suite.js`, `node --check components/dashboard-app.js`, `npm run build`, `npm run deploy:full`, live signed-out `/dashboard` redirect, live `/portal` HTTP 200, and live `/api/events` `{"ok":true}`.
 
@@ -164,6 +171,7 @@ Next.js client portal, service storefront, and merch storefront for Black Lion S
 
 ## 2026-05-20 inactivity logout and single-session sign-on
 
+- 2026-09-02 update: logged-in users now time out after 5 minutes with no activity and `/portal?auth=required&reason=idle` displays a pop-up style notice explaining that the site logged them out after 5 minutes.
 - `components/client-nav.js` now shows a sticky idle warning before automatic logout, with a countdown plus `Stay signed in` and `Log out now` actions.
 - Idle logout clears the client token, clears the server session, broadcasts the signed-out state, and returns the user to `/portal?auth=required&reason=idle`.
 - `lib/auth-events.js` centralizes auth activity event names, idle timeout constants, and cross-tab activity broadcasts.
@@ -200,6 +208,9 @@ Next.js client portal, service storefront, and merch storefront for Black Lion S
 ## Routes
 
 - `/` landing page
+- `/multimedia` Black Lion Multimedia branch
+- `/tech-development` Black Lion Tech Development branch
+- `/fashion` Black Lion Lion Fashion branch
 - `/faq` expanded questions and answers
 - `/legal` legal and compliance overview
 - `/privacy` Privacy Policy

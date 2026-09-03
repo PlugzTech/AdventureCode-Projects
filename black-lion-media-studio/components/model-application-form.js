@@ -347,6 +347,10 @@ export function ModelApplicationForm() {
       const result = await response.json().catch(() => ({}));
 
       if (!response.ok) {
+        if (response.status >= 500) {
+          throw new Error("Online model application submission is temporarily unavailable. Email contact@blacklionstudios.com with your model details for now.");
+        }
+
         throw new Error(result.error || "Application could not be submitted.");
       }
 

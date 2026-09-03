@@ -19,6 +19,10 @@ export async function fetchJson(url, options = {}) {
 export async function requireJson(url, options = {}) {
   const { response, data } = await fetchJson(url, options);
   if (!response.ok) {
+    if (response.status >= 500) {
+      throw new Error("Online account tools are temporarily unavailable. Use Square Appointments or email contact@blacklionstudios.com for now.");
+    }
+
     throw new Error(data?.error || "Request failed");
   }
 

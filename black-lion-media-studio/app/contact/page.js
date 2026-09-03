@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { ShortcutRail, SupportNotice } from "../../components/shared-ui";
+import { businessLines } from "../../lib/business-lines";
 
 export const metadata = {
   title: "Contact",
-  description: "Contact Black Lion Studios for creative production, technical support, merch, scheduling, and service questions.",
+  description: "Contact Black Lion Studios for Multimedia, Tech Development, Fashion, scheduling, and service questions.",
   alternates: { canonical: "/contact" }
 };
 
@@ -15,8 +16,8 @@ export default function ContactPage() {
           <p className="label">Contact</p>
           <h1>Send the right details the first time.</h1>
           <p>
-            Use the portal for service requests, scheduling, project questions, merch questions,
-            billing context, and follow-up messages.
+            Use the portal for Multimedia, Tech Development, Fashion, scheduling, billing context,
+            and follow-up messages.
           </p>
           <div className="legal-action-row">
             <Link href="/portal" className="button">Open portal</Link>
@@ -27,6 +28,12 @@ export default function ContactPage() {
           <ShortcutRail
             items={[
               { href: "/services", label: "Services", value: "Review options", note: "See pricing and timing first" },
+              ...businessLines.map((line) => ({
+                href: line.href,
+                label: line.eyebrow,
+                value: line.name,
+                note: line.summary
+              })),
               { href: "/portal", label: "Portal", value: "Send request", note: "Best path for follow-up" },
               { href: "/faq", label: "FAQ", value: "Common answers", note: "Booking, accounts, billing, and merch" }
             ]}

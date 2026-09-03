@@ -3,8 +3,15 @@ import {
   complianceItems,
   governmentComplianceSections,
   lastUpdated,
-  legalReferenceLinks
+  legalReferenceLinks,
+  securityFrameworkSections
 } from "../../lib/legal-content";
+
+export const metadata = {
+  title: "Legal",
+  description:
+    "Black Lion Studios legal, compliance, privacy, terms, copyright, accessibility, payments, merch, and service-policy overview."
+};
 
 export default function LegalPage() {
   return (
@@ -41,6 +48,29 @@ export default function LegalPage() {
               <p>{item.copy}</p>
             </article>
           ))}
+        </section>
+
+        <section className="panel legal-section">
+          <p className="label">Security framework readiness</p>
+          <h2>ISO 27001, SOC 2, and HIPAA controls without false certification claims.</h2>
+          <p>
+            Black Lion Studios uses these frameworks as readiness controls for privacy, security,
+            incident response, vendor handling, access control, and sensitive-data boundaries. Formal
+            certification, attestation, or HIPAA business-associate status requires separate audit,
+            evidence, contract, and operating procedures.
+          </p>
+          <div className="legal-compliance-list">
+            {securityFrameworkSections.map((section) => (
+              <article className="legal-compliance-row" key={section.title}>
+                <h3>{section.title}</h3>
+                <ul>
+                  {section.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section className="panel legal-section">

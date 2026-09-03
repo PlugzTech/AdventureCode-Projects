@@ -38,7 +38,7 @@ export default function ServiceAdLandingPage({ page }) {
         .split("-")
         .map((word) => word[0].toUpperCase() + word.slice(1))
         .join(" "),
-      note: "Compare this service lane"
+      note: "Compare this child service"
     }));
 
   return (
@@ -46,19 +46,24 @@ export default function ServiceAdLandingPage({ page }) {
       <main className="stack">
         <LandingMediaPair
           image={page.image}
-          eyebrow={page.service.name}
+          eyebrow={`${page.branchName} child service`}
           title={page.headline}
           copy={page.summary}
-          items={[page.service.priceLabel, page.service.turnaround, page.audience]}
+          items={[page.branchName, page.service.priceLabel, page.service.turnaround, page.audience]}
         />
 
         <section className="panel">
           <p className="label">Start here</p>
           <h1>{page.service.name}</h1>
-          <p className="muted">{page.service.description}</p>
+          <p className="muted">
+            {page.service.description} This page belongs under {page.branchName}.
+          </p>
           <div className="hero-actions">
-            <Link href="/#service-estimation" className="button">
+            <Link href="/services#service-estimation" className="button">
               Service Estimation
+            </Link>
+            <Link href={page.branchHref} className="button button-secondary">
+              {page.branchName}
             </Link>
             <Link href="/contact" className="button button-secondary">
               Ask first
@@ -82,7 +87,7 @@ export default function ServiceAdLandingPage({ page }) {
           <SpotlightCard
             className="service-card"
             eyebrow="Coverage"
-            title="What this lane handles"
+            title="What this child service handles"
             copy={page.service.coverage}
           />
         </SurfaceGrid>
@@ -127,7 +132,7 @@ export default function ServiceAdLandingPage({ page }) {
         </section>
 
         <section className="panel">
-          <p className="label">Other services</p>
+          <p className="label">Other child services</p>
           <SurfaceGrid className="service-grid">
             {otherRoutes.map((route) => (
               <SpotlightCard
@@ -149,7 +154,7 @@ export default function ServiceAdLandingPage({ page }) {
           eyebrow="Ready"
           title={`Start a ${page.service.name} request.`}
           copy="Start with the quote details, then continue into the portal for tracked follow-up."
-          href="/#service-estimation"
+          href="/services#service-estimation"
           actionLabel="Service Estimation"
         />
       </main>

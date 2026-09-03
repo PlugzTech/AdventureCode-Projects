@@ -11,6 +11,24 @@ export const metadata = {
 
 const supportPaths = [
   {
+    label: "Multimedia",
+    value: "Photos, video, sound",
+    note: "Use this for production, event, DJ, or beat-session routing.",
+    href: "/multimedia"
+  },
+  {
+    label: "Tech",
+    value: "Software and web",
+    note: "Use this for web development, membership sites, PC help, and maintenance.",
+    href: "/tech-development"
+  },
+  {
+    label: "Fashion",
+    value: "Merch and models",
+    note: "Use this for fashion content, Plugz merch, or the modeling sub-site.",
+    href: "/fashion"
+  },
+  {
     label: "Ad link",
     value: "Landed in the wrong place",
     note: "Use this when an ad, post, or shared link does not match what you expected.",
@@ -40,7 +58,7 @@ const issueTypes = [
   "Ad or campaign link did not match the page.",
   "Account sign-in, profile, or message access issue.",
   "Square appointment, booking, scheduling, deposit, or project-scope question.",
-  "Merch, delivery, billing context, or invoice follow-up.",
+  "Fashion, merch, model sub-site, delivery, billing context, or invoice follow-up.",
   "Privacy, legal, copyright, or accessibility concern."
 ];
 
@@ -52,8 +70,8 @@ export default function SupportPage() {
           <p className="label">Support</p>
           <h1>Route the issue without slowing the request down.</h1>
           <p>
-            Use this page when an ad, account, Square appointment, booking, merch, billing,
-            privacy, accessibility, copyright, or active project question needs a cleaner next
+            Use this page when a Multimedia, Tech Development, Fashion, account, Square
+            appointment, merch, billing, privacy, accessibility, copyright, or active project question needs a cleaner next
             step. Account-specific work should stay in the portal so follow-up has the right
             context. Last updated {lastUpdated}.
           </p>

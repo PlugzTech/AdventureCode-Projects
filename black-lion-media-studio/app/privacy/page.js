@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { lastUpdated, privacySections } from "../../lib/legal-content";
 
+export const metadata = {
+  title: "Privacy Policy",
+  description:
+    "How Black Lion Studios handles account details, Service Estimation records, Square appointment context, model applicant information, and privacy requests."
+};
+
 export default function PrivacyPage() {
   return (
     <div className="page-shell">

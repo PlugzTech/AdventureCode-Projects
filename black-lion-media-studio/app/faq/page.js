@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { faqItems, lastUpdated } from "../../lib/legal-content";
 
+export const metadata = {
+  title: "FAQ",
+  description:
+    "Answers for Black Lion Studios booking, account setup, privacy, service requests, Square appointments, store access, and copyright-claim questions."
+};
+
 export default function FAQPage() {
   return (
     <div className="page-shell">

@@ -4,8 +4,8 @@ import { findServiceAdPage } from "../../lib/services";
 const page = findServiceAdPage("/pc-tech-support");
 
 export const metadata = {
-  title: "PC Tech Support",
-  description: "Book Black Lion Studios PC tech support for setup, troubleshooting, tune-ups, upgrades, and practical help.",
+  title: "PC Tech Support | Black Lion Tech Development",
+  description: "Book Black Lion Tech Development PC support for setup, troubleshooting, tune-ups, upgrades, and practical help.",
   alternates: { canonical: "/pc-tech-support" }
 };
 

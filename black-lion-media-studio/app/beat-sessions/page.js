@@ -4,8 +4,8 @@ import { findServiceAdPage } from "../../lib/services";
 const page = findServiceAdPage("/beat-sessions");
 
 export const metadata = {
-  title: "Beat Sessions",
-  description: "Book Black Lion Studios beat creation sessions for artists, creators, and brands.",
+  title: "Beat Sessions | Black Lion Multimedia",
+  description: "Book Black Lion Multimedia beat creation sessions for artists, creators, and brands.",
   alternates: { canonical: "/beat-sessions" }
 };
 

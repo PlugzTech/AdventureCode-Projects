@@ -2,8 +2,8 @@ import Link from "next/link";
 import { modelFaqItems } from "../../../lib/model-faq";
 
 export const metadata = {
-  title: "Model FAQ",
-  description: "Answers for Black Lion Studios model applicants about 18+ eligibility, 1099 project work, reapplication timing, model profiles, portfolio links, and project terms.",
+  title: "Model FAQ | Black Lion Lion Fashion",
+  description: "Answers for Black Lion Lion Fashion model applicants about 18+ eligibility, 1099 project work, reapplication timing, model profiles, portfolio links, and project terms.",
   alternates: { canonical: "/models/faq" }
 };
 
@@ -12,7 +12,7 @@ export default function ModelFAQPage() {
     <div className="page-shell">
       <main className="stack">
         <section className="panel legal-hero models-hero">
-          <p className="label">Model FAQ</p>
+          <p className="label">Black Lion Lion Fashion model sub-site</p>
           <h1>Questions before applying to model.</h1>
           <p>
             Answers for adult model applicants about profile separation, 1099 project work,
@@ -20,6 +20,7 @@ export default function ModelFAQPage() {
           </p>
           <div className="legal-action-row">
             <Link href="/models" className="button">Back to Model Sign-up</Link>
+            <Link href="/fashion" className="button button-secondary">Fashion</Link>
             <Link href="/privacy" className="button button-secondary">Privacy Policy</Link>
           </div>
         </section>

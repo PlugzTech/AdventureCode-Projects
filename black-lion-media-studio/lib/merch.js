@@ -1,7 +1,16 @@
+export const plugzSiteLinks = {
+  home: "https://plugz-untd-gear.web.app",
+  shop: "https://plugz-untd-gear.web.app/#shop",
+  account: "https://plugz-untd-gear.web.app/dashboard"
+};
+
 export const merchCollections = [
   {
     slug: "plugz-untd",
     name: "Plugz UNTD",
+    siteUrl: plugzSiteLinks.home,
+    shopUrl: plugzSiteLinks.shop,
+    accountUrl: plugzSiteLinks.account,
     tagline: "Utility-driven streetwear with a sharper studio edge.",
     accent: "Core Collection",
     description:
@@ -30,6 +39,9 @@ export const merchCollections = [
   {
     slug: "plugz-rngd",
     name: "Plugz RNGD",
+    siteUrl: plugzSiteLinks.home,
+    shopUrl: plugzSiteLinks.shop,
+    accountUrl: plugzSiteLinks.account,
     tagline: "A louder capsule with performance energy and nightlife attitude.",
     accent: "Drop Collection",
     description:

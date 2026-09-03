@@ -6,8 +6,8 @@ const storageKey = "bls-theme";
 const validThemes = new Set(["light", "dark", "system"]);
 const lightQuery = "(prefers-color-scheme: light)";
 const themeColors = {
-  light: "#f5f5ef",
-  dark: "#0d1510"
+  light: "#dffbff",
+  dark: "#071b24"
 };
 
 const ThemeContext = createContext({

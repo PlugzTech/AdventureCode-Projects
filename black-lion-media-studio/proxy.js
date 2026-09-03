@@ -1,58 +1,38 @@
 import { NextResponse } from "next/server";
+import { applySecurityHeaders } from "./lib/security-headers.mjs";
 
-function applySecurityHeaders(response) {
-  response.headers.set(
-    "content-security-policy",
-    [
-      "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
-      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-      "font-src 'self' https://fonts.gstatic.com data:",
-      "img-src 'self' data: blob: https:",
-      "connect-src 'self' https://*.googleapis.com https://*.google.com https://*.run.app",
-      "frame-ancestors 'none'",
-      "base-uri 'self'",
-      "form-action 'self'",
-      "object-src 'none'",
-      "upgrade-insecure-requests"
-    ].join("; ")
+const blockedProbePattern =
+  /(?:^|\/)(?:\.env|\.git|\.svn|\.hg|wp-admin|wp-login\.php|xmlrpc\.php|phpmyadmin|adminer|composer\.(?:json|lock)|package-lock\.json|yarn\.lock|pnpm-lock\.yaml)(?:\/|$)/i;
+
+function isSensitivePath(pathname) {
+  return (
+    pathname.startsWith("/api/") ||
+    pathname.startsWith("/dashboard") ||
+    pathname.startsWith("/booking-manager") ||
+    pathname.startsWith("/profile") ||
+    pathname.startsWith("/messages") ||
+    pathname.startsWith("/portal")
   );
-  response.headers.set("x-frame-options", "DENY");
-  response.headers.set("x-content-type-options", "nosniff");
-  response.headers.set("referrer-policy", "strict-origin-when-cross-origin");
-  response.headers.set("permissions-policy", "camera=(), microphone=(), geolocation=()");
-  response.headers.set("strict-transport-security", "max-age=31536000; includeSubDomains; preload");
-  response.headers.set("cross-origin-opener-policy", "same-origin");
-  response.headers.set("cross-origin-resource-policy", "same-origin");
-  response.headers.set("origin-agent-cluster", "?1");
-  response.headers.set("x-dns-prefetch-control", "off");
-  return response;
 }
 
 export function proxy(request) {
+  if (blockedProbePattern.test(request.nextUrl.pathname)) {
+    const response = new NextResponse(null, { status: 404 });
+    applySecurityHeaders(response.headers);
+    response.headers.set("cache-control", "no-store, no-cache, must-revalidate, private");
+    return response;
+  }
+
   const response = NextResponse.next();
 
-  if (
-    request.nextUrl.pathname.startsWith("/api/") ||
-    request.nextUrl.pathname.startsWith("/dashboard") ||
-    request.nextUrl.pathname.startsWith("/booking-manager") ||
-    request.nextUrl.pathname.startsWith("/profile") ||
-    request.nextUrl.pathname.startsWith("/messages")
-  ) {
+  if (isSensitivePath(request.nextUrl.pathname)) {
     response.headers.set("cache-control", "no-store, no-cache, must-revalidate, private");
   }
 
-  return applySecurityHeaders(response);
+  applySecurityHeaders(response.headers);
+  return response;
 }
 
 export const config = {
-  matcher: [
-    "/",
-    "/dashboard/:path*",
-    "/booking-manager/:path*",
-    "/profile/:path*",
-    "/messages/:path*",
-    "/portal",
-    "/api/:path*"
-  ]
+  matcher: ["/:path*"]
 };

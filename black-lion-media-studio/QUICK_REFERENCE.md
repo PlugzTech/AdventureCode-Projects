@@ -10,6 +10,7 @@ Use this first when resuming work. The longer history remains in `PROJECT_PROGRE
 - SSR function: `firebase-frameworks-black-lion-media-studio:ssrblacklionmediastudio(us-central1)`
 - Framework: Next.js `16.0.11` through Firebase Hosting framework support
 - Persistence: Firestore through Firebase Admin, with user normalization in `lib/db.js`
+- Related Plugz Firebase project note: `PLUGZ_FIREBASE_HANDOFF_2026-07-29.md`
 
 ## Fast Commands
 
@@ -62,6 +63,10 @@ When checking framework-hosted pages, Firebase/CDN caching can briefly show the 
 
 ## Current UX Decisions
 
+- The root `/` page is a splash landing page only. Keep detailed estimator, booking calendar, compliance, FAQ, and support content off the splash unless it is just a route choice.
+- Primary public branches are `/multimedia` for `Black Lion Multimedia`, `/tech-development` for `Black Lion Tech Development`, and `/fashion` for `Black Lion Lion Fashion`.
+- Modeling belongs under Fashion as the separate public model sub-site at `/models` and `/models/faq`.
+- Public category language should stay branch-specific: photo/video/audio/DJ copy under Multimedia; software/web/PC-support copy under Tech Development; merch/fashion/modeling/campaign visuals under Fashion.
 - Site typography is Arial/Helvetica by default.
 - The custom `daggerdancertitle.ttf` font is only for the explicit `Black Lion Studios` brand mark wrapped with `brand-signature`.
 - Do not apply the custom font to body descriptions, legal copy, FAQ answers, buttons, dashboard text, or ordinary text that mentions Black Lion Studios.
@@ -71,7 +76,7 @@ When checking framework-hosted pages, Firebase/CDN caching can briefly show the 
 - Security headers are defined in both `next.config.mjs` and `firebase.json`; keep them aligned so static/prerendered pages and app routes stay consistent.
 - The site is hardened against common browser tampering vectors, but client-side preferences like theme are intentionally user-controllable and must not be treated as proof of identity or permission.
 - Square billing lives in `lib/square-billing.js`, `app/api/manager/requests/[requestId]/invoice/route.js`, `components/booking-manager-app.js`, and `components/dashboard-app.js`.
-- Square Appointments sync lives in `lib/square-appointments.js`, `app/api/square/bookings/webhook/route.js`, `lib/db.js`, `lib/consultation-calendar.js`, `app/page.js`, and `app/book/page.js`.
+- Square Appointments sync lives in `lib/square-appointments.js`, `app/api/square/bookings/webhook/route.js`, `lib/db.js`, `lib/consultation-calendar.js`, and `app/book/page.js`.
 - Square production runtime requires `SQUARE_ACCESS_TOKEN`, `SQUARE_LOCATION_ID`, and `SQUARE_WEBHOOK_SIGNATURE_KEY`; `SQUARE_ENVIRONMENT`, `SQUARE_API_VERSION`, `SQUARE_BOOKINGS_WEBHOOK_URL`, `SQUARE_APPOINTMENTS_TIMEZONE`, `NEXT_PUBLIC_SQUARE_APPOINTMENTS_URL`, and `SITE_BASE_URL` are optional.
 - Use `npm run deploy:full` for Square billing, Square Appointments webhook, API, Firestore schema, or environment changes.
 - Service invoice amounts are stored with the visible service prices in `lib/services.js`.
@@ -82,12 +87,12 @@ When checking framework-hosted pages, Firebase/CDN caching can briefly show the 
 - The 2026-05-27 dashboard update adds `components/black-lion-media-suite.js`, a 40-module Black Lion Media Studio operations suite rendered after the workflow panel.
 - The `/profile` page is consolidated into snapshot, readiness, contact/account, service/follow-up, billing/invoices, shipping/delivery, links, custom fields, and shortcuts.
 - Browser-size wrapping is handled mainly in `app/globals.css` through shell gutters, flexible grid minimums, `auto-fit` grid wrapping, `overflow-wrap:anywhere`, and 1080/900/680/520px breakpoints.
-- Inactivity logout lives in `components/client-nav.js` with shared constants/events in `lib/auth-events.js`.
+- Inactivity logout lives in `components/client-nav.js` with shared constants/events in `lib/auth-events.js`; signed-in users are logged out after 5 minutes with no activity and returned to `/portal?auth=required&reason=idle`.
 - Single-session sign-on behavior lives in `components/auth-sync.js`; `/portal` redirects authenticated users to `/dashboard` after `/api/me` confirms the secure cookie session.
 - If a user reports looping between `/dashboard` and `/portal`, check `components/auth-sync.js` first for stale localStorage-vs-cookie session drift.
 - If sign-in succeeds but returns to `/portal`, check `components/auth-form-card.js` and `lib/client-session.js`; workspace navigation should wait for `/api/me` cookie-session confirmation and all auth fetches should include same-origin credentials.
 - Server-rendered auth depends on Firebase Hosting forwarding the reserved `__session` cookie. Do not rename it back to `bls_session`.
-- Auth/session shell changes require `npm run deploy:full`, not `deploy:static-fast`, because `/portal` and the auth shell rely on the SSR function.
+- Auth/session shell changes require `npm run deploy:full`, not `deploy:static-fast`, because protected routes and `/api/**` rely on the SSR function.
 - Firebase migration to `black-lion-media-studio` is complete. New CLI deploys use `blacklionmediastudio@gmail.com`.
 - Client message email alerts live in `lib/email-notifications.js` and `app/api/messages/route.js`.
 - Message alert delivery requires SMTP runtime settings: `SMTP_HOST`, `SMTP_USER`, and `SMTP_PASS`; optional `CLIENT_MESSAGE_ALERT_TO` defaults to `blacklionmediastudio@gmail.com`.
@@ -112,7 +117,7 @@ When checking framework-hosted pages, Firebase/CDN caching can briefly show the 
 - Latest Model Sign-up deployment used `npm run deploy:full` and live smoke confirmed `/models`, 1099 disclosure copy, homepage CTA, empty-payload API rejection, missing-1099-disclosure rejection, under-18 rejection, and a full valid production write. The live valid-write smoke created model application `BA9lxwvDTJQQm4QocCkf` and model user `wSozquJowaA9VYUMhTqZ` with email `smoke.model+1782006295214@example.com`; those smoke-test records plus the matching email lock and username reservation were cleaned up afterward with targeted Firebase CLI deletes.
 - `/profile` adapts for model users and exposes model-specific PII/profile fields directly.
 - `/booking-manager` includes a model-only search/review panel powered by `modelProfiles` from `buildManagerDashboardData()`.
-- Homepage hero includes visible `Are you a model?` CTA to `/models`.
+- Splash page routes model applicants through `/fashion`; the dedicated model sub-site remains `/models`.
 - Model Sign-up implementation details: `MODEL_SIGN_UP_2026-06-21.md`.
 - Dashboard access fix details: `DASHBOARD_ACCESS_FIX_2026-06-12.md`
 - First-party analytics lives in `components/analytics-tracker.js`, `lib/client-analytics.js`, `lib/analytics.js`, and `app/api/events/route.js`.
@@ -122,6 +127,10 @@ When checking framework-hosted pages, Firebase/CDN caching can briefly show the 
 ## Main Files
 
 - `app/page.js`: public landing page
+- `app/multimedia/page.js`: Black Lion Multimedia branch page
+- `app/tech-development/page.js`: Black Lion Tech Development branch page
+- `app/fashion/page.js`: Black Lion Lion Fashion branch page
+- `lib/business-lines.js`: branch definitions, route ownership, and grouped child-service links
 - `app/models/page.js`: public Model Sign-up page, FAQ, and 100+ component inventory render
 - `app/portal/page.js`: sign-up/sign-in page
 - `components/portal/`: server-first sign-in page sections and portal copy data

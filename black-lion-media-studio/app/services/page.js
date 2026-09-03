@@ -1,58 +1,67 @@
 import Link from "next/link";
+import { ServiceQuoteBuilder } from "../../components/service-quote-builder";
 import { ProcessSteps, ShortcutRail, SpotlightCard, SurfaceGrid } from "../../components/shared-ui";
-import { serviceAdRoutes, serviceCatalog } from "../../lib/services";
+import { businessLines } from "../../lib/business-lines";
 
 export const metadata = {
   title: "Services",
-  description: "Black Lion Studios services for photography, videography, DJ work, beat sessions, membership sites, and PC tech support.",
+  description: "Black Lion Studios services grouped into Multimedia, Tech Development, and Fashion branches.",
   alternates: { canonical: "/services" }
 };
 
 export default function ServicesPage() {
-  const serviceRouteItems = serviceAdRoutes.map((route) => {
-    const service = serviceCatalog.find((item) => item.slug === route.catalogSlug);
-    return {
-      label: service?.priceLabel || "Service",
-      value: service?.name || route.route.replace("/", ""),
-      href: route.route,
-      note: route.headline
-    };
-  });
-
   return (
     <div className="page-shell">
       <main className="stack">
         <section className="panel">
           <p className="label">Services</p>
-          <h1>Choose the work you need, then send the request.</h1>
+          <h1>Choose a Black Lion branch, then send the request.</h1>
           <p className="muted">
-            Review starting prices, normal timing, and coverage before creating an account.
+            Services are grouped into Multimedia, Tech Development, and Fashion, with individual
+            service routes still available for specific ad or booking paths.
           </p>
           <div className="hero-actions">
             <Link href="/book" className="button">Start a request</Link>
-            <Link href="/#service-estimation" className="button button-secondary">Service Estimation</Link>
+            <Link href="#service-estimation" className="button button-secondary">Service Estimation</Link>
           </div>
-          <ShortcutRail items={serviceRouteItems} className="ui-shortcut-tight" />
+          <ShortcutRail
+            items={businessLines.map((line) => ({
+              href: line.href,
+              label: line.eyebrow,
+              value: line.name,
+              note: line.summary
+            }))}
+            className="ui-shortcut-tight"
+          />
         </section>
-        <SurfaceGrid className="service-grid">
-          {serviceCatalog.map((service) => (
-            <SpotlightCard
-              className="service-card"
-              key={service.slug}
-              eyebrow={service.priceLabel}
-              title={service.name}
-              copy={service.description}
-            >
-              <p className="muted">{service.coverage}</p>
-              <p>{service.turnaround}</p>
-            </SpotlightCard>
-          ))}
-        </SurfaceGrid>
+        {businessLines.map((line) => (
+          <section className="panel" key={line.slug}>
+            <p className="label">{line.eyebrow}</p>
+            <h2 className="editorial-heading">{line.name}</h2>
+            <p className="muted">{line.summary}</p>
+            <ShortcutRail items={line.paths} className="ui-shortcut-tight" />
+            <SurfaceGrid className="service-grid">
+              {line.services.map((service) => (
+                <SpotlightCard
+                  className="service-card"
+                  key={`${line.slug}-${service.slug}`}
+                  eyebrow={service.priceLabel}
+                  title={service.name}
+                  copy={service.description}
+                >
+                  <p className="muted">{service.coverage}</p>
+                  <p>{service.turnaround}</p>
+                </SpotlightCard>
+              ))}
+            </SurfaceGrid>
+          </section>
+        ))}
+        <ServiceQuoteBuilder />
         <section className="panel">
           <p className="label">Booking flow</p>
           <ProcessSteps
             items={[
-              "Pick the service that matches the project.",
+              "Pick Multimedia, Tech Development, Fashion, or a child service inside one branch.",
               "Create the account so the studio has contact and billing context.",
               "Send details, files, dates, and budget range through the portal."
             ]}

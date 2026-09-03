@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { storeClientSessionToken } from "../lib/client-session";
 import { trackEvent } from "../lib/client-analytics";
 import { postJson } from "../lib/client-api";
@@ -28,6 +28,15 @@ async function waitForCookieSession() {
 export function AuthFormCard({ requiresAuth = false, idleReason = false }) {
   const [tab, setTab] = useState("signup");
   const [message, setMessage] = useState("");
+  const [routeNotice, setRouteNotice] = useState({ requiresAuth, idleReason });
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setRouteNotice({
+      requiresAuth: requiresAuth || params.get("auth") === "required",
+      idleReason: idleReason || params.get("reason") === "idle"
+    });
+  }, [requiresAuth, idleReason]);
 
   function continueToWorkspace(path) {
     if (typeof window !== "undefined") {
@@ -99,9 +108,12 @@ export function AuthFormCard({ requiresAuth = false, idleReason = false }) {
         </button>
       </div>
 
-      {idleReason ? (
-        <p className="notice">You were signed out after no activity. Sign in again when you are ready to continue.</p>
-      ) : requiresAuth ? (
+      {routeNotice.idleReason ? (
+        <div className="notice session-timeout-notice" role="alert" aria-live="assertive">
+          <strong>You were logged out.</strong>
+          <p>There was no activity for 5 minutes, so the site logged you out. Sign in again when you are ready to continue.</p>
+        </div>
+      ) : routeNotice.requiresAuth ? (
         <p className="notice">Sign in or create an account to continue.</p>
       ) : null}
       <SupportNotice

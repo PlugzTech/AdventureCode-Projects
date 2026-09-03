@@ -3,6 +3,13 @@
     "site": "black-lion-media-studio",
     "public": ".firebase/static-fast/hosting",
     "cleanUrls": true,
+    "redirects": [
+      {
+        "source": "/quote",
+        "destination": "/services#service-estimation",
+        "type": 308
+      }
+    ],
     "headers": [
       {
         "source": "**",
@@ -24,8 +31,20 @@
             "value": "DENY"
           },
           {
+            "key": "Strict-Transport-Security",
+            "value": "max-age=31536000; includeSubDomains; preload"
+          },
+          {
             "key": "Cross-Origin-Opener-Policy",
             "value": "same-origin"
+          },
+          {
+            "key": "Cross-Origin-Resource-Policy",
+            "value": "same-origin"
+          },
+          {
+            "key": "Origin-Agent-Cluster",
+            "value": "?1"
           },
           {
             "key": "Permissions-Policy",
@@ -41,20 +60,6 @@
     "rewrites": [
       {
         "source": "/api/**",
-        "function": {
-          "functionId": "ssrblacklionmediastudio",
-          "region": "us-central1"
-        }
-      },
-      {
-        "source": "/portal",
-        "function": {
-          "functionId": "ssrblacklionmediastudio",
-          "region": "us-central1"
-        }
-      },
-      {
-        "source": "/portal/**",
         "function": {
           "functionId": "ssrblacklionmediastudio",
           "region": "us-central1"

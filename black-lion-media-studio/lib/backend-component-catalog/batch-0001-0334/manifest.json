@@ -1,0 +1,2014 @@
+{
+  "batch": "0001-0334",
+  "componentCount": 334,
+  "skippedExistingCount": 0,
+  "createdAt": "2026-07-01T02:58:49.859Z",
+  "source": "backend-component-catalog/batch-0001-0334",
+  "components": [
+    {
+      "id": "backend-ops-0001",
+      "file": "0001-identity-session-guard-01.js",
+      "category": "auth",
+      "name": "Identity Session Guard 0001"
+    },
+    {
+      "id": "backend-ops-0002",
+      "file": "0002-api-contract-handler-01.js",
+      "category": "api",
+      "name": "API Contract Handler 0002"
+    },
+    {
+      "id": "backend-ops-0003",
+      "file": "0003-firebase-admin-boundary-01.js",
+      "category": "firebase",
+      "name": "Firebase Admin Boundary 0003"
+    },
+    {
+      "id": "backend-ops-0004",
+      "file": "0004-firestore-write-contract-01.js",
+      "category": "firestore",
+      "name": "Firestore Write Contract 0004"
+    },
+    {
+      "id": "backend-ops-0005",
+      "file": "0005-storage-object-policy-01.js",
+      "category": "storage",
+      "name": "Storage Object Policy 0005"
+    },
+    {
+      "id": "backend-ops-0006",
+      "file": "0006-billing-event-reconciler-01.js",
+      "category": "billing",
+      "name": "Billing Event Reconciler 0006"
+    },
+    {
+      "id": "backend-ops-0007",
+      "file": "0007-notification-dispatch-plan-01.js",
+      "category": "notifications",
+      "name": "Notification Dispatch Plan 0007"
+    },
+    {
+      "id": "backend-ops-0008",
+      "file": "0008-audit-trail-writer-01.js",
+      "category": "audit",
+      "name": "Audit Trail Writer 0008"
+    },
+    {
+      "id": "backend-ops-0009",
+      "file": "0009-security-control-check-01.js",
+      "category": "security",
+      "name": "Security Control Check 0009"
+    },
+    {
+      "id": "backend-ops-0010",
+      "file": "0010-deployment-readiness-gate-01.js",
+      "category": "deployment",
+      "name": "Deployment Readiness Gate 0010"
+    },
+    {
+      "id": "backend-ops-0011",
+      "file": "0011-monitoring-signal-map-01.js",
+      "category": "monitoring",
+      "name": "Monitoring Signal Map 0011"
+    },
+    {
+      "id": "backend-ops-0012",
+      "file": "0012-health-probe-definition-01.js",
+      "category": "health",
+      "name": "Health Probe Definition 0012"
+    },
+    {
+      "id": "backend-ops-0013",
+      "file": "0013-smoke-test-scenario-01.js",
+      "category": "smoke-testing",
+      "name": "Smoke Test Scenario 0013"
+    },
+    {
+      "id": "backend-ops-0014",
+      "file": "0014-validation-schema-contract-01.js",
+      "category": "validation",
+      "name": "Validation Schema Contract 0014"
+    },
+    {
+      "id": "backend-ops-0015",
+      "file": "0015-rate-limit-policy-01.js",
+      "category": "rate-limit",
+      "name": "Rate Limit Policy 0015"
+    },
+    {
+      "id": "backend-ops-0016",
+      "file": "0016-data-retention-rule-01.js",
+      "category": "data-retention",
+      "name": "Data Retention Rule 0016"
+    },
+    {
+      "id": "backend-ops-0017",
+      "file": "0017-backup-job-definition-01.js",
+      "category": "backup",
+      "name": "Backup Job Definition 0017"
+    },
+    {
+      "id": "backend-ops-0018",
+      "file": "0018-recovery-runbook-step-01.js",
+      "category": "recovery",
+      "name": "Recovery Runbook Step 0018"
+    },
+    {
+      "id": "backend-ops-0019",
+      "file": "0019-queue-worker-contract-01.js",
+      "category": "queueing",
+      "name": "Queue Worker Contract 0019"
+    },
+    {
+      "id": "backend-ops-0020",
+      "file": "0020-scheduled-task-window-01.js",
+      "category": "scheduling",
+      "name": "Scheduled Task Window 0020"
+    },
+    {
+      "id": "backend-ops-0021",
+      "file": "0021-identity-session-guard-02.js",
+      "category": "auth",
+      "name": "Identity Session Guard 0021"
+    },
+    {
+      "id": "backend-ops-0022",
+      "file": "0022-api-contract-handler-02.js",
+      "category": "api",
+      "name": "API Contract Handler 0022"
+    },
+    {
+      "id": "backend-ops-0023",
+      "file": "0023-firebase-admin-boundary-02.js",
+      "category": "firebase",
+      "name": "Firebase Admin Boundary 0023"
+    },
+    {
+      "id": "backend-ops-0024",
+      "file": "0024-firestore-write-contract-02.js",
+      "category": "firestore",
+      "name": "Firestore Write Contract 0024"
+    },
+    {
+      "id": "backend-ops-0025",
+      "file": "0025-storage-object-policy-02.js",
+      "category": "storage",
+      "name": "Storage Object Policy 0025"
+    },
+    {
+      "id": "backend-ops-0026",
+      "file": "0026-billing-event-reconciler-02.js",
+      "category": "billing",
+      "name": "Billing Event Reconciler 0026"
+    },
+    {
+      "id": "backend-ops-0027",
+      "file": "0027-notification-dispatch-plan-02.js",
+      "category": "notifications",
+      "name": "Notification Dispatch Plan 0027"
+    },
+    {
+      "id": "backend-ops-0028",
+      "file": "0028-audit-trail-writer-02.js",
+      "category": "audit",
+      "name": "Audit Trail Writer 0028"
+    },
+    {
+      "id": "backend-ops-0029",
+      "file": "0029-security-control-check-02.js",
+      "category": "security",
+      "name": "Security Control Check 0029"
+    },
+    {
+      "id": "backend-ops-0030",
+      "file": "0030-deployment-readiness-gate-02.js",
+      "category": "deployment",
+      "name": "Deployment Readiness Gate 0030"
+    },
+    {
+      "id": "backend-ops-0031",
+      "file": "0031-monitoring-signal-map-02.js",
+      "category": "monitoring",
+      "name": "Monitoring Signal Map 0031"
+    },
+    {
+      "id": "backend-ops-0032",
+      "file": "0032-health-probe-definition-02.js",
+      "category": "health",
+      "name": "Health Probe Definition 0032"
+    },
+    {
+      "id": "backend-ops-0033",
+      "file": "0033-smoke-test-scenario-02.js",
+      "category": "smoke-testing",
+      "name": "Smoke Test Scenario 0033"
+    },
+    {
+      "id": "backend-ops-0034",
+      "file": "0034-validation-schema-contract-02.js",
+      "category": "validation",
+      "name": "Validation Schema Contract 0034"
+    },
+    {
+      "id": "backend-ops-0035",
+      "file": "0035-rate-limit-policy-02.js",
+      "category": "rate-limit",
+      "name": "Rate Limit Policy 0035"
+    },
+    {
+      "id": "backend-ops-0036",
+      "file": "0036-data-retention-rule-02.js",
+      "category": "data-retention",
+      "name": "Data Retention Rule 0036"
+    },
+    {
+      "id": "backend-ops-0037",
+      "file": "0037-backup-job-definition-02.js",
+      "category": "backup",
+      "name": "Backup Job Definition 0037"
+    },
+    {
+      "id": "backend-ops-0038",
+      "file": "0038-recovery-runbook-step-02.js",
+      "category": "recovery",
+      "name": "Recovery Runbook Step 0038"
+    },
+    {
+      "id": "backend-ops-0039",
+      "file": "0039-queue-worker-contract-02.js",
+      "category": "queueing",
+      "name": "Queue Worker Contract 0039"
+    },
+    {
+      "id": "backend-ops-0040",
+      "file": "0040-scheduled-task-window-02.js",
+      "category": "scheduling",
+      "name": "Scheduled Task Window 0040"
+    },
+    {
+      "id": "backend-ops-0041",
+      "file": "0041-identity-session-guard-03.js",
+      "category": "auth",
+      "name": "Identity Session Guard 0041"
+    },
+    {
+      "id": "backend-ops-0042",
+      "file": "0042-api-contract-handler-03.js",
+      "category": "api",
+      "name": "API Contract Handler 0042"
+    },
+    {
+      "id": "backend-ops-0043",
+      "file": "0043-firebase-admin-boundary-03.js",
+      "category": "firebase",
+      "name": "Firebase Admin Boundary 0043"
+    },
+    {
+      "id": "backend-ops-0044",
+      "file": "0044-firestore-write-contract-03.js",
+      "category": "firestore",
+      "name": "Firestore Write Contract 0044"
+    },
+    {
+      "id": "backend-ops-0045",
+      "file": "0045-storage-object-policy-03.js",
+      "category": "storage",
+      "name": "Storage Object Policy 0045"
+    },
+    {
+      "id": "backend-ops-0046",
+      "file": "0046-billing-event-reconciler-03.js",
+      "category": "billing",
+      "name": "Billing Event Reconciler 0046"
+    },
+    {
+      "id": "backend-ops-0047",
+      "file": "0047-notification-dispatch-plan-03.js",
+      "category": "notifications",
+      "name": "Notification Dispatch Plan 0047"
+    },
+    {
+      "id": "backend-ops-0048",
+      "file": "0048-audit-trail-writer-03.js",
+      "category": "audit",
+      "name": "Audit Trail Writer 0048"
+    },
+    {
+      "id": "backend-ops-0049",
+      "file": "0049-security-control-check-03.js",
+      "category": "security",
+      "name": "Security Control Check 0049"
+    },
+    {
+      "id": "backend-ops-0050",
+      "file": "0050-deployment-readiness-gate-03.js",
+      "category": "deployment",
+      "name": "Deployment Readiness Gate 0050"
+    },
+    {
+      "id": "backend-ops-0051",
+      "file": "0051-monitoring-signal-map-03.js",
+      "category": "monitoring",
+      "name": "Monitoring Signal Map 0051"
+    },
+    {
+      "id": "backend-ops-0052",
+      "file": "0052-health-probe-definition-03.js",
+      "category": "health",
+      "name": "Health Probe Definition 0052"
+    },
+    {
+      "id": "backend-ops-0053",
+      "file": "0053-smoke-test-scenario-03.js",
+      "category": "smoke-testing",
+      "name": "Smoke Test Scenario 0053"
+    },
+    {
+      "id": "backend-ops-0054",
+      "file": "0054-validation-schema-contract-03.js",
+      "category": "validation",
+      "name": "Validation Schema Contract 0054"
+    },
+    {
+      "id": "backend-ops-0055",
+      "file": "0055-rate-limit-policy-03.js",
+      "category": "rate-limit",
+      "name": "Rate Limit Policy 0055"
+    },
+    {
+      "id": "backend-ops-0056",
+      "file": "0056-data-retention-rule-03.js",
+      "category": "data-retention",
+      "name": "Data Retention Rule 0056"
+    },
+    {
+      "id": "backend-ops-0057",
+      "file": "0057-backup-job-definition-03.js",
+      "category": "backup",
+      "name": "Backup Job Definition 0057"
+    },
+    {
+      "id": "backend-ops-0058",
+      "file": "0058-recovery-runbook-step-03.js",
+      "category": "recovery",
+      "name": "Recovery Runbook Step 0058"
+    },
+    {
+      "id": "backend-ops-0059",
+      "file": "0059-queue-worker-contract-03.js",
+      "category": "queueing",
+      "name": "Queue Worker Contract 0059"
+    },
+    {
+      "id": "backend-ops-0060",
+      "file": "0060-scheduled-task-window-03.js",
+      "category": "scheduling",
+      "name": "Scheduled Task Window 0060"
+    },
+    {
+      "id": "backend-ops-0061",
+      "file": "0061-identity-session-guard-04.js",
+      "category": "auth",
+      "name": "Identity Session Guard 0061"
+    },
+    {
+      "id": "backend-ops-0062",
+      "file": "0062-api-contract-handler-04.js",
+      "category": "api",
+      "name": "API Contract Handler 0062"
+    },
+    {
+      "id": "backend-ops-0063",
+      "file": "0063-firebase-admin-boundary-04.js",
+      "category": "firebase",
+      "name": "Firebase Admin Boundary 0063"
+    },
+    {
+      "id": "backend-ops-0064",
+      "file": "0064-firestore-write-contract-04.js",
+      "category": "firestore",
+      "name": "Firestore Write Contract 0064"
+    },
+    {
+      "id": "backend-ops-0065",
+      "file": "0065-storage-object-policy-04.js",
+      "category": "storage",
+      "name": "Storage Object Policy 0065"
+    },
+    {
+      "id": "backend-ops-0066",
+      "file": "0066-billing-event-reconciler-04.js",
+      "category": "billing",
+      "name": "Billing Event Reconciler 0066"
+    },
+    {
+      "id": "backend-ops-0067",
+      "file": "0067-notification-dispatch-plan-04.js",
+      "category": "notifications",
+      "name": "Notification Dispatch Plan 0067"
+    },
+    {
+      "id": "backend-ops-0068",
+      "file": "0068-audit-trail-writer-04.js",
+      "category": "audit",
+      "name": "Audit Trail Writer 0068"
+    },
+    {
+      "id": "backend-ops-0069",
+      "file": "0069-security-control-check-04.js",
+      "category": "security",
+      "name": "Security Control Check 0069"
+    },
+    {
+      "id": "backend-ops-0070",
+      "file": "0070-deployment-readiness-gate-04.js",
+      "category": "deployment",
+      "name": "Deployment Readiness Gate 0070"
+    },
+    {
+      "id": "backend-ops-0071",
+      "file": "0071-monitoring-signal-map-04.js",
+      "category": "monitoring",
+      "name": "Monitoring Signal Map 0071"
+    },
+    {
+      "id": "backend-ops-0072",
+      "file": "0072-health-probe-definition-04.js",
+      "category": "health",
+      "name": "Health Probe Definition 0072"
+    },
+    {
+      "id": "backend-ops-0073",
+      "file": "0073-smoke-test-scenario-04.js",
+      "category": "smoke-testing",
+      "name": "Smoke Test Scenario 0073"
+    },
+    {
+      "id": "backend-ops-0074",
+      "file": "0074-validation-schema-contract-04.js",
+      "category": "validation",
+      "name": "Validation Schema Contract 0074"
+    },
+    {
+      "id": "backend-ops-0075",
+      "file": "0075-rate-limit-policy-04.js",
+      "category": "rate-limit",
+      "name": "Rate Limit Policy 0075"
+    },
+    {
+      "id": "backend-ops-0076",
+      "file": "0076-data-retention-rule-04.js",
+      "category": "data-retention",
+      "name": "Data Retention Rule 0076"
+    },
+    {
+      "id": "backend-ops-0077",
+      "file": "0077-backup-job-definition-04.js",
+      "category": "backup",
+      "name": "Backup Job Definition 0077"
+    },
+    {
+      "id": "backend-ops-0078",
+      "file": "0078-recovery-runbook-step-04.js",
+      "category": "recovery",
+      "name": "Recovery Runbook Step 0078"
+    },
+    {
+      "id": "backend-ops-0079",
+      "file": "0079-queue-worker-contract-04.js",
+      "category": "queueing",
+      "name": "Queue Worker Contract 0079"
+    },
+    {
+      "id": "backend-ops-0080",
+      "file": "0080-scheduled-task-window-04.js",
+      "category": "scheduling",
+      "name": "Scheduled Task Window 0080"
+    },
+    {
+      "id": "backend-ops-0081",
+      "file": "0081-identity-session-guard-05.js",
+      "category": "auth",
+      "name": "Identity Session Guard 0081"
+    },
+    {
+      "id": "backend-ops-0082",
+      "file": "0082-api-contract-handler-05.js",
+      "category": "api",
+      "name": "API Contract Handler 0082"
+    },
+    {
+      "id": "backend-ops-0083",
+      "file": "0083-firebase-admin-boundary-05.js",
+      "category": "firebase",
+      "name": "Firebase Admin Boundary 0083"
+    },
+    {
+      "id": "backend-ops-0084",
+      "file": "0084-firestore-write-contract-05.js",
+      "category": "firestore",
+      "name": "Firestore Write Contract 0084"
+    },
+    {
+      "id": "backend-ops-0085",
+      "file": "0085-storage-object-policy-05.js",
+      "category": "storage",
+      "name": "Storage Object Policy 0085"
+    },
+    {
+      "id": "backend-ops-0086",
+      "file": "0086-billing-event-reconciler-05.js",
+      "category": "billing",
+      "name": "Billing Event Reconciler 0086"
+    },
+    {
+      "id": "backend-ops-0087",
+      "file": "0087-notification-dispatch-plan-05.js",
+      "category": "notifications",
+      "name": "Notification Dispatch Plan 0087"
+    },
+    {
+      "id": "backend-ops-0088",
+      "file": "0088-audit-trail-writer-05.js",
+      "category": "audit",
+      "name": "Audit Trail Writer 0088"
+    },
+    {
+      "id": "backend-ops-0089",
+      "file": "0089-security-control-check-05.js",
+      "category": "security",
+      "name": "Security Control Check 0089"
+    },
+    {
+      "id": "backend-ops-0090",
+      "file": "0090-deployment-readiness-gate-05.js",
+      "category": "deployment",
+      "name": "Deployment Readiness Gate 0090"
+    },
+    {
+      "id": "backend-ops-0091",
+      "file": "0091-monitoring-signal-map-05.js",
+      "category": "monitoring",
+      "name": "Monitoring Signal Map 0091"
+    },
+    {
+      "id": "backend-ops-0092",
+      "file": "0092-health-probe-definition-05.js",
+      "category": "health",
+      "name": "Health Probe Definition 0092"
+    },
+    {
+      "id": "backend-ops-0093",
+      "file": "0093-smoke-test-scenario-05.js",
+      "category": "smoke-testing",
+      "name": "Smoke Test Scenario 0093"
+    },
+    {
+      "id": "backend-ops-0094",
+      "file": "0094-validation-schema-contract-05.js",
+      "category": "validation",
+      "name": "Validation Schema Contract 0094"
+    },
+    {
+      "id": "backend-ops-0095",
+      "file": "0095-rate-limit-policy-05.js",
+      "category": "rate-limit",
+      "name": "Rate Limit Policy 0095"
+    },
+    {
+      "id": "backend-ops-0096",
+      "file": "0096-data-retention-rule-05.js",
+      "category": "data-retention",
+      "name": "Data Retention Rule 0096"
+    },
+    {
+      "id": "backend-ops-0097",
+      "file": "0097-backup-job-definition-05.js",
+      "category": "backup",
+      "name": "Backup Job Definition 0097"
+    },
+    {
+      "id": "backend-ops-0098",
+      "file": "0098-recovery-runbook-step-05.js",
+      "category": "recovery",
+      "name": "Recovery Runbook Step 0098"
+    },
+    {
+      "id": "backend-ops-0099",
+      "file": "0099-queue-worker-contract-05.js",
+      "category": "queueing",
+      "name": "Queue Worker Contract 0099"
+    },
+    {
+      "id": "backend-ops-0100",
+      "file": "0100-scheduled-task-window-05.js",
+      "category": "scheduling",
+      "name": "Scheduled Task Window 0100"
+    },
+    {
+      "id": "backend-ops-0101",
+      "file": "0101-identity-session-guard-06.js",
+      "category": "auth",
+      "name": "Identity Session Guard 0101"
+    },
+    {
+      "id": "backend-ops-0102",
+      "file": "0102-api-contract-handler-06.js",
+      "category": "api",
+      "name": "API Contract Handler 0102"
+    },
+    {
+      "id": "backend-ops-0103",
+      "file": "0103-firebase-admin-boundary-06.js",
+      "category": "firebase",
+      "name": "Firebase Admin Boundary 0103"
+    },
+    {
+      "id": "backend-ops-0104",
+      "file": "0104-firestore-write-contract-06.js",
+      "category": "firestore",
+      "name": "Firestore Write Contract 0104"
+    },
+    {
+      "id": "backend-ops-0105",
+      "file": "0105-storage-object-policy-06.js",
+      "category": "storage",
+      "name": "Storage Object Policy 0105"
+    },
+    {
+      "id": "backend-ops-0106",
+      "file": "0106-billing-event-reconciler-06.js",
+      "category": "billing",
+      "name": "Billing Event Reconciler 0106"
+    },
+    {
+      "id": "backend-ops-0107",
+      "file": "0107-notification-dispatch-plan-06.js",
+      "category": "notifications",
+      "name": "Notification Dispatch Plan 0107"
+    },
+    {
+      "id": "backend-ops-0108",
+      "file": "0108-audit-trail-writer-06.js",
+      "category": "audit",
+      "name": "Audit Trail Writer 0108"
+    },
+    {
+      "id": "backend-ops-0109",
+      "file": "0109-security-control-check-06.js",
+      "category": "security",
+      "name": "Security Control Check 0109"
+    },
+    {
+      "id": "backend-ops-0110",
+      "file": "0110-deployment-readiness-gate-06.js",
+      "category": "deployment",
+      "name": "Deployment Readiness Gate 0110"
+    },
+    {
+      "id": "backend-ops-0111",
+      "file": "0111-monitoring-signal-map-06.js",
+      "category": "monitoring",
+      "name": "Monitoring Signal Map 0111"
+    },
+    {
+      "id": "backend-ops-0112",
+      "file": "0112-health-probe-definition-06.js",
+      "category": "health",
+      "name": "Health Probe Definition 0112"
+    },
+    {
+      "id": "backend-ops-0113",
+      "file": "0113-smoke-test-scenario-06.js",
+      "category": "smoke-testing",
+      "name": "Smoke Test Scenario 0113"
+    },
+    {
+      "id": "backend-ops-0114",
+      "file": "0114-validation-schema-contract-06.js",
+      "category": "validation",
+      "name": "Validation Schema Contract 0114"
+    },
+    {
+      "id": "backend-ops-0115",
+      "file": "0115-rate-limit-policy-06.js",
+      "category": "rate-limit",
+      "name": "Rate Limit Policy 0115"
+    },
+    {
+      "id": "backend-ops-0116",
+      "file": "0116-data-retention-rule-06.js",
+      "category": "data-retention",
+      "name": "Data Retention Rule 0116"
+    },
+    {
+      "id": "backend-ops-0117",
+      "file": "0117-backup-job-definition-06.js",
+      "category": "backup",
+      "name": "Backup Job Definition 0117"
+    },
+    {
+      "id": "backend-ops-0118",
+      "file": "0118-recovery-runbook-step-06.js",
+      "category": "recovery",
+      "name": "Recovery Runbook Step 0118"
+    },
+    {
+      "id": "backend-ops-0119",
+      "file": "0119-queue-worker-contract-06.js",
+      "category": "queueing",
+      "name": "Queue Worker Contract 0119"
+    },
+    {
+      "id": "backend-ops-0120",
+      "file": "0120-scheduled-task-window-06.js",
+      "category": "scheduling",
+      "name": "Scheduled Task Window 0120"
+    },
+    {
+      "id": "backend-ops-0121",
+      "file": "0121-identity-session-guard-07.js",
+      "category": "auth",
+      "name": "Identity Session Guard 0121"
+    },
+    {
+      "id": "backend-ops-0122",
+      "file": "0122-api-contract-handler-07.js",
+      "category": "api",
+      "name": "API Contract Handler 0122"
+    },
+    {
+      "id": "backend-ops-0123",
+      "file": "0123-firebase-admin-boundary-07.js",
+      "category": "firebase",
+      "name": "Firebase Admin Boundary 0123"
+    },
+    {
+      "id": "backend-ops-0124",
+      "file": "0124-firestore-write-contract-07.js",
+      "category": "firestore",
+      "name": "Firestore Write Contract 0124"
+    },
+    {
+      "id": "backend-ops-0125",
+      "file": "0125-storage-object-policy-07.js",
+      "category": "storage",
+      "name": "Storage Object Policy 0125"
+    },
+    {
+      "id": "backend-ops-0126",
+      "file": "0126-billing-event-reconciler-07.js",
+      "category": "billing",
+      "name": "Billing Event Reconciler 0126"
+    },
+    {
+      "id": "backend-ops-0127",
+      "file": "0127-notification-dispatch-plan-07.js",
+      "category": "notifications",
+      "name": "Notification Dispatch Plan 0127"
+    },
+    {
+      "id": "backend-ops-0128",
+      "file": "0128-audit-trail-writer-07.js",
+      "category": "audit",
+      "name": "Audit Trail Writer 0128"
+    },
+    {
+      "id": "backend-ops-0129",
+      "file": "0129-security-control-check-07.js",
+      "category": "security",
+      "name": "Security Control Check 0129"
+    },
+    {
+      "id": "backend-ops-0130",
+      "file": "0130-deployment-readiness-gate-07.js",
+      "category": "deployment",
+      "name": "Deployment Readiness Gate 0130"
+    },
+    {
+      "id": "backend-ops-0131",
+      "file": "0131-monitoring-signal-map-07.js",
+      "category": "monitoring",
+      "name": "Monitoring Signal Map 0131"
+    },
+    {
+      "id": "backend-ops-0132",
+      "file": "0132-health-probe-definition-07.js",
+      "category": "health",
+      "name": "Health Probe Definition 0132"
+    },
+    {
+      "id": "backend-ops-0133",
+      "file": "0133-smoke-test-scenario-07.js",
+      "category": "smoke-testing",
+      "name": "Smoke Test Scenario 0133"
+    },
+    {
+      "id": "backend-ops-0134",
+      "file": "0134-validation-schema-contract-07.js",
+      "category": "validation",
+      "name": "Validation Schema Contract 0134"
+    },
+    {
+      "id": "backend-ops-0135",
+      "file": "0135-rate-limit-policy-07.js",
+      "category": "rate-limit",
+      "name": "Rate Limit Policy 0135"
+    },
+    {
+      "id": "backend-ops-0136",
+      "file": "0136-data-retention-rule-07.js",
+      "category": "data-retention",
+      "name": "Data Retention Rule 0136"
+    },
+    {
+      "id": "backend-ops-0137",
+      "file": "0137-backup-job-definition-07.js",
+      "category": "backup",
+      "name": "Backup Job Definition 0137"
+    },
+    {
+      "id": "backend-ops-0138",
+      "file": "0138-recovery-runbook-step-07.js",
+      "category": "recovery",
+      "name": "Recovery Runbook Step 0138"
+    },
+    {
+      "id": "backend-ops-0139",
+      "file": "0139-queue-worker-contract-07.js",
+      "category": "queueing",
+      "name": "Queue Worker Contract 0139"
+    },
+    {
+      "id": "backend-ops-0140",
+      "file": "0140-scheduled-task-window-07.js",
+      "category": "scheduling",
+      "name": "Scheduled Task Window 0140"
+    },
+    {
+      "id": "backend-ops-0141",
+      "file": "0141-identity-session-guard-08.js",
+      "category": "auth",
+      "name": "Identity Session Guard 0141"
+    },
+    {
+      "id": "backend-ops-0142",
+      "file": "0142-api-contract-handler-08.js",
+      "category": "api",
+      "name": "API Contract Handler 0142"
+    },
+    {
+      "id": "backend-ops-0143",
+      "file": "0143-firebase-admin-boundary-08.js",
+      "category": "firebase",
+      "name": "Firebase Admin Boundary 0143"
+    },
+    {
+      "id": "backend-ops-0144",
+      "file": "0144-firestore-write-contract-08.js",
+      "category": "firestore",
+      "name": "Firestore Write Contract 0144"
+    },
+    {
+      "id": "backend-ops-0145",
+      "file": "0145-storage-object-policy-08.js",
+      "category": "storage",
+      "name": "Storage Object Policy 0145"
+    },
+    {
+      "id": "backend-ops-0146",
+      "file": "0146-billing-event-reconciler-08.js",
+      "category": "billing",
+      "name": "Billing Event Reconciler 0146"
+    },
+    {
+      "id": "backend-ops-0147",
+      "file": "0147-notification-dispatch-plan-08.js",
+      "category": "notifications",
+      "name": "Notification Dispatch Plan 0147"
+    },
+    {
+      "id": "backend-ops-0148",
+      "file": "0148-audit-trail-writer-08.js",
+      "category": "audit",
+      "name": "Audit Trail Writer 0148"
+    },
+    {
+      "id": "backend-ops-0149",
+      "file": "0149-security-control-check-08.js",
+      "category": "security",
+      "name": "Security Control Check 0149"
+    },
+    {
+      "id": "backend-ops-0150",
+      "file": "0150-deployment-readiness-gate-08.js",
+      "category": "deployment",
+      "name": "Deployment Readiness Gate 0150"
+    },
+    {
+      "id": "backend-ops-0151",
+      "file": "0151-monitoring-signal-map-08.js",
+      "category": "monitoring",
+      "name": "Monitoring Signal Map 0151"
+    },
+    {
+      "id": "backend-ops-0152",
+      "file": "0152-health-probe-definition-08.js",
+      "category": "health",
+      "name": "Health Probe Definition 0152"
+    },
+    {
+      "id": "backend-ops-0153",
+      "file": "0153-smoke-test-scenario-08.js",
+      "category": "smoke-testing",
+      "name": "Smoke Test Scenario 0153"
+    },
+    {
+      "id": "backend-ops-0154",
+      "file": "0154-validation-schema-contract-08.js",
+      "category": "validation",
+      "name": "Validation Schema Contract 0154"
+    },
+    {
+      "id": "backend-ops-0155",
+      "file": "0155-rate-limit-policy-08.js",
+      "category": "rate-limit",
+      "name": "Rate Limit Policy 0155"
+    },
+    {
+      "id": "backend-ops-0156",
+      "file": "0156-data-retention-rule-08.js",
+      "category": "data-retention",
+      "name": "Data Retention Rule 0156"
+    },
+    {
+      "id": "backend-ops-0157",
+      "file": "0157-backup-job-definition-08.js",
+      "category": "backup",
+      "name": "Backup Job Definition 0157"
+    },
+    {
+      "id": "backend-ops-0158",
+      "file": "0158-recovery-runbook-step-08.js",
+      "category": "recovery",
+      "name": "Recovery Runbook Step 0158"
+    },
+    {
+      "id": "backend-ops-0159",
+      "file": "0159-queue-worker-contract-08.js",
+      "category": "queueing",
+      "name": "Queue Worker Contract 0159"
+    },
+    {
+      "id": "backend-ops-0160",
+      "file": "0160-scheduled-task-window-08.js",
+      "category": "scheduling",
+      "name": "Scheduled Task Window 0160"
+    },
+    {
+      "id": "backend-ops-0161",
+      "file": "0161-identity-session-guard-09.js",
+      "category": "auth",
+      "name": "Identity Session Guard 0161"
+    },
+    {
+      "id": "backend-ops-0162",
+      "file": "0162-api-contract-handler-09.js",
+      "category": "api",
+      "name": "API Contract Handler 0162"
+    },
+    {
+      "id": "backend-ops-0163",
+      "file": "0163-firebase-admin-boundary-09.js",
+      "category": "firebase",
+      "name": "Firebase Admin Boundary 0163"
+    },
+    {
+      "id": "backend-ops-0164",
+      "file": "0164-firestore-write-contract-09.js",
+      "category": "firestore",
+      "name": "Firestore Write Contract 0164"
+    },
+    {
+      "id": "backend-ops-0165",
+      "file": "0165-storage-object-policy-09.js",
+      "category": "storage",
+      "name": "Storage Object Policy 0165"
+    },
+    {
+      "id": "backend-ops-0166",
+      "file": "0166-billing-event-reconciler-09.js",
+      "category": "billing",
+      "name": "Billing Event Reconciler 0166"
+    },
+    {
+      "id": "backend-ops-0167",
+      "file": "0167-notification-dispatch-plan-09.js",
+      "category": "notifications",
+      "name": "Notification Dispatch Plan 0167"
+    },
+    {
+      "id": "backend-ops-0168",
+      "file": "0168-audit-trail-writer-09.js",
+      "category": "audit",
+      "name": "Audit Trail Writer 0168"
+    },
+    {
+      "id": "backend-ops-0169",
+      "file": "0169-security-control-check-09.js",
+      "category": "security",
+      "name": "Security Control Check 0169"
+    },
+    {
+      "id": "backend-ops-0170",
+      "file": "0170-deployment-readiness-gate-09.js",
+      "category": "deployment",
+      "name": "Deployment Readiness Gate 0170"
+    },
+    {
+      "id": "backend-ops-0171",
+      "file": "0171-monitoring-signal-map-09.js",
+      "category": "monitoring",
+      "name": "Monitoring Signal Map 0171"
+    },
+    {
+      "id": "backend-ops-0172",
+      "file": "0172-health-probe-definition-09.js",
+      "category": "health",
+      "name": "Health Probe Definition 0172"
+    },
+    {
+      "id": "backend-ops-0173",
+      "file": "0173-smoke-test-scenario-09.js",
+      "category": "smoke-testing",
+      "name": "Smoke Test Scenario 0173"
+    },
+    {
+      "id": "backend-ops-0174",
+      "file": "0174-validation-schema-contract-09.js",
+      "category": "validation",
+      "name": "Validation Schema Contract 0174"
+    },
+    {
+      "id": "backend-ops-0175",
+      "file": "0175-rate-limit-policy-09.js",
+      "category": "rate-limit",
+      "name": "Rate Limit Policy 0175"
+    },
+    {
+      "id": "backend-ops-0176",
+      "file": "0176-data-retention-rule-09.js",
+      "category": "data-retention",
+      "name": "Data Retention Rule 0176"
+    },
+    {
+      "id": "backend-ops-0177",
+      "file": "0177-backup-job-definition-09.js",
+      "category": "backup",
+      "name": "Backup Job Definition 0177"
+    },
+    {
+      "id": "backend-ops-0178",
+      "file": "0178-recovery-runbook-step-09.js",
+      "category": "recovery",
+      "name": "Recovery Runbook Step 0178"
+    },
+    {
+      "id": "backend-ops-0179",
+      "file": "0179-queue-worker-contract-09.js",
+      "category": "queueing",
+      "name": "Queue Worker Contract 0179"
+    },
+    {
+      "id": "backend-ops-0180",
+      "file": "0180-scheduled-task-window-09.js",
+      "category": "scheduling",
+      "name": "Scheduled Task Window 0180"
+    },
+    {
+      "id": "backend-ops-0181",
+      "file": "0181-identity-session-guard-10.js",
+      "category": "auth",
+      "name": "Identity Session Guard 0181"
+    },
+    {
+      "id": "backend-ops-0182",
+      "file": "0182-api-contract-handler-10.js",
+      "category": "api",
+      "name": "API Contract Handler 0182"
+    },
+    {
+      "id": "backend-ops-0183",
+      "file": "0183-firebase-admin-boundary-10.js",
+      "category": "firebase",
+      "name": "Firebase Admin Boundary 0183"
+    },
+    {
+      "id": "backend-ops-0184",
+      "file": "0184-firestore-write-contract-10.js",
+      "category": "firestore",
+      "name": "Firestore Write Contract 0184"
+    },
+    {
+      "id": "backend-ops-0185",
+      "file": "0185-storage-object-policy-10.js",
+      "category": "storage",
+      "name": "Storage Object Policy 0185"
+    },
+    {
+      "id": "backend-ops-0186",
+      "file": "0186-billing-event-reconciler-10.js",
+      "category": "billing",
+      "name": "Billing Event Reconciler 0186"
+    },
+    {
+      "id": "backend-ops-0187",
+      "file": "0187-notification-dispatch-plan-10.js",
+      "category": "notifications",
+      "name": "Notification Dispatch Plan 0187"
+    },
+    {
+      "id": "backend-ops-0188",
+      "file": "0188-audit-trail-writer-10.js",
+      "category": "audit",
+      "name": "Audit Trail Writer 0188"
+    },
+    {
+      "id": "backend-ops-0189",
+      "file": "0189-security-control-check-10.js",
+      "category": "security",
+      "name": "Security Control Check 0189"
+    },
+    {
+      "id": "backend-ops-0190",
+      "file": "0190-deployment-readiness-gate-10.js",
+      "category": "deployment",
+      "name": "Deployment Readiness Gate 0190"
+    },
+    {
+      "id": "backend-ops-0191",
+      "file": "0191-monitoring-signal-map-10.js",
+      "category": "monitoring",
+      "name": "Monitoring Signal Map 0191"
+    },
+    {
+      "id": "backend-ops-0192",
+      "file": "0192-health-probe-definition-10.js",
+      "category": "health",
+      "name": "Health Probe Definition 0192"
+    },
+    {
+      "id": "backend-ops-0193",
+      "file": "0193-smoke-test-scenario-10.js",
+      "category": "smoke-testing",
+      "name": "Smoke Test Scenario 0193"
+    },
+    {
+      "id": "backend-ops-0194",
+      "file": "0194-validation-schema-contract-10.js",
+      "category": "validation",
+      "name": "Validation Schema Contract 0194"
+    },
+    {
+      "id": "backend-ops-0195",
+      "file": "0195-rate-limit-policy-10.js",
+      "category": "rate-limit",
+      "name": "Rate Limit Policy 0195"
+    },
+    {
+      "id": "backend-ops-0196",
+      "file": "0196-data-retention-rule-10.js",
+      "category": "data-retention",
+      "name": "Data Retention Rule 0196"
+    },
+    {
+      "id": "backend-ops-0197",
+      "file": "0197-backup-job-definition-10.js",
+      "category": "backup",
+      "name": "Backup Job Definition 0197"
+    },
+    {
+      "id": "backend-ops-0198",
+      "file": "0198-recovery-runbook-step-10.js",
+      "category": "recovery",
+      "name": "Recovery Runbook Step 0198"
+    },
+    {
+      "id": "backend-ops-0199",
+      "file": "0199-queue-worker-contract-10.js",
+      "category": "queueing",
+      "name": "Queue Worker Contract 0199"
+    },
+    {
+      "id": "backend-ops-0200",
+      "file": "0200-scheduled-task-window-10.js",
+      "category": "scheduling",
+      "name": "Scheduled Task Window 0200"
+    },
+    {
+      "id": "backend-ops-0201",
+      "file": "0201-identity-session-guard-11.js",
+      "category": "auth",
+      "name": "Identity Session Guard 0201"
+    },
+    {
+      "id": "backend-ops-0202",
+      "file": "0202-api-contract-handler-11.js",
+      "category": "api",
+      "name": "API Contract Handler 0202"
+    },
+    {
+      "id": "backend-ops-0203",
+      "file": "0203-firebase-admin-boundary-11.js",
+      "category": "firebase",
+      "name": "Firebase Admin Boundary 0203"
+    },
+    {
+      "id": "backend-ops-0204",
+      "file": "0204-firestore-write-contract-11.js",
+      "category": "firestore",
+      "name": "Firestore Write Contract 0204"
+    },
+    {
+      "id": "backend-ops-0205",
+      "file": "0205-storage-object-policy-11.js",
+      "category": "storage",
+      "name": "Storage Object Policy 0205"
+    },
+    {
+      "id": "backend-ops-0206",
+      "file": "0206-billing-event-reconciler-11.js",
+      "category": "billing",
+      "name": "Billing Event Reconciler 0206"
+    },
+    {
+      "id": "backend-ops-0207",
+      "file": "0207-notification-dispatch-plan-11.js",
+      "category": "notifications",
+      "name": "Notification Dispatch Plan 0207"
+    },
+    {
+      "id": "backend-ops-0208",
+      "file": "0208-audit-trail-writer-11.js",
+      "category": "audit",
+      "name": "Audit Trail Writer 0208"
+    },
+    {
+      "id": "backend-ops-0209",
+      "file": "0209-security-control-check-11.js",
+      "category": "security",
+      "name": "Security Control Check 0209"
+    },
+    {
+      "id": "backend-ops-0210",
+      "file": "0210-deployment-readiness-gate-11.js",
+      "category": "deployment",
+      "name": "Deployment Readiness Gate 0210"
+    },
+    {
+      "id": "backend-ops-0211",
+      "file": "0211-monitoring-signal-map-11.js",
+      "category": "monitoring",
+      "name": "Monitoring Signal Map 0211"
+    },
+    {
+      "id": "backend-ops-0212",
+      "file": "0212-health-probe-definition-11.js",
+      "category": "health",
+      "name": "Health Probe Definition 0212"
+    },
+    {
+      "id": "backend-ops-0213",
+      "file": "0213-smoke-test-scenario-11.js",
+      "category": "smoke-testing",
+      "name": "Smoke Test Scenario 0213"
+    },
+    {
+      "id": "backend-ops-0214",
+      "file": "0214-validation-schema-contract-11.js",
+      "category": "validation",
+      "name": "Validation Schema Contract 0214"
+    },
+    {
+      "id": "backend-ops-0215",
+      "file": "0215-rate-limit-policy-11.js",
+      "category": "rate-limit",
+      "name": "Rate Limit Policy 0215"
+    },
+    {
+      "id": "backend-ops-0216",
+      "file": "0216-data-retention-rule-11.js",
+      "category": "data-retention",
+      "name": "Data Retention Rule 0216"
+    },
+    {
+      "id": "backend-ops-0217",
+      "file": "0217-backup-job-definition-11.js",
+      "category": "backup",
+      "name": "Backup Job Definition 0217"
+    },
+    {
+      "id": "backend-ops-0218",
+      "file": "0218-recovery-runbook-step-11.js",
+      "category": "recovery",
+      "name": "Recovery Runbook Step 0218"
+    },
+    {
+      "id": "backend-ops-0219",
+      "file": "0219-queue-worker-contract-11.js",
+      "category": "queueing",
+      "name": "Queue Worker Contract 0219"
+    },
+    {
+      "id": "backend-ops-0220",
+      "file": "0220-scheduled-task-window-11.js",
+      "category": "scheduling",
+      "name": "Scheduled Task Window 0220"
+    },
+    {
+      "id": "backend-ops-0221",
+      "file": "0221-identity-session-guard-12.js",
+      "category": "auth",
+      "name": "Identity Session Guard 0221"
+    },
+    {
+      "id": "backend-ops-0222",
+      "file": "0222-api-contract-handler-12.js",
+      "category": "api",
+      "name": "API Contract Handler 0222"
+    },
+    {
+      "id": "backend-ops-0223",
+      "file": "0223-firebase-admin-boundary-12.js",
+      "category": "firebase",
+      "name": "Firebase Admin Boundary 0223"
+    },
+    {
+      "id": "backend-ops-0224",
+      "file": "0224-firestore-write-contract-12.js",
+      "category": "firestore",
+      "name": "Firestore Write Contract 0224"
+    },
+    {
+      "id": "backend-ops-0225",
+      "file": "0225-storage-object-policy-12.js",
+      "category": "storage",
+      "name": "Storage Object Policy 0225"
+    },
+    {
+      "id": "backend-ops-0226",
+      "file": "0226-billing-event-reconciler-12.js",
+      "category": "billing",
+      "name": "Billing Event Reconciler 0226"
+    },
+    {
+      "id": "backend-ops-0227",
+      "file": "0227-notification-dispatch-plan-12.js",
+      "category": "notifications",
+      "name": "Notification Dispatch Plan 0227"
+    },
+    {
+      "id": "backend-ops-0228",
+      "file": "0228-audit-trail-writer-12.js",
+      "category": "audit",
+      "name": "Audit Trail Writer 0228"
+    },
+    {
+      "id": "backend-ops-0229",
+      "file": "0229-security-control-check-12.js",
+      "category": "security",
+      "name": "Security Control Check 0229"
+    },
+    {
+      "id": "backend-ops-0230",
+      "file": "0230-deployment-readiness-gate-12.js",
+      "category": "deployment",
+      "name": "Deployment Readiness Gate 0230"
+    },
+    {
+      "id": "backend-ops-0231",
+      "file": "0231-monitoring-signal-map-12.js",
+      "category": "monitoring",
+      "name": "Monitoring Signal Map 0231"
+    },
+    {
+      "id": "backend-ops-0232",
+      "file": "0232-health-probe-definition-12.js",
+      "category": "health",
+      "name": "Health Probe Definition 0232"
+    },
+    {
+      "id": "backend-ops-0233",
+      "file": "0233-smoke-test-scenario-12.js",
+      "category": "smoke-testing",
+      "name": "Smoke Test Scenario 0233"
+    },
+    {
+      "id": "backend-ops-0234",
+      "file": "0234-validation-schema-contract-12.js",
+      "category": "validation",
+      "name": "Validation Schema Contract 0234"
+    },
+    {
+      "id": "backend-ops-0235",
+      "file": "0235-rate-limit-policy-12.js",
+      "category": "rate-limit",
+      "name": "Rate Limit Policy 0235"
+    },
+    {
+      "id": "backend-ops-0236",
+      "file": "0236-data-retention-rule-12.js",
+      "category": "data-retention",
+      "name": "Data Retention Rule 0236"
+    },
+    {
+      "id": "backend-ops-0237",
+      "file": "0237-backup-job-definition-12.js",
+      "category": "backup",
+      "name": "Backup Job Definition 0237"
+    },
+    {
+      "id": "backend-ops-0238",
+      "file": "0238-recovery-runbook-step-12.js",
+      "category": "recovery",
+      "name": "Recovery Runbook Step 0238"
+    },
+    {
+      "id": "backend-ops-0239",
+      "file": "0239-queue-worker-contract-12.js",
+      "category": "queueing",
+      "name": "Queue Worker Contract 0239"
+    },
+    {
+      "id": "backend-ops-0240",
+      "file": "0240-scheduled-task-window-12.js",
+      "category": "scheduling",
+      "name": "Scheduled Task Window 0240"
+    },
+    {
+      "id": "backend-ops-0241",
+      "file": "0241-identity-session-guard-13.js",
+      "category": "auth",
+      "name": "Identity Session Guard 0241"
+    },
+    {
+      "id": "backend-ops-0242",
+      "file": "0242-api-contract-handler-13.js",
+      "category": "api",
+      "name": "API Contract Handler 0242"
+    },
+    {
+      "id": "backend-ops-0243",
+      "file": "0243-firebase-admin-boundary-13.js",
+      "category": "firebase",
+      "name": "Firebase Admin Boundary 0243"
+    },
+    {
+      "id": "backend-ops-0244",
+      "file": "0244-firestore-write-contract-13.js",
+      "category": "firestore",
+      "name": "Firestore Write Contract 0244"
+    },
+    {
+      "id": "backend-ops-0245",
+      "file": "0245-storage-object-policy-13.js",
+      "category": "storage",
+      "name": "Storage Object Policy 0245"
+    },
+    {
+      "id": "backend-ops-0246",
+      "file": "0246-billing-event-reconciler-13.js",
+      "category": "billing",
+      "name": "Billing Event Reconciler 0246"
+    },
+    {
+      "id": "backend-ops-0247",
+      "file": "0247-notification-dispatch-plan-13.js",
+      "category": "notifications",
+      "name": "Notification Dispatch Plan 0247"
+    },
+    {
+      "id": "backend-ops-0248",
+      "file": "0248-audit-trail-writer-13.js",
+      "category": "audit",
+      "name": "Audit Trail Writer 0248"
+    },
+    {
+      "id": "backend-ops-0249",
+      "file": "0249-security-control-check-13.js",
+      "category": "security",
+      "name": "Security Control Check 0249"
+    },
+    {
+      "id": "backend-ops-0250",
+      "file": "0250-deployment-readiness-gate-13.js",
+      "category": "deployment",
+      "name": "Deployment Readiness Gate 0250"
+    },
+    {
+      "id": "backend-ops-0251",
+      "file": "0251-monitoring-signal-map-13.js",
+      "category": "monitoring",
+      "name": "Monitoring Signal Map 0251"
+    },
+    {
+      "id": "backend-ops-0252",
+      "file": "0252-health-probe-definition-13.js",
+      "category": "health",
+      "name": "Health Probe Definition 0252"
+    },
+    {
+      "id": "backend-ops-0253",
+      "file": "0253-smoke-test-scenario-13.js",
+      "category": "smoke-testing",
+      "name": "Smoke Test Scenario 0253"
+    },
+    {
+      "id": "backend-ops-0254",
+      "file": "0254-validation-schema-contract-13.js",
+      "category": "validation",
+      "name": "Validation Schema Contract 0254"
+    },
+    {
+      "id": "backend-ops-0255",
+      "file": "0255-rate-limit-policy-13.js",
+      "category": "rate-limit",
+      "name": "Rate Limit Policy 0255"
+    },
+    {
+      "id": "backend-ops-0256",
+      "file": "0256-data-retention-rule-13.js",
+      "category": "data-retention",
+      "name": "Data Retention Rule 0256"
+    },
+    {
+      "id": "backend-ops-0257",
+      "file": "0257-backup-job-definition-13.js",
+      "category": "backup",
+      "name": "Backup Job Definition 0257"
+    },
+    {
+      "id": "backend-ops-0258",
+      "file": "0258-recovery-runbook-step-13.js",
+      "category": "recovery",
+      "name": "Recovery Runbook Step 0258"
+    },
+    {
+      "id": "backend-ops-0259",
+      "file": "0259-queue-worker-contract-13.js",
+      "category": "queueing",
+      "name": "Queue Worker Contract 0259"
+    },
+    {
+      "id": "backend-ops-0260",
+      "file": "0260-scheduled-task-window-13.js",
+      "category": "scheduling",
+      "name": "Scheduled Task Window 0260"
+    },
+    {
+      "id": "backend-ops-0261",
+      "file": "0261-identity-session-guard-14.js",
+      "category": "auth",
+      "name": "Identity Session Guard 0261"
+    },
+    {
+      "id": "backend-ops-0262",
+      "file": "0262-api-contract-handler-14.js",
+      "category": "api",
+      "name": "API Contract Handler 0262"
+    },
+    {
+      "id": "backend-ops-0263",
+      "file": "0263-firebase-admin-boundary-14.js",
+      "category": "firebase",
+      "name": "Firebase Admin Boundary 0263"
+    },
+    {
+      "id": "backend-ops-0264",
+      "file": "0264-firestore-write-contract-14.js",
+      "category": "firestore",
+      "name": "Firestore Write Contract 0264"
+    },
+    {
+      "id": "backend-ops-0265",
+      "file": "0265-storage-object-policy-14.js",
+      "category": "storage",
+      "name": "Storage Object Policy 0265"
+    },
+    {
+      "id": "backend-ops-0266",
+      "file": "0266-billing-event-reconciler-14.js",
+      "category": "billing",
+      "name": "Billing Event Reconciler 0266"
+    },
+    {
+      "id": "backend-ops-0267",
+      "file": "0267-notification-dispatch-plan-14.js",
+      "category": "notifications",
+      "name": "Notification Dispatch Plan 0267"
+    },
+    {
+      "id": "backend-ops-0268",
+      "file": "0268-audit-trail-writer-14.js",
+      "category": "audit",
+      "name": "Audit Trail Writer 0268"
+    },
+    {
+      "id": "backend-ops-0269",
+      "file": "0269-security-control-check-14.js",
+      "category": "security",
+      "name": "Security Control Check 0269"
+    },
+    {
+      "id": "backend-ops-0270",
+      "file": "0270-deployment-readiness-gate-14.js",
+      "category": "deployment",
+      "name": "Deployment Readiness Gate 0270"
+    },
+    {
+      "id": "backend-ops-0271",
+      "file": "0271-monitoring-signal-map-14.js",
+      "category": "monitoring",
+      "name": "Monitoring Signal Map 0271"
+    },
+    {
+      "id": "backend-ops-0272",
+      "file": "0272-health-probe-definition-14.js",
+      "category": "health",
+      "name": "Health Probe Definition 0272"
+    },
+    {
+      "id": "backend-ops-0273",
+      "file": "0273-smoke-test-scenario-14.js",
+      "category": "smoke-testing",
+      "name": "Smoke Test Scenario 0273"
+    },
+    {
+      "id": "backend-ops-0274",
+      "file": "0274-validation-schema-contract-14.js",
+      "category": "validation",
+      "name": "Validation Schema Contract 0274"
+    },
+    {
+      "id": "backend-ops-0275",
+      "file": "0275-rate-limit-policy-14.js",
+      "category": "rate-limit",
+      "name": "Rate Limit Policy 0275"
+    },
+    {
+      "id": "backend-ops-0276",
+      "file": "0276-data-retention-rule-14.js",
+      "category": "data-retention",
+      "name": "Data Retention Rule 0276"
+    },
+    {
+      "id": "backend-ops-0277",
+      "file": "0277-backup-job-definition-14.js",
+      "category": "backup",
+      "name": "Backup Job Definition 0277"
+    },
+    {
+      "id": "backend-ops-0278",
+      "file": "0278-recovery-runbook-step-14.js",
+      "category": "recovery",
+      "name": "Recovery Runbook Step 0278"
+    },
+    {
+      "id": "backend-ops-0279",
+      "file": "0279-queue-worker-contract-14.js",
+      "category": "queueing",
+      "name": "Queue Worker Contract 0279"
+    },
+    {
+      "id": "backend-ops-0280",
+      "file": "0280-scheduled-task-window-14.js",
+      "category": "scheduling",
+      "name": "Scheduled Task Window 0280"
+    },
+    {
+      "id": "backend-ops-0281",
+      "file": "0281-identity-session-guard-15.js",
+      "category": "auth",
+      "name": "Identity Session Guard 0281"
+    },
+    {
+      "id": "backend-ops-0282",
+      "file": "0282-api-contract-handler-15.js",
+      "category": "api",
+      "name": "API Contract Handler 0282"
+    },
+    {
+      "id": "backend-ops-0283",
+      "file": "0283-firebase-admin-boundary-15.js",
+      "category": "firebase",
+      "name": "Firebase Admin Boundary 0283"
+    },
+    {
+      "id": "backend-ops-0284",
+      "file": "0284-firestore-write-contract-15.js",
+      "category": "firestore",
+      "name": "Firestore Write Contract 0284"
+    },
+    {
+      "id": "backend-ops-0285",
+      "file": "0285-storage-object-policy-15.js",
+      "category": "storage",
+      "name": "Storage Object Policy 0285"
+    },
+    {
+      "id": "backend-ops-0286",
+      "file": "0286-billing-event-reconciler-15.js",
+      "category": "billing",
+      "name": "Billing Event Reconciler 0286"
+    },
+    {
+      "id": "backend-ops-0287",
+      "file": "0287-notification-dispatch-plan-15.js",
+      "category": "notifications",
+      "name": "Notification Dispatch Plan 0287"
+    },
+    {
+      "id": "backend-ops-0288",
+      "file": "0288-audit-trail-writer-15.js",
+      "category": "audit",
+      "name": "Audit Trail Writer 0288"
+    },
+    {
+      "id": "backend-ops-0289",
+      "file": "0289-security-control-check-15.js",
+      "category": "security",
+      "name": "Security Control Check 0289"
+    },
+    {
+      "id": "backend-ops-0290",
+      "file": "0290-deployment-readiness-gate-15.js",
+      "category": "deployment",
+      "name": "Deployment Readiness Gate 0290"
+    },
+    {
+      "id": "backend-ops-0291",
+      "file": "0291-monitoring-signal-map-15.js",
+      "category": "monitoring",
+      "name": "Monitoring Signal Map 0291"
+    },
+    {
+      "id": "backend-ops-0292",
+      "file": "0292-health-probe-definition-15.js",
+      "category": "health",
+      "name": "Health Probe Definition 0292"
+    },
+    {
+      "id": "backend-ops-0293",
+      "file": "0293-smoke-test-scenario-15.js",
+      "category": "smoke-testing",
+      "name": "Smoke Test Scenario 0293"
+    },
+    {
+      "id": "backend-ops-0294",
+      "file": "0294-validation-schema-contract-15.js",
+      "category": "validation",
+      "name": "Validation Schema Contract 0294"
+    },
+    {
+      "id": "backend-ops-0295",
+      "file": "0295-rate-limit-policy-15.js",
+      "category": "rate-limit",
+      "name": "Rate Limit Policy 0295"
+    },
+    {
+      "id": "backend-ops-0296",
+      "file": "0296-data-retention-rule-15.js",
+      "category": "data-retention",
+      "name": "Data Retention Rule 0296"
+    },
+    {
+      "id": "backend-ops-0297",
+      "file": "0297-backup-job-definition-15.js",
+      "category": "backup",
+      "name": "Backup Job Definition 0297"
+    },
+    {
+      "id": "backend-ops-0298",
+      "file": "0298-recovery-runbook-step-15.js",
+      "category": "recovery",
+      "name": "Recovery Runbook Step 0298"
+    },
+    {
+      "id": "backend-ops-0299",
+      "file": "0299-queue-worker-contract-15.js",
+      "category": "queueing",
+      "name": "Queue Worker Contract 0299"
+    },
+    {
+      "id": "backend-ops-0300",
+      "file": "0300-scheduled-task-window-15.js",
+      "category": "scheduling",
+      "name": "Scheduled Task Window 0300"
+    },
+    {
+      "id": "backend-ops-0301",
+      "file": "0301-identity-session-guard-16.js",
+      "category": "auth",
+      "name": "Identity Session Guard 0301"
+    },
+    {
+      "id": "backend-ops-0302",
+      "file": "0302-api-contract-handler-16.js",
+      "category": "api",
+      "name": "API Contract Handler 0302"
+    },
+    {
+      "id": "backend-ops-0303",
+      "file": "0303-firebase-admin-boundary-16.js",
+      "category": "firebase",
+      "name": "Firebase Admin Boundary 0303"
+    },
+    {
+      "id": "backend-ops-0304",
+      "file": "0304-firestore-write-contract-16.js",
+      "category": "firestore",
+      "name": "Firestore Write Contract 0304"
+    },
+    {
+      "id": "backend-ops-0305",
+      "file": "0305-storage-object-policy-16.js",
+      "category": "storage",
+      "name": "Storage Object Policy 0305"
+    },
+    {
+      "id": "backend-ops-0306",
+      "file": "0306-billing-event-reconciler-16.js",
+      "category": "billing",
+      "name": "Billing Event Reconciler 0306"
+    },
+    {
+      "id": "backend-ops-0307",
+      "file": "0307-notification-dispatch-plan-16.js",
+      "category": "notifications",
+      "name": "Notification Dispatch Plan 0307"
+    },
+    {
+      "id": "backend-ops-0308",
+      "file": "0308-audit-trail-writer-16.js",
+      "category": "audit",
+      "name": "Audit Trail Writer 0308"
+    },
+    {
+      "id": "backend-ops-0309",
+      "file": "0309-security-control-check-16.js",
+      "category": "security",
+      "name": "Security Control Check 0309"
+    },
+    {
+      "id": "backend-ops-0310",
+      "file": "0310-deployment-readiness-gate-16.js",
+      "category": "deployment",
+      "name": "Deployment Readiness Gate 0310"
+    },
+    {
+      "id": "backend-ops-0311",
+      "file": "0311-monitoring-signal-map-16.js",
+      "category": "monitoring",
+      "name": "Monitoring Signal Map 0311"
+    },
+    {
+      "id": "backend-ops-0312",
+      "file": "0312-health-probe-definition-16.js",
+      "category": "health",
+      "name": "Health Probe Definition 0312"
+    },
+    {
+      "id": "backend-ops-0313",
+      "file": "0313-smoke-test-scenario-16.js",
+      "category": "smoke-testing",
+      "name": "Smoke Test Scenario 0313"
+    },
+    {
+      "id": "backend-ops-0314",
+      "file": "0314-validation-schema-contract-16.js",
+      "category": "validation",
+      "name": "Validation Schema Contract 0314"
+    },
+    {
+      "id": "backend-ops-0315",
+      "file": "0315-rate-limit-policy-16.js",
+      "category": "rate-limit",
+      "name": "Rate Limit Policy 0315"
+    },
+    {
+      "id": "backend-ops-0316",
+      "file": "0316-data-retention-rule-16.js",
+      "category": "data-retention",
+      "name": "Data Retention Rule 0316"
+    },
+    {
+      "id": "backend-ops-0317",
+      "file": "0317-backup-job-definition-16.js",
+      "category": "backup",
+      "name": "Backup Job Definition 0317"
+    },
+    {
+      "id": "backend-ops-0318",
+      "file": "0318-recovery-runbook-step-16.js",
+      "category": "recovery",
+      "name": "Recovery Runbook Step 0318"
+    },
+    {
+      "id": "backend-ops-0319",
+      "file": "0319-queue-worker-contract-16.js",
+      "category": "queueing",
+      "name": "Queue Worker Contract 0319"
+    },
+    {
+      "id": "backend-ops-0320",
+      "file": "0320-scheduled-task-window-16.js",
+      "category": "scheduling",
+      "name": "Scheduled Task Window 0320"
+    },
+    {
+      "id": "backend-ops-0321",
+      "file": "0321-identity-session-guard-17.js",
+      "category": "auth",
+      "name": "Identity Session Guard 0321"
+    },
+    {
+      "id": "backend-ops-0322",
+      "file": "0322-api-contract-handler-17.js",
+      "category": "api",
+      "name": "API Contract Handler 0322"
+    },
+    {
+      "id": "backend-ops-0323",
+      "file": "0323-firebase-admin-boundary-17.js",
+      "category": "firebase",
+      "name": "Firebase Admin Boundary 0323"
+    },
+    {
+      "id": "backend-ops-0324",
+      "file": "0324-firestore-write-contract-17.js",
+      "category": "firestore",
+      "name": "Firestore Write Contract 0324"
+    },
+    {
+      "id": "backend-ops-0325",
+      "file": "0325-storage-object-policy-17.js",
+      "category": "storage",
+      "name": "Storage Object Policy 0325"
+    },
+    {
+      "id": "backend-ops-0326",
+      "file": "0326-billing-event-reconciler-17.js",
+      "category": "billing",
+      "name": "Billing Event Reconciler 0326"
+    },
+    {
+      "id": "backend-ops-0327",
+      "file": "0327-notification-dispatch-plan-17.js",
+      "category": "notifications",
+      "name": "Notification Dispatch Plan 0327"
+    },
+    {
+      "id": "backend-ops-0328",
+      "file": "0328-audit-trail-writer-17.js",
+      "category": "audit",
+      "name": "Audit Trail Writer 0328"
+    },
+    {
+      "id": "backend-ops-0329",
+      "file": "0329-security-control-check-17.js",
+      "category": "security",
+      "name": "Security Control Check 0329"
+    },
+    {
+      "id": "backend-ops-0330",
+      "file": "0330-deployment-readiness-gate-17.js",
+      "category": "deployment",
+      "name": "Deployment Readiness Gate 0330"
+    },
+    {
+      "id": "backend-ops-0331",
+      "file": "0331-monitoring-signal-map-17.js",
+      "category": "monitoring",
+      "name": "Monitoring Signal Map 0331"
+    },
+    {
+      "id": "backend-ops-0332",
+      "file": "0332-health-probe-definition-17.js",
+      "category": "health",
+      "name": "Health Probe Definition 0332"
+    },
+    {
+      "id": "backend-ops-0333",
+      "file": "0333-smoke-test-scenario-17.js",
+      "category": "smoke-testing",
+      "name": "Smoke Test Scenario 0333"
+    },
+    {
+      "id": "backend-ops-0334",
+      "file": "0334-validation-schema-contract-17.js",
+      "category": "validation",
+      "name": "Validation Schema Contract 0334"
+    }
+  ],
+  "skippedExistingFiles": []
+}

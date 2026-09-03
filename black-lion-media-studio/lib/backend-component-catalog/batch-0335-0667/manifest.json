@@ -1,0 +1,2008 @@
+{
+  "batch": "0335-0667",
+  "type": "backend-operational-component-catalog",
+  "runtimeWiring": false,
+  "createdCount": 333,
+  "skippedExistingCount": 0,
+  "components": [
+    {
+      "id": "backend-ops-0335",
+      "file": "0335-primary-auth-access-control-contract.js",
+      "name": "0335 Primary Access Control Contract",
+      "category": "auth"
+    },
+    {
+      "id": "backend-ops-0336",
+      "file": "0336-primary-api-api-operation-contract.js",
+      "name": "0336 Primary API Operation Contract",
+      "category": "api"
+    },
+    {
+      "id": "backend-ops-0337",
+      "file": "0337-primary-firebase-firebase-service-contract.js",
+      "name": "0337 Primary Firebase Service Contract",
+      "category": "firebase"
+    },
+    {
+      "id": "backend-ops-0338",
+      "file": "0338-primary-firestore-firestore-data-contract.js",
+      "name": "0338 Primary Firestore Data Contract",
+      "category": "firestore"
+    },
+    {
+      "id": "backend-ops-0339",
+      "file": "0339-primary-storage-storage-asset-contract.js",
+      "name": "0339 Primary Storage Asset Contract",
+      "category": "storage"
+    },
+    {
+      "id": "backend-ops-0340",
+      "file": "0340-primary-billing-billing-control-contract.js",
+      "name": "0340 Primary Billing Control Contract",
+      "category": "billing"
+    },
+    {
+      "id": "backend-ops-0341",
+      "file": "0341-primary-notifications-notification-delivery-contract.js",
+      "name": "0341 Primary Notification Delivery Contract",
+      "category": "notifications"
+    },
+    {
+      "id": "backend-ops-0342",
+      "file": "0342-primary-audit-audit-event-contract.js",
+      "name": "0342 Primary Audit Event Contract",
+      "category": "audit"
+    },
+    {
+      "id": "backend-ops-0343",
+      "file": "0343-primary-security-security-guardrail-contract.js",
+      "name": "0343 Primary Security Guardrail Contract",
+      "category": "security"
+    },
+    {
+      "id": "backend-ops-0344",
+      "file": "0344-primary-deployment-deployment-readiness-contract.js",
+      "name": "0344 Primary Deployment Readiness Contract",
+      "category": "deployment"
+    },
+    {
+      "id": "backend-ops-0345",
+      "file": "0345-primary-monitoring-monitoring-signal-contract.js",
+      "name": "0345 Primary Monitoring Signal Contract",
+      "category": "monitoring"
+    },
+    {
+      "id": "backend-ops-0346",
+      "file": "0346-primary-health-health-check-contract.js",
+      "name": "0346 Primary Health Check Contract",
+      "category": "health"
+    },
+    {
+      "id": "backend-ops-0347",
+      "file": "0347-primary-smoke-testing-smoke-test-contract.js",
+      "name": "0347 Primary Smoke Test Contract",
+      "category": "smoke-testing"
+    },
+    {
+      "id": "backend-ops-0348",
+      "file": "0348-primary-validation-validation-rule-contract.js",
+      "name": "0348 Primary Validation Rule Contract",
+      "category": "validation"
+    },
+    {
+      "id": "backend-ops-0349",
+      "file": "0349-primary-rate-limit-rate-limit-contract.js",
+      "name": "0349 Primary Rate Limit Contract",
+      "category": "rate-limit"
+    },
+    {
+      "id": "backend-ops-0350",
+      "file": "0350-primary-data-retention-data-retention-contract.js",
+      "name": "0350 Primary Data Retention Contract",
+      "category": "data-retention"
+    },
+    {
+      "id": "backend-ops-0351",
+      "file": "0351-primary-backup-backup-procedure-contract.js",
+      "name": "0351 Primary Backup Procedure Contract",
+      "category": "backup"
+    },
+    {
+      "id": "backend-ops-0352",
+      "file": "0352-primary-recovery-recovery-runbook-contract.js",
+      "name": "0352 Primary Recovery Runbook Contract",
+      "category": "recovery"
+    },
+    {
+      "id": "backend-ops-0353",
+      "file": "0353-primary-queueing-queue-worker-contract.js",
+      "name": "0353 Primary Queue Worker Contract",
+      "category": "queueing"
+    },
+    {
+      "id": "backend-ops-0354",
+      "file": "0354-primary-scheduling-scheduled-task-contract.js",
+      "name": "0354 Primary Scheduled Task Contract",
+      "category": "scheduling"
+    },
+    {
+      "id": "backend-ops-0355",
+      "file": "0355-scoped-auth-access-control-contract.js",
+      "name": "0355 Scoped Access Control Contract",
+      "category": "auth"
+    },
+    {
+      "id": "backend-ops-0356",
+      "file": "0356-scoped-api-api-operation-contract.js",
+      "name": "0356 Scoped API Operation Contract",
+      "category": "api"
+    },
+    {
+      "id": "backend-ops-0357",
+      "file": "0357-scoped-firebase-firebase-service-contract.js",
+      "name": "0357 Scoped Firebase Service Contract",
+      "category": "firebase"
+    },
+    {
+      "id": "backend-ops-0358",
+      "file": "0358-scoped-firestore-firestore-data-contract.js",
+      "name": "0358 Scoped Firestore Data Contract",
+      "category": "firestore"
+    },
+    {
+      "id": "backend-ops-0359",
+      "file": "0359-scoped-storage-storage-asset-contract.js",
+      "name": "0359 Scoped Storage Asset Contract",
+      "category": "storage"
+    },
+    {
+      "id": "backend-ops-0360",
+      "file": "0360-scoped-billing-billing-control-contract.js",
+      "name": "0360 Scoped Billing Control Contract",
+      "category": "billing"
+    },
+    {
+      "id": "backend-ops-0361",
+      "file": "0361-scoped-notifications-notification-delivery-contract.js",
+      "name": "0361 Scoped Notification Delivery Contract",
+      "category": "notifications"
+    },
+    {
+      "id": "backend-ops-0362",
+      "file": "0362-scoped-audit-audit-event-contract.js",
+      "name": "0362 Scoped Audit Event Contract",
+      "category": "audit"
+    },
+    {
+      "id": "backend-ops-0363",
+      "file": "0363-scoped-security-security-guardrail-contract.js",
+      "name": "0363 Scoped Security Guardrail Contract",
+      "category": "security"
+    },
+    {
+      "id": "backend-ops-0364",
+      "file": "0364-scoped-deployment-deployment-readiness-contract.js",
+      "name": "0364 Scoped Deployment Readiness Contract",
+      "category": "deployment"
+    },
+    {
+      "id": "backend-ops-0365",
+      "file": "0365-scoped-monitoring-monitoring-signal-contract.js",
+      "name": "0365 Scoped Monitoring Signal Contract",
+      "category": "monitoring"
+    },
+    {
+      "id": "backend-ops-0366",
+      "file": "0366-scoped-health-health-check-contract.js",
+      "name": "0366 Scoped Health Check Contract",
+      "category": "health"
+    },
+    {
+      "id": "backend-ops-0367",
+      "file": "0367-scoped-smoke-testing-smoke-test-contract.js",
+      "name": "0367 Scoped Smoke Test Contract",
+      "category": "smoke-testing"
+    },
+    {
+      "id": "backend-ops-0368",
+      "file": "0368-scoped-validation-validation-rule-contract.js",
+      "name": "0368 Scoped Validation Rule Contract",
+      "category": "validation"
+    },
+    {
+      "id": "backend-ops-0369",
+      "file": "0369-scoped-rate-limit-rate-limit-contract.js",
+      "name": "0369 Scoped Rate Limit Contract",
+      "category": "rate-limit"
+    },
+    {
+      "id": "backend-ops-0370",
+      "file": "0370-scoped-data-retention-data-retention-contract.js",
+      "name": "0370 Scoped Data Retention Contract",
+      "category": "data-retention"
+    },
+    {
+      "id": "backend-ops-0371",
+      "file": "0371-scoped-backup-backup-procedure-contract.js",
+      "name": "0371 Scoped Backup Procedure Contract",
+      "category": "backup"
+    },
+    {
+      "id": "backend-ops-0372",
+      "file": "0372-scoped-recovery-recovery-runbook-contract.js",
+      "name": "0372 Scoped Recovery Runbook Contract",
+      "category": "recovery"
+    },
+    {
+      "id": "backend-ops-0373",
+      "file": "0373-scoped-queueing-queue-worker-contract.js",
+      "name": "0373 Scoped Queue Worker Contract",
+      "category": "queueing"
+    },
+    {
+      "id": "backend-ops-0374",
+      "file": "0374-scoped-scheduling-scheduled-task-contract.js",
+      "name": "0374 Scoped Scheduled Task Contract",
+      "category": "scheduling"
+    },
+    {
+      "id": "backend-ops-0375",
+      "file": "0375-verified-auth-access-control-contract.js",
+      "name": "0375 Verified Access Control Contract",
+      "category": "auth"
+    },
+    {
+      "id": "backend-ops-0376",
+      "file": "0376-verified-api-api-operation-contract.js",
+      "name": "0376 Verified API Operation Contract",
+      "category": "api"
+    },
+    {
+      "id": "backend-ops-0377",
+      "file": "0377-verified-firebase-firebase-service-contract.js",
+      "name": "0377 Verified Firebase Service Contract",
+      "category": "firebase"
+    },
+    {
+      "id": "backend-ops-0378",
+      "file": "0378-verified-firestore-firestore-data-contract.js",
+      "name": "0378 Verified Firestore Data Contract",
+      "category": "firestore"
+    },
+    {
+      "id": "backend-ops-0379",
+      "file": "0379-verified-storage-storage-asset-contract.js",
+      "name": "0379 Verified Storage Asset Contract",
+      "category": "storage"
+    },
+    {
+      "id": "backend-ops-0380",
+      "file": "0380-verified-billing-billing-control-contract.js",
+      "name": "0380 Verified Billing Control Contract",
+      "category": "billing"
+    },
+    {
+      "id": "backend-ops-0381",
+      "file": "0381-verified-notifications-notification-delivery-contract.js",
+      "name": "0381 Verified Notification Delivery Contract",
+      "category": "notifications"
+    },
+    {
+      "id": "backend-ops-0382",
+      "file": "0382-verified-audit-audit-event-contract.js",
+      "name": "0382 Verified Audit Event Contract",
+      "category": "audit"
+    },
+    {
+      "id": "backend-ops-0383",
+      "file": "0383-verified-security-security-guardrail-contract.js",
+      "name": "0383 Verified Security Guardrail Contract",
+      "category": "security"
+    },
+    {
+      "id": "backend-ops-0384",
+      "file": "0384-verified-deployment-deployment-readiness-contract.js",
+      "name": "0384 Verified Deployment Readiness Contract",
+      "category": "deployment"
+    },
+    {
+      "id": "backend-ops-0385",
+      "file": "0385-verified-monitoring-monitoring-signal-contract.js",
+      "name": "0385 Verified Monitoring Signal Contract",
+      "category": "monitoring"
+    },
+    {
+      "id": "backend-ops-0386",
+      "file": "0386-verified-health-health-check-contract.js",
+      "name": "0386 Verified Health Check Contract",
+      "category": "health"
+    },
+    {
+      "id": "backend-ops-0387",
+      "file": "0387-verified-smoke-testing-smoke-test-contract.js",
+      "name": "0387 Verified Smoke Test Contract",
+      "category": "smoke-testing"
+    },
+    {
+      "id": "backend-ops-0388",
+      "file": "0388-verified-validation-validation-rule-contract.js",
+      "name": "0388 Verified Validation Rule Contract",
+      "category": "validation"
+    },
+    {
+      "id": "backend-ops-0389",
+      "file": "0389-verified-rate-limit-rate-limit-contract.js",
+      "name": "0389 Verified Rate Limit Contract",
+      "category": "rate-limit"
+    },
+    {
+      "id": "backend-ops-0390",
+      "file": "0390-verified-data-retention-data-retention-contract.js",
+      "name": "0390 Verified Data Retention Contract",
+      "category": "data-retention"
+    },
+    {
+      "id": "backend-ops-0391",
+      "file": "0391-verified-backup-backup-procedure-contract.js",
+      "name": "0391 Verified Backup Procedure Contract",
+      "category": "backup"
+    },
+    {
+      "id": "backend-ops-0392",
+      "file": "0392-verified-recovery-recovery-runbook-contract.js",
+      "name": "0392 Verified Recovery Runbook Contract",
+      "category": "recovery"
+    },
+    {
+      "id": "backend-ops-0393",
+      "file": "0393-verified-queueing-queue-worker-contract.js",
+      "name": "0393 Verified Queue Worker Contract",
+      "category": "queueing"
+    },
+    {
+      "id": "backend-ops-0394",
+      "file": "0394-verified-scheduling-scheduled-task-contract.js",
+      "name": "0394 Verified Scheduled Task Contract",
+      "category": "scheduling"
+    },
+    {
+      "id": "backend-ops-0395",
+      "file": "0395-managed-auth-access-control-contract.js",
+      "name": "0395 Managed Access Control Contract",
+      "category": "auth"
+    },
+    {
+      "id": "backend-ops-0396",
+      "file": "0396-managed-api-api-operation-contract.js",
+      "name": "0396 Managed API Operation Contract",
+      "category": "api"
+    },
+    {
+      "id": "backend-ops-0397",
+      "file": "0397-managed-firebase-firebase-service-contract.js",
+      "name": "0397 Managed Firebase Service Contract",
+      "category": "firebase"
+    },
+    {
+      "id": "backend-ops-0398",
+      "file": "0398-managed-firestore-firestore-data-contract.js",
+      "name": "0398 Managed Firestore Data Contract",
+      "category": "firestore"
+    },
+    {
+      "id": "backend-ops-0399",
+      "file": "0399-managed-storage-storage-asset-contract.js",
+      "name": "0399 Managed Storage Asset Contract",
+      "category": "storage"
+    },
+    {
+      "id": "backend-ops-0400",
+      "file": "0400-managed-billing-billing-control-contract.js",
+      "name": "0400 Managed Billing Control Contract",
+      "category": "billing"
+    },
+    {
+      "id": "backend-ops-0401",
+      "file": "0401-managed-notifications-notification-delivery-contract.js",
+      "name": "0401 Managed Notification Delivery Contract",
+      "category": "notifications"
+    },
+    {
+      "id": "backend-ops-0402",
+      "file": "0402-managed-audit-audit-event-contract.js",
+      "name": "0402 Managed Audit Event Contract",
+      "category": "audit"
+    },
+    {
+      "id": "backend-ops-0403",
+      "file": "0403-managed-security-security-guardrail-contract.js",
+      "name": "0403 Managed Security Guardrail Contract",
+      "category": "security"
+    },
+    {
+      "id": "backend-ops-0404",
+      "file": "0404-managed-deployment-deployment-readiness-contract.js",
+      "name": "0404 Managed Deployment Readiness Contract",
+      "category": "deployment"
+    },
+    {
+      "id": "backend-ops-0405",
+      "file": "0405-managed-monitoring-monitoring-signal-contract.js",
+      "name": "0405 Managed Monitoring Signal Contract",
+      "category": "monitoring"
+    },
+    {
+      "id": "backend-ops-0406",
+      "file": "0406-managed-health-health-check-contract.js",
+      "name": "0406 Managed Health Check Contract",
+      "category": "health"
+    },
+    {
+      "id": "backend-ops-0407",
+      "file": "0407-managed-smoke-testing-smoke-test-contract.js",
+      "name": "0407 Managed Smoke Test Contract",
+      "category": "smoke-testing"
+    },
+    {
+      "id": "backend-ops-0408",
+      "file": "0408-managed-validation-validation-rule-contract.js",
+      "name": "0408 Managed Validation Rule Contract",
+      "category": "validation"
+    },
+    {
+      "id": "backend-ops-0409",
+      "file": "0409-managed-rate-limit-rate-limit-contract.js",
+      "name": "0409 Managed Rate Limit Contract",
+      "category": "rate-limit"
+    },
+    {
+      "id": "backend-ops-0410",
+      "file": "0410-managed-data-retention-data-retention-contract.js",
+      "name": "0410 Managed Data Retention Contract",
+      "category": "data-retention"
+    },
+    {
+      "id": "backend-ops-0411",
+      "file": "0411-managed-backup-backup-procedure-contract.js",
+      "name": "0411 Managed Backup Procedure Contract",
+      "category": "backup"
+    },
+    {
+      "id": "backend-ops-0412",
+      "file": "0412-managed-recovery-recovery-runbook-contract.js",
+      "name": "0412 Managed Recovery Runbook Contract",
+      "category": "recovery"
+    },
+    {
+      "id": "backend-ops-0413",
+      "file": "0413-managed-queueing-queue-worker-contract.js",
+      "name": "0413 Managed Queue Worker Contract",
+      "category": "queueing"
+    },
+    {
+      "id": "backend-ops-0414",
+      "file": "0414-managed-scheduling-scheduled-task-contract.js",
+      "name": "0414 Managed Scheduled Task Contract",
+      "category": "scheduling"
+    },
+    {
+      "id": "backend-ops-0415",
+      "file": "0415-resilient-auth-access-control-contract.js",
+      "name": "0415 Resilient Access Control Contract",
+      "category": "auth"
+    },
+    {
+      "id": "backend-ops-0416",
+      "file": "0416-resilient-api-api-operation-contract.js",
+      "name": "0416 Resilient API Operation Contract",
+      "category": "api"
+    },
+    {
+      "id": "backend-ops-0417",
+      "file": "0417-resilient-firebase-firebase-service-contract.js",
+      "name": "0417 Resilient Firebase Service Contract",
+      "category": "firebase"
+    },
+    {
+      "id": "backend-ops-0418",
+      "file": "0418-resilient-firestore-firestore-data-contract.js",
+      "name": "0418 Resilient Firestore Data Contract",
+      "category": "firestore"
+    },
+    {
+      "id": "backend-ops-0419",
+      "file": "0419-resilient-storage-storage-asset-contract.js",
+      "name": "0419 Resilient Storage Asset Contract",
+      "category": "storage"
+    },
+    {
+      "id": "backend-ops-0420",
+      "file": "0420-resilient-billing-billing-control-contract.js",
+      "name": "0420 Resilient Billing Control Contract",
+      "category": "billing"
+    },
+    {
+      "id": "backend-ops-0421",
+      "file": "0421-resilient-notifications-notification-delivery-contract.js",
+      "name": "0421 Resilient Notification Delivery Contract",
+      "category": "notifications"
+    },
+    {
+      "id": "backend-ops-0422",
+      "file": "0422-resilient-audit-audit-event-contract.js",
+      "name": "0422 Resilient Audit Event Contract",
+      "category": "audit"
+    },
+    {
+      "id": "backend-ops-0423",
+      "file": "0423-resilient-security-security-guardrail-contract.js",
+      "name": "0423 Resilient Security Guardrail Contract",
+      "category": "security"
+    },
+    {
+      "id": "backend-ops-0424",
+      "file": "0424-resilient-deployment-deployment-readiness-contract.js",
+      "name": "0424 Resilient Deployment Readiness Contract",
+      "category": "deployment"
+    },
+    {
+      "id": "backend-ops-0425",
+      "file": "0425-resilient-monitoring-monitoring-signal-contract.js",
+      "name": "0425 Resilient Monitoring Signal Contract",
+      "category": "monitoring"
+    },
+    {
+      "id": "backend-ops-0426",
+      "file": "0426-resilient-health-health-check-contract.js",
+      "name": "0426 Resilient Health Check Contract",
+      "category": "health"
+    },
+    {
+      "id": "backend-ops-0427",
+      "file": "0427-resilient-smoke-testing-smoke-test-contract.js",
+      "name": "0427 Resilient Smoke Test Contract",
+      "category": "smoke-testing"
+    },
+    {
+      "id": "backend-ops-0428",
+      "file": "0428-resilient-validation-validation-rule-contract.js",
+      "name": "0428 Resilient Validation Rule Contract",
+      "category": "validation"
+    },
+    {
+      "id": "backend-ops-0429",
+      "file": "0429-resilient-rate-limit-rate-limit-contract.js",
+      "name": "0429 Resilient Rate Limit Contract",
+      "category": "rate-limit"
+    },
+    {
+      "id": "backend-ops-0430",
+      "file": "0430-resilient-data-retention-data-retention-contract.js",
+      "name": "0430 Resilient Data Retention Contract",
+      "category": "data-retention"
+    },
+    {
+      "id": "backend-ops-0431",
+      "file": "0431-resilient-backup-backup-procedure-contract.js",
+      "name": "0431 Resilient Backup Procedure Contract",
+      "category": "backup"
+    },
+    {
+      "id": "backend-ops-0432",
+      "file": "0432-resilient-recovery-recovery-runbook-contract.js",
+      "name": "0432 Resilient Recovery Runbook Contract",
+      "category": "recovery"
+    },
+    {
+      "id": "backend-ops-0433",
+      "file": "0433-resilient-queueing-queue-worker-contract.js",
+      "name": "0433 Resilient Queue Worker Contract",
+      "category": "queueing"
+    },
+    {
+      "id": "backend-ops-0434",
+      "file": "0434-resilient-scheduling-scheduled-task-contract.js",
+      "name": "0434 Resilient Scheduled Task Contract",
+      "category": "scheduling"
+    },
+    {
+      "id": "backend-ops-0435",
+      "file": "0435-guarded-auth-access-control-contract.js",
+      "name": "0435 Guarded Access Control Contract",
+      "category": "auth"
+    },
+    {
+      "id": "backend-ops-0436",
+      "file": "0436-guarded-api-api-operation-contract.js",
+      "name": "0436 Guarded API Operation Contract",
+      "category": "api"
+    },
+    {
+      "id": "backend-ops-0437",
+      "file": "0437-guarded-firebase-firebase-service-contract.js",
+      "name": "0437 Guarded Firebase Service Contract",
+      "category": "firebase"
+    },
+    {
+      "id": "backend-ops-0438",
+      "file": "0438-guarded-firestore-firestore-data-contract.js",
+      "name": "0438 Guarded Firestore Data Contract",
+      "category": "firestore"
+    },
+    {
+      "id": "backend-ops-0439",
+      "file": "0439-guarded-storage-storage-asset-contract.js",
+      "name": "0439 Guarded Storage Asset Contract",
+      "category": "storage"
+    },
+    {
+      "id": "backend-ops-0440",
+      "file": "0440-guarded-billing-billing-control-contract.js",
+      "name": "0440 Guarded Billing Control Contract",
+      "category": "billing"
+    },
+    {
+      "id": "backend-ops-0441",
+      "file": "0441-guarded-notifications-notification-delivery-contract.js",
+      "name": "0441 Guarded Notification Delivery Contract",
+      "category": "notifications"
+    },
+    {
+      "id": "backend-ops-0442",
+      "file": "0442-guarded-audit-audit-event-contract.js",
+      "name": "0442 Guarded Audit Event Contract",
+      "category": "audit"
+    },
+    {
+      "id": "backend-ops-0443",
+      "file": "0443-guarded-security-security-guardrail-contract.js",
+      "name": "0443 Guarded Security Guardrail Contract",
+      "category": "security"
+    },
+    {
+      "id": "backend-ops-0444",
+      "file": "0444-guarded-deployment-deployment-readiness-contract.js",
+      "name": "0444 Guarded Deployment Readiness Contract",
+      "category": "deployment"
+    },
+    {
+      "id": "backend-ops-0445",
+      "file": "0445-guarded-monitoring-monitoring-signal-contract.js",
+      "name": "0445 Guarded Monitoring Signal Contract",
+      "category": "monitoring"
+    },
+    {
+      "id": "backend-ops-0446",
+      "file": "0446-guarded-health-health-check-contract.js",
+      "name": "0446 Guarded Health Check Contract",
+      "category": "health"
+    },
+    {
+      "id": "backend-ops-0447",
+      "file": "0447-guarded-smoke-testing-smoke-test-contract.js",
+      "name": "0447 Guarded Smoke Test Contract",
+      "category": "smoke-testing"
+    },
+    {
+      "id": "backend-ops-0448",
+      "file": "0448-guarded-validation-validation-rule-contract.js",
+      "name": "0448 Guarded Validation Rule Contract",
+      "category": "validation"
+    },
+    {
+      "id": "backend-ops-0449",
+      "file": "0449-guarded-rate-limit-rate-limit-contract.js",
+      "name": "0449 Guarded Rate Limit Contract",
+      "category": "rate-limit"
+    },
+    {
+      "id": "backend-ops-0450",
+      "file": "0450-guarded-data-retention-data-retention-contract.js",
+      "name": "0450 Guarded Data Retention Contract",
+      "category": "data-retention"
+    },
+    {
+      "id": "backend-ops-0451",
+      "file": "0451-guarded-backup-backup-procedure-contract.js",
+      "name": "0451 Guarded Backup Procedure Contract",
+      "category": "backup"
+    },
+    {
+      "id": "backend-ops-0452",
+      "file": "0452-guarded-recovery-recovery-runbook-contract.js",
+      "name": "0452 Guarded Recovery Runbook Contract",
+      "category": "recovery"
+    },
+    {
+      "id": "backend-ops-0453",
+      "file": "0453-guarded-queueing-queue-worker-contract.js",
+      "name": "0453 Guarded Queue Worker Contract",
+      "category": "queueing"
+    },
+    {
+      "id": "backend-ops-0454",
+      "file": "0454-guarded-scheduling-scheduled-task-contract.js",
+      "name": "0454 Guarded Scheduled Task Contract",
+      "category": "scheduling"
+    },
+    {
+      "id": "backend-ops-0455",
+      "file": "0455-observable-auth-access-control-contract.js",
+      "name": "0455 Observable Access Control Contract",
+      "category": "auth"
+    },
+    {
+      "id": "backend-ops-0456",
+      "file": "0456-observable-api-api-operation-contract.js",
+      "name": "0456 Observable API Operation Contract",
+      "category": "api"
+    },
+    {
+      "id": "backend-ops-0457",
+      "file": "0457-observable-firebase-firebase-service-contract.js",
+      "name": "0457 Observable Firebase Service Contract",
+      "category": "firebase"
+    },
+    {
+      "id": "backend-ops-0458",
+      "file": "0458-observable-firestore-firestore-data-contract.js",
+      "name": "0458 Observable Firestore Data Contract",
+      "category": "firestore"
+    },
+    {
+      "id": "backend-ops-0459",
+      "file": "0459-observable-storage-storage-asset-contract.js",
+      "name": "0459 Observable Storage Asset Contract",
+      "category": "storage"
+    },
+    {
+      "id": "backend-ops-0460",
+      "file": "0460-observable-billing-billing-control-contract.js",
+      "name": "0460 Observable Billing Control Contract",
+      "category": "billing"
+    },
+    {
+      "id": "backend-ops-0461",
+      "file": "0461-observable-notifications-notification-delivery-contract.js",
+      "name": "0461 Observable Notification Delivery Contract",
+      "category": "notifications"
+    },
+    {
+      "id": "backend-ops-0462",
+      "file": "0462-observable-audit-audit-event-contract.js",
+      "name": "0462 Observable Audit Event Contract",
+      "category": "audit"
+    },
+    {
+      "id": "backend-ops-0463",
+      "file": "0463-observable-security-security-guardrail-contract.js",
+      "name": "0463 Observable Security Guardrail Contract",
+      "category": "security"
+    },
+    {
+      "id": "backend-ops-0464",
+      "file": "0464-observable-deployment-deployment-readiness-contract.js",
+      "name": "0464 Observable Deployment Readiness Contract",
+      "category": "deployment"
+    },
+    {
+      "id": "backend-ops-0465",
+      "file": "0465-observable-monitoring-monitoring-signal-contract.js",
+      "name": "0465 Observable Monitoring Signal Contract",
+      "category": "monitoring"
+    },
+    {
+      "id": "backend-ops-0466",
+      "file": "0466-observable-health-health-check-contract.js",
+      "name": "0466 Observable Health Check Contract",
+      "category": "health"
+    },
+    {
+      "id": "backend-ops-0467",
+      "file": "0467-observable-smoke-testing-smoke-test-contract.js",
+      "name": "0467 Observable Smoke Test Contract",
+      "category": "smoke-testing"
+    },
+    {
+      "id": "backend-ops-0468",
+      "file": "0468-observable-validation-validation-rule-contract.js",
+      "name": "0468 Observable Validation Rule Contract",
+      "category": "validation"
+    },
+    {
+      "id": "backend-ops-0469",
+      "file": "0469-observable-rate-limit-rate-limit-contract.js",
+      "name": "0469 Observable Rate Limit Contract",
+      "category": "rate-limit"
+    },
+    {
+      "id": "backend-ops-0470",
+      "file": "0470-observable-data-retention-data-retention-contract.js",
+      "name": "0470 Observable Data Retention Contract",
+      "category": "data-retention"
+    },
+    {
+      "id": "backend-ops-0471",
+      "file": "0471-observable-backup-backup-procedure-contract.js",
+      "name": "0471 Observable Backup Procedure Contract",
+      "category": "backup"
+    },
+    {
+      "id": "backend-ops-0472",
+      "file": "0472-observable-recovery-recovery-runbook-contract.js",
+      "name": "0472 Observable Recovery Runbook Contract",
+      "category": "recovery"
+    },
+    {
+      "id": "backend-ops-0473",
+      "file": "0473-observable-queueing-queue-worker-contract.js",
+      "name": "0473 Observable Queue Worker Contract",
+      "category": "queueing"
+    },
+    {
+      "id": "backend-ops-0474",
+      "file": "0474-observable-scheduling-scheduled-task-contract.js",
+      "name": "0474 Observable Scheduled Task Contract",
+      "category": "scheduling"
+    },
+    {
+      "id": "backend-ops-0475",
+      "file": "0475-durable-auth-access-control-contract.js",
+      "name": "0475 Durable Access Control Contract",
+      "category": "auth"
+    },
+    {
+      "id": "backend-ops-0476",
+      "file": "0476-durable-api-api-operation-contract.js",
+      "name": "0476 Durable API Operation Contract",
+      "category": "api"
+    },
+    {
+      "id": "backend-ops-0477",
+      "file": "0477-durable-firebase-firebase-service-contract.js",
+      "name": "0477 Durable Firebase Service Contract",
+      "category": "firebase"
+    },
+    {
+      "id": "backend-ops-0478",
+      "file": "0478-durable-firestore-firestore-data-contract.js",
+      "name": "0478 Durable Firestore Data Contract",
+      "category": "firestore"
+    },
+    {
+      "id": "backend-ops-0479",
+      "file": "0479-durable-storage-storage-asset-contract.js",
+      "name": "0479 Durable Storage Asset Contract",
+      "category": "storage"
+    },
+    {
+      "id": "backend-ops-0480",
+      "file": "0480-durable-billing-billing-control-contract.js",
+      "name": "0480 Durable Billing Control Contract",
+      "category": "billing"
+    },
+    {
+      "id": "backend-ops-0481",
+      "file": "0481-durable-notifications-notification-delivery-contract.js",
+      "name": "0481 Durable Notification Delivery Contract",
+      "category": "notifications"
+    },
+    {
+      "id": "backend-ops-0482",
+      "file": "0482-durable-audit-audit-event-contract.js",
+      "name": "0482 Durable Audit Event Contract",
+      "category": "audit"
+    },
+    {
+      "id": "backend-ops-0483",
+      "file": "0483-durable-security-security-guardrail-contract.js",
+      "name": "0483 Durable Security Guardrail Contract",
+      "category": "security"
+    },
+    {
+      "id": "backend-ops-0484",
+      "file": "0484-durable-deployment-deployment-readiness-contract.js",
+      "name": "0484 Durable Deployment Readiness Contract",
+      "category": "deployment"
+    },
+    {
+      "id": "backend-ops-0485",
+      "file": "0485-durable-monitoring-monitoring-signal-contract.js",
+      "name": "0485 Durable Monitoring Signal Contract",
+      "category": "monitoring"
+    },
+    {
+      "id": "backend-ops-0486",
+      "file": "0486-durable-health-health-check-contract.js",
+      "name": "0486 Durable Health Check Contract",
+      "category": "health"
+    },
+    {
+      "id": "backend-ops-0487",
+      "file": "0487-durable-smoke-testing-smoke-test-contract.js",
+      "name": "0487 Durable Smoke Test Contract",
+      "category": "smoke-testing"
+    },
+    {
+      "id": "backend-ops-0488",
+      "file": "0488-durable-validation-validation-rule-contract.js",
+      "name": "0488 Durable Validation Rule Contract",
+      "category": "validation"
+    },
+    {
+      "id": "backend-ops-0489",
+      "file": "0489-durable-rate-limit-rate-limit-contract.js",
+      "name": "0489 Durable Rate Limit Contract",
+      "category": "rate-limit"
+    },
+    {
+      "id": "backend-ops-0490",
+      "file": "0490-durable-data-retention-data-retention-contract.js",
+      "name": "0490 Durable Data Retention Contract",
+      "category": "data-retention"
+    },
+    {
+      "id": "backend-ops-0491",
+      "file": "0491-durable-backup-backup-procedure-contract.js",
+      "name": "0491 Durable Backup Procedure Contract",
+      "category": "backup"
+    },
+    {
+      "id": "backend-ops-0492",
+      "file": "0492-durable-recovery-recovery-runbook-contract.js",
+      "name": "0492 Durable Recovery Runbook Contract",
+      "category": "recovery"
+    },
+    {
+      "id": "backend-ops-0493",
+      "file": "0493-durable-queueing-queue-worker-contract.js",
+      "name": "0493 Durable Queue Worker Contract",
+      "category": "queueing"
+    },
+    {
+      "id": "backend-ops-0494",
+      "file": "0494-durable-scheduling-scheduled-task-contract.js",
+      "name": "0494 Durable Scheduled Task Contract",
+      "category": "scheduling"
+    },
+    {
+      "id": "backend-ops-0495",
+      "file": "0495-traceable-auth-access-control-contract.js",
+      "name": "0495 Traceable Access Control Contract",
+      "category": "auth"
+    },
+    {
+      "id": "backend-ops-0496",
+      "file": "0496-traceable-api-api-operation-contract.js",
+      "name": "0496 Traceable API Operation Contract",
+      "category": "api"
+    },
+    {
+      "id": "backend-ops-0497",
+      "file": "0497-traceable-firebase-firebase-service-contract.js",
+      "name": "0497 Traceable Firebase Service Contract",
+      "category": "firebase"
+    },
+    {
+      "id": "backend-ops-0498",
+      "file": "0498-traceable-firestore-firestore-data-contract.js",
+      "name": "0498 Traceable Firestore Data Contract",
+      "category": "firestore"
+    },
+    {
+      "id": "backend-ops-0499",
+      "file": "0499-traceable-storage-storage-asset-contract.js",
+      "name": "0499 Traceable Storage Asset Contract",
+      "category": "storage"
+    },
+    {
+      "id": "backend-ops-0500",
+      "file": "0500-traceable-billing-billing-control-contract.js",
+      "name": "0500 Traceable Billing Control Contract",
+      "category": "billing"
+    },
+    {
+      "id": "backend-ops-0501",
+      "file": "0501-traceable-notifications-notification-delivery-contract.js",
+      "name": "0501 Traceable Notification Delivery Contract",
+      "category": "notifications"
+    },
+    {
+      "id": "backend-ops-0502",
+      "file": "0502-traceable-audit-audit-event-contract.js",
+      "name": "0502 Traceable Audit Event Contract",
+      "category": "audit"
+    },
+    {
+      "id": "backend-ops-0503",
+      "file": "0503-traceable-security-security-guardrail-contract.js",
+      "name": "0503 Traceable Security Guardrail Contract",
+      "category": "security"
+    },
+    {
+      "id": "backend-ops-0504",
+      "file": "0504-traceable-deployment-deployment-readiness-contract.js",
+      "name": "0504 Traceable Deployment Readiness Contract",
+      "category": "deployment"
+    },
+    {
+      "id": "backend-ops-0505",
+      "file": "0505-traceable-monitoring-monitoring-signal-contract.js",
+      "name": "0505 Traceable Monitoring Signal Contract",
+      "category": "monitoring"
+    },
+    {
+      "id": "backend-ops-0506",
+      "file": "0506-traceable-health-health-check-contract.js",
+      "name": "0506 Traceable Health Check Contract",
+      "category": "health"
+    },
+    {
+      "id": "backend-ops-0507",
+      "file": "0507-traceable-smoke-testing-smoke-test-contract.js",
+      "name": "0507 Traceable Smoke Test Contract",
+      "category": "smoke-testing"
+    },
+    {
+      "id": "backend-ops-0508",
+      "file": "0508-traceable-validation-validation-rule-contract.js",
+      "name": "0508 Traceable Validation Rule Contract",
+      "category": "validation"
+    },
+    {
+      "id": "backend-ops-0509",
+      "file": "0509-traceable-rate-limit-rate-limit-contract.js",
+      "name": "0509 Traceable Rate Limit Contract",
+      "category": "rate-limit"
+    },
+    {
+      "id": "backend-ops-0510",
+      "file": "0510-traceable-data-retention-data-retention-contract.js",
+      "name": "0510 Traceable Data Retention Contract",
+      "category": "data-retention"
+    },
+    {
+      "id": "backend-ops-0511",
+      "file": "0511-traceable-backup-backup-procedure-contract.js",
+      "name": "0511 Traceable Backup Procedure Contract",
+      "category": "backup"
+    },
+    {
+      "id": "backend-ops-0512",
+      "file": "0512-traceable-recovery-recovery-runbook-contract.js",
+      "name": "0512 Traceable Recovery Runbook Contract",
+      "category": "recovery"
+    },
+    {
+      "id": "backend-ops-0513",
+      "file": "0513-traceable-queueing-queue-worker-contract.js",
+      "name": "0513 Traceable Queue Worker Contract",
+      "category": "queueing"
+    },
+    {
+      "id": "backend-ops-0514",
+      "file": "0514-traceable-scheduling-scheduled-task-contract.js",
+      "name": "0514 Traceable Scheduled Task Contract",
+      "category": "scheduling"
+    },
+    {
+      "id": "backend-ops-0515",
+      "file": "0515-controlled-auth-access-control-contract.js",
+      "name": "0515 Controlled Access Control Contract",
+      "category": "auth"
+    },
+    {
+      "id": "backend-ops-0516",
+      "file": "0516-controlled-api-api-operation-contract.js",
+      "name": "0516 Controlled API Operation Contract",
+      "category": "api"
+    },
+    {
+      "id": "backend-ops-0517",
+      "file": "0517-controlled-firebase-firebase-service-contract.js",
+      "name": "0517 Controlled Firebase Service Contract",
+      "category": "firebase"
+    },
+    {
+      "id": "backend-ops-0518",
+      "file": "0518-controlled-firestore-firestore-data-contract.js",
+      "name": "0518 Controlled Firestore Data Contract",
+      "category": "firestore"
+    },
+    {
+      "id": "backend-ops-0519",
+      "file": "0519-controlled-storage-storage-asset-contract.js",
+      "name": "0519 Controlled Storage Asset Contract",
+      "category": "storage"
+    },
+    {
+      "id": "backend-ops-0520",
+      "file": "0520-controlled-billing-billing-control-contract.js",
+      "name": "0520 Controlled Billing Control Contract",
+      "category": "billing"
+    },
+    {
+      "id": "backend-ops-0521",
+      "file": "0521-controlled-notifications-notification-delivery-contract.js",
+      "name": "0521 Controlled Notification Delivery Contract",
+      "category": "notifications"
+    },
+    {
+      "id": "backend-ops-0522",
+      "file": "0522-controlled-audit-audit-event-contract.js",
+      "name": "0522 Controlled Audit Event Contract",
+      "category": "audit"
+    },
+    {
+      "id": "backend-ops-0523",
+      "file": "0523-controlled-security-security-guardrail-contract.js",
+      "name": "0523 Controlled Security Guardrail Contract",
+      "category": "security"
+    },
+    {
+      "id": "backend-ops-0524",
+      "file": "0524-controlled-deployment-deployment-readiness-contract.js",
+      "name": "0524 Controlled Deployment Readiness Contract",
+      "category": "deployment"
+    },
+    {
+      "id": "backend-ops-0525",
+      "file": "0525-controlled-monitoring-monitoring-signal-contract.js",
+      "name": "0525 Controlled Monitoring Signal Contract",
+      "category": "monitoring"
+    },
+    {
+      "id": "backend-ops-0526",
+      "file": "0526-controlled-health-health-check-contract.js",
+      "name": "0526 Controlled Health Check Contract",
+      "category": "health"
+    },
+    {
+      "id": "backend-ops-0527",
+      "file": "0527-controlled-smoke-testing-smoke-test-contract.js",
+      "name": "0527 Controlled Smoke Test Contract",
+      "category": "smoke-testing"
+    },
+    {
+      "id": "backend-ops-0528",
+      "file": "0528-controlled-validation-validation-rule-contract.js",
+      "name": "0528 Controlled Validation Rule Contract",
+      "category": "validation"
+    },
+    {
+      "id": "backend-ops-0529",
+      "file": "0529-controlled-rate-limit-rate-limit-contract.js",
+      "name": "0529 Controlled Rate Limit Contract",
+      "category": "rate-limit"
+    },
+    {
+      "id": "backend-ops-0530",
+      "file": "0530-controlled-data-retention-data-retention-contract.js",
+      "name": "0530 Controlled Data Retention Contract",
+      "category": "data-retention"
+    },
+    {
+      "id": "backend-ops-0531",
+      "file": "0531-controlled-backup-backup-procedure-contract.js",
+      "name": "0531 Controlled Backup Procedure Contract",
+      "category": "backup"
+    },
+    {
+      "id": "backend-ops-0532",
+      "file": "0532-controlled-recovery-recovery-runbook-contract.js",
+      "name": "0532 Controlled Recovery Runbook Contract",
+      "category": "recovery"
+    },
+    {
+      "id": "backend-ops-0533",
+      "file": "0533-controlled-queueing-queue-worker-contract.js",
+      "name": "0533 Controlled Queue Worker Contract",
+      "category": "queueing"
+    },
+    {
+      "id": "backend-ops-0534",
+      "file": "0534-controlled-scheduling-scheduled-task-contract.js",
+      "name": "0534 Controlled Scheduled Task Contract",
+      "category": "scheduling"
+    },
+    {
+      "id": "backend-ops-0535",
+      "file": "0535-idempotent-auth-access-control-contract.js",
+      "name": "0535 Idempotent Access Control Contract",
+      "category": "auth"
+    },
+    {
+      "id": "backend-ops-0536",
+      "file": "0536-idempotent-api-api-operation-contract.js",
+      "name": "0536 Idempotent API Operation Contract",
+      "category": "api"
+    },
+    {
+      "id": "backend-ops-0537",
+      "file": "0537-idempotent-firebase-firebase-service-contract.js",
+      "name": "0537 Idempotent Firebase Service Contract",
+      "category": "firebase"
+    },
+    {
+      "id": "backend-ops-0538",
+      "file": "0538-idempotent-firestore-firestore-data-contract.js",
+      "name": "0538 Idempotent Firestore Data Contract",
+      "category": "firestore"
+    },
+    {
+      "id": "backend-ops-0539",
+      "file": "0539-idempotent-storage-storage-asset-contract.js",
+      "name": "0539 Idempotent Storage Asset Contract",
+      "category": "storage"
+    },
+    {
+      "id": "backend-ops-0540",
+      "file": "0540-idempotent-billing-billing-control-contract.js",
+      "name": "0540 Idempotent Billing Control Contract",
+      "category": "billing"
+    },
+    {
+      "id": "backend-ops-0541",
+      "file": "0541-idempotent-notifications-notification-delivery-contract.js",
+      "name": "0541 Idempotent Notification Delivery Contract",
+      "category": "notifications"
+    },
+    {
+      "id": "backend-ops-0542",
+      "file": "0542-idempotent-audit-audit-event-contract.js",
+      "name": "0542 Idempotent Audit Event Contract",
+      "category": "audit"
+    },
+    {
+      "id": "backend-ops-0543",
+      "file": "0543-idempotent-security-security-guardrail-contract.js",
+      "name": "0543 Idempotent Security Guardrail Contract",
+      "category": "security"
+    },
+    {
+      "id": "backend-ops-0544",
+      "file": "0544-idempotent-deployment-deployment-readiness-contract.js",
+      "name": "0544 Idempotent Deployment Readiness Contract",
+      "category": "deployment"
+    },
+    {
+      "id": "backend-ops-0545",
+      "file": "0545-idempotent-monitoring-monitoring-signal-contract.js",
+      "name": "0545 Idempotent Monitoring Signal Contract",
+      "category": "monitoring"
+    },
+    {
+      "id": "backend-ops-0546",
+      "file": "0546-idempotent-health-health-check-contract.js",
+      "name": "0546 Idempotent Health Check Contract",
+      "category": "health"
+    },
+    {
+      "id": "backend-ops-0547",
+      "file": "0547-idempotent-smoke-testing-smoke-test-contract.js",
+      "name": "0547 Idempotent Smoke Test Contract",
+      "category": "smoke-testing"
+    },
+    {
+      "id": "backend-ops-0548",
+      "file": "0548-idempotent-validation-validation-rule-contract.js",
+      "name": "0548 Idempotent Validation Rule Contract",
+      "category": "validation"
+    },
+    {
+      "id": "backend-ops-0549",
+      "file": "0549-idempotent-rate-limit-rate-limit-contract.js",
+      "name": "0549 Idempotent Rate Limit Contract",
+      "category": "rate-limit"
+    },
+    {
+      "id": "backend-ops-0550",
+      "file": "0550-idempotent-data-retention-data-retention-contract.js",
+      "name": "0550 Idempotent Data Retention Contract",
+      "category": "data-retention"
+    },
+    {
+      "id": "backend-ops-0551",
+      "file": "0551-idempotent-backup-backup-procedure-contract.js",
+      "name": "0551 Idempotent Backup Procedure Contract",
+      "category": "backup"
+    },
+    {
+      "id": "backend-ops-0552",
+      "file": "0552-idempotent-recovery-recovery-runbook-contract.js",
+      "name": "0552 Idempotent Recovery Runbook Contract",
+      "category": "recovery"
+    },
+    {
+      "id": "backend-ops-0553",
+      "file": "0553-idempotent-queueing-queue-worker-contract.js",
+      "name": "0553 Idempotent Queue Worker Contract",
+      "category": "queueing"
+    },
+    {
+      "id": "backend-ops-0554",
+      "file": "0554-idempotent-scheduling-scheduled-task-contract.js",
+      "name": "0554 Idempotent Scheduled Task Contract",
+      "category": "scheduling"
+    },
+    {
+      "id": "backend-ops-0555",
+      "file": "0555-versioned-auth-access-control-contract.js",
+      "name": "0555 Versioned Access Control Contract",
+      "category": "auth"
+    },
+    {
+      "id": "backend-ops-0556",
+      "file": "0556-versioned-api-api-operation-contract.js",
+      "name": "0556 Versioned API Operation Contract",
+      "category": "api"
+    },
+    {
+      "id": "backend-ops-0557",
+      "file": "0557-versioned-firebase-firebase-service-contract.js",
+      "name": "0557 Versioned Firebase Service Contract",
+      "category": "firebase"
+    },
+    {
+      "id": "backend-ops-0558",
+      "file": "0558-versioned-firestore-firestore-data-contract.js",
+      "name": "0558 Versioned Firestore Data Contract",
+      "category": "firestore"
+    },
+    {
+      "id": "backend-ops-0559",
+      "file": "0559-versioned-storage-storage-asset-contract.js",
+      "name": "0559 Versioned Storage Asset Contract",
+      "category": "storage"
+    },
+    {
+      "id": "backend-ops-0560",
+      "file": "0560-versioned-billing-billing-control-contract.js",
+      "name": "0560 Versioned Billing Control Contract",
+      "category": "billing"
+    },
+    {
+      "id": "backend-ops-0561",
+      "file": "0561-versioned-notifications-notification-delivery-contract.js",
+      "name": "0561 Versioned Notification Delivery Contract",
+      "category": "notifications"
+    },
+    {
+      "id": "backend-ops-0562",
+      "file": "0562-versioned-audit-audit-event-contract.js",
+      "name": "0562 Versioned Audit Event Contract",
+      "category": "audit"
+    },
+    {
+      "id": "backend-ops-0563",
+      "file": "0563-versioned-security-security-guardrail-contract.js",
+      "name": "0563 Versioned Security Guardrail Contract",
+      "category": "security"
+    },
+    {
+      "id": "backend-ops-0564",
+      "file": "0564-versioned-deployment-deployment-readiness-contract.js",
+      "name": "0564 Versioned Deployment Readiness Contract",
+      "category": "deployment"
+    },
+    {
+      "id": "backend-ops-0565",
+      "file": "0565-versioned-monitoring-monitoring-signal-contract.js",
+      "name": "0565 Versioned Monitoring Signal Contract",
+      "category": "monitoring"
+    },
+    {
+      "id": "backend-ops-0566",
+      "file": "0566-versioned-health-health-check-contract.js",
+      "name": "0566 Versioned Health Check Contract",
+      "category": "health"
+    },
+    {
+      "id": "backend-ops-0567",
+      "file": "0567-versioned-smoke-testing-smoke-test-contract.js",
+      "name": "0567 Versioned Smoke Test Contract",
+      "category": "smoke-testing"
+    },
+    {
+      "id": "backend-ops-0568",
+      "file": "0568-versioned-validation-validation-rule-contract.js",
+      "name": "0568 Versioned Validation Rule Contract",
+      "category": "validation"
+    },
+    {
+      "id": "backend-ops-0569",
+      "file": "0569-versioned-rate-limit-rate-limit-contract.js",
+      "name": "0569 Versioned Rate Limit Contract",
+      "category": "rate-limit"
+    },
+    {
+      "id": "backend-ops-0570",
+      "file": "0570-versioned-data-retention-data-retention-contract.js",
+      "name": "0570 Versioned Data Retention Contract",
+      "category": "data-retention"
+    },
+    {
+      "id": "backend-ops-0571",
+      "file": "0571-versioned-backup-backup-procedure-contract.js",
+      "name": "0571 Versioned Backup Procedure Contract",
+      "category": "backup"
+    },
+    {
+      "id": "backend-ops-0572",
+      "file": "0572-versioned-recovery-recovery-runbook-contract.js",
+      "name": "0572 Versioned Recovery Runbook Contract",
+      "category": "recovery"
+    },
+    {
+      "id": "backend-ops-0573",
+      "file": "0573-versioned-queueing-queue-worker-contract.js",
+      "name": "0573 Versioned Queue Worker Contract",
+      "category": "queueing"
+    },
+    {
+      "id": "backend-ops-0574",
+      "file": "0574-versioned-scheduling-scheduled-task-contract.js",
+      "name": "0574 Versioned Scheduled Task Contract",
+      "category": "scheduling"
+    },
+    {
+      "id": "backend-ops-0575",
+      "file": "0575-hardened-auth-access-control-contract.js",
+      "name": "0575 Hardened Access Control Contract",
+      "category": "auth"
+    },
+    {
+      "id": "backend-ops-0576",
+      "file": "0576-hardened-api-api-operation-contract.js",
+      "name": "0576 Hardened API Operation Contract",
+      "category": "api"
+    },
+    {
+      "id": "backend-ops-0577",
+      "file": "0577-hardened-firebase-firebase-service-contract.js",
+      "name": "0577 Hardened Firebase Service Contract",
+      "category": "firebase"
+    },
+    {
+      "id": "backend-ops-0578",
+      "file": "0578-hardened-firestore-firestore-data-contract.js",
+      "name": "0578 Hardened Firestore Data Contract",
+      "category": "firestore"
+    },
+    {
+      "id": "backend-ops-0579",
+      "file": "0579-hardened-storage-storage-asset-contract.js",
+      "name": "0579 Hardened Storage Asset Contract",
+      "category": "storage"
+    },
+    {
+      "id": "backend-ops-0580",
+      "file": "0580-hardened-billing-billing-control-contract.js",
+      "name": "0580 Hardened Billing Control Contract",
+      "category": "billing"
+    },
+    {
+      "id": "backend-ops-0581",
+      "file": "0581-hardened-notifications-notification-delivery-contract.js",
+      "name": "0581 Hardened Notification Delivery Contract",
+      "category": "notifications"
+    },
+    {
+      "id": "backend-ops-0582",
+      "file": "0582-hardened-audit-audit-event-contract.js",
+      "name": "0582 Hardened Audit Event Contract",
+      "category": "audit"
+    },
+    {
+      "id": "backend-ops-0583",
+      "file": "0583-hardened-security-security-guardrail-contract.js",
+      "name": "0583 Hardened Security Guardrail Contract",
+      "category": "security"
+    },
+    {
+      "id": "backend-ops-0584",
+      "file": "0584-hardened-deployment-deployment-readiness-contract.js",
+      "name": "0584 Hardened Deployment Readiness Contract",
+      "category": "deployment"
+    },
+    {
+      "id": "backend-ops-0585",
+      "file": "0585-hardened-monitoring-monitoring-signal-contract.js",
+      "name": "0585 Hardened Monitoring Signal Contract",
+      "category": "monitoring"
+    },
+    {
+      "id": "backend-ops-0586",
+      "file": "0586-hardened-health-health-check-contract.js",
+      "name": "0586 Hardened Health Check Contract",
+      "category": "health"
+    },
+    {
+      "id": "backend-ops-0587",
+      "file": "0587-hardened-smoke-testing-smoke-test-contract.js",
+      "name": "0587 Hardened Smoke Test Contract",
+      "category": "smoke-testing"
+    },
+    {
+      "id": "backend-ops-0588",
+      "file": "0588-hardened-validation-validation-rule-contract.js",
+      "name": "0588 Hardened Validation Rule Contract",
+      "category": "validation"
+    },
+    {
+      "id": "backend-ops-0589",
+      "file": "0589-hardened-rate-limit-rate-limit-contract.js",
+      "name": "0589 Hardened Rate Limit Contract",
+      "category": "rate-limit"
+    },
+    {
+      "id": "backend-ops-0590",
+      "file": "0590-hardened-data-retention-data-retention-contract.js",
+      "name": "0590 Hardened Data Retention Contract",
+      "category": "data-retention"
+    },
+    {
+      "id": "backend-ops-0591",
+      "file": "0591-hardened-backup-backup-procedure-contract.js",
+      "name": "0591 Hardened Backup Procedure Contract",
+      "category": "backup"
+    },
+    {
+      "id": "backend-ops-0592",
+      "file": "0592-hardened-recovery-recovery-runbook-contract.js",
+      "name": "0592 Hardened Recovery Runbook Contract",
+      "category": "recovery"
+    },
+    {
+      "id": "backend-ops-0593",
+      "file": "0593-hardened-queueing-queue-worker-contract.js",
+      "name": "0593 Hardened Queue Worker Contract",
+      "category": "queueing"
+    },
+    {
+      "id": "backend-ops-0594",
+      "file": "0594-hardened-scheduling-scheduled-task-contract.js",
+      "name": "0594 Hardened Scheduled Task Contract",
+      "category": "scheduling"
+    },
+    {
+      "id": "backend-ops-0595",
+      "file": "0595-audited-auth-access-control-contract.js",
+      "name": "0595 Audited Access Control Contract",
+      "category": "auth"
+    },
+    {
+      "id": "backend-ops-0596",
+      "file": "0596-audited-api-api-operation-contract.js",
+      "name": "0596 Audited API Operation Contract",
+      "category": "api"
+    },
+    {
+      "id": "backend-ops-0597",
+      "file": "0597-audited-firebase-firebase-service-contract.js",
+      "name": "0597 Audited Firebase Service Contract",
+      "category": "firebase"
+    },
+    {
+      "id": "backend-ops-0598",
+      "file": "0598-audited-firestore-firestore-data-contract.js",
+      "name": "0598 Audited Firestore Data Contract",
+      "category": "firestore"
+    },
+    {
+      "id": "backend-ops-0599",
+      "file": "0599-audited-storage-storage-asset-contract.js",
+      "name": "0599 Audited Storage Asset Contract",
+      "category": "storage"
+    },
+    {
+      "id": "backend-ops-0600",
+      "file": "0600-audited-billing-billing-control-contract.js",
+      "name": "0600 Audited Billing Control Contract",
+      "category": "billing"
+    },
+    {
+      "id": "backend-ops-0601",
+      "file": "0601-audited-notifications-notification-delivery-contract.js",
+      "name": "0601 Audited Notification Delivery Contract",
+      "category": "notifications"
+    },
+    {
+      "id": "backend-ops-0602",
+      "file": "0602-audited-audit-audit-event-contract.js",
+      "name": "0602 Audited Audit Event Contract",
+      "category": "audit"
+    },
+    {
+      "id": "backend-ops-0603",
+      "file": "0603-audited-security-security-guardrail-contract.js",
+      "name": "0603 Audited Security Guardrail Contract",
+      "category": "security"
+    },
+    {
+      "id": "backend-ops-0604",
+      "file": "0604-audited-deployment-deployment-readiness-contract.js",
+      "name": "0604 Audited Deployment Readiness Contract",
+      "category": "deployment"
+    },
+    {
+      "id": "backend-ops-0605",
+      "file": "0605-audited-monitoring-monitoring-signal-contract.js",
+      "name": "0605 Audited Monitoring Signal Contract",
+      "category": "monitoring"
+    },
+    {
+      "id": "backend-ops-0606",
+      "file": "0606-audited-health-health-check-contract.js",
+      "name": "0606 Audited Health Check Contract",
+      "category": "health"
+    },
+    {
+      "id": "backend-ops-0607",
+      "file": "0607-audited-smoke-testing-smoke-test-contract.js",
+      "name": "0607 Audited Smoke Test Contract",
+      "category": "smoke-testing"
+    },
+    {
+      "id": "backend-ops-0608",
+      "file": "0608-audited-validation-validation-rule-contract.js",
+      "name": "0608 Audited Validation Rule Contract",
+      "category": "validation"
+    },
+    {
+      "id": "backend-ops-0609",
+      "file": "0609-audited-rate-limit-rate-limit-contract.js",
+      "name": "0609 Audited Rate Limit Contract",
+      "category": "rate-limit"
+    },
+    {
+      "id": "backend-ops-0610",
+      "file": "0610-audited-data-retention-data-retention-contract.js",
+      "name": "0610 Audited Data Retention Contract",
+      "category": "data-retention"
+    },
+    {
+      "id": "backend-ops-0611",
+      "file": "0611-audited-backup-backup-procedure-contract.js",
+      "name": "0611 Audited Backup Procedure Contract",
+      "category": "backup"
+    },
+    {
+      "id": "backend-ops-0612",
+      "file": "0612-audited-recovery-recovery-runbook-contract.js",
+      "name": "0612 Audited Recovery Runbook Contract",
+      "category": "recovery"
+    },
+    {
+      "id": "backend-ops-0613",
+      "file": "0613-audited-queueing-queue-worker-contract.js",
+      "name": "0613 Audited Queue Worker Contract",
+      "category": "queueing"
+    },
+    {
+      "id": "backend-ops-0614",
+      "file": "0614-audited-scheduling-scheduled-task-contract.js",
+      "name": "0614 Audited Scheduled Task Contract",
+      "category": "scheduling"
+    },
+    {
+      "id": "backend-ops-0615",
+      "file": "0615-policy-auth-access-control-contract.js",
+      "name": "0615 Policy Access Control Contract",
+      "category": "auth"
+    },
+    {
+      "id": "backend-ops-0616",
+      "file": "0616-policy-api-api-operation-contract.js",
+      "name": "0616 Policy API Operation Contract",
+      "category": "api"
+    },
+    {
+      "id": "backend-ops-0617",
+      "file": "0617-policy-firebase-firebase-service-contract.js",
+      "name": "0617 Policy Firebase Service Contract",
+      "category": "firebase"
+    },
+    {
+      "id": "backend-ops-0618",
+      "file": "0618-policy-firestore-firestore-data-contract.js",
+      "name": "0618 Policy Firestore Data Contract",
+      "category": "firestore"
+    },
+    {
+      "id": "backend-ops-0619",
+      "file": "0619-policy-storage-storage-asset-contract.js",
+      "name": "0619 Policy Storage Asset Contract",
+      "category": "storage"
+    },
+    {
+      "id": "backend-ops-0620",
+      "file": "0620-policy-billing-billing-control-contract.js",
+      "name": "0620 Policy Billing Control Contract",
+      "category": "billing"
+    },
+    {
+      "id": "backend-ops-0621",
+      "file": "0621-policy-notifications-notification-delivery-contract.js",
+      "name": "0621 Policy Notification Delivery Contract",
+      "category": "notifications"
+    },
+    {
+      "id": "backend-ops-0622",
+      "file": "0622-policy-audit-audit-event-contract.js",
+      "name": "0622 Policy Audit Event Contract",
+      "category": "audit"
+    },
+    {
+      "id": "backend-ops-0623",
+      "file": "0623-policy-security-security-guardrail-contract.js",
+      "name": "0623 Policy Security Guardrail Contract",
+      "category": "security"
+    },
+    {
+      "id": "backend-ops-0624",
+      "file": "0624-policy-deployment-deployment-readiness-contract.js",
+      "name": "0624 Policy Deployment Readiness Contract",
+      "category": "deployment"
+    },
+    {
+      "id": "backend-ops-0625",
+      "file": "0625-policy-monitoring-monitoring-signal-contract.js",
+      "name": "0625 Policy Monitoring Signal Contract",
+      "category": "monitoring"
+    },
+    {
+      "id": "backend-ops-0626",
+      "file": "0626-policy-health-health-check-contract.js",
+      "name": "0626 Policy Health Check Contract",
+      "category": "health"
+    },
+    {
+      "id": "backend-ops-0627",
+      "file": "0627-policy-smoke-testing-smoke-test-contract.js",
+      "name": "0627 Policy Smoke Test Contract",
+      "category": "smoke-testing"
+    },
+    {
+      "id": "backend-ops-0628",
+      "file": "0628-policy-validation-validation-rule-contract.js",
+      "name": "0628 Policy Validation Rule Contract",
+      "category": "validation"
+    },
+    {
+      "id": "backend-ops-0629",
+      "file": "0629-policy-rate-limit-rate-limit-contract.js",
+      "name": "0629 Policy Rate Limit Contract",
+      "category": "rate-limit"
+    },
+    {
+      "id": "backend-ops-0630",
+      "file": "0630-policy-data-retention-data-retention-contract.js",
+      "name": "0630 Policy Data Retention Contract",
+      "category": "data-retention"
+    },
+    {
+      "id": "backend-ops-0631",
+      "file": "0631-policy-backup-backup-procedure-contract.js",
+      "name": "0631 Policy Backup Procedure Contract",
+      "category": "backup"
+    },
+    {
+      "id": "backend-ops-0632",
+      "file": "0632-policy-recovery-recovery-runbook-contract.js",
+      "name": "0632 Policy Recovery Runbook Contract",
+      "category": "recovery"
+    },
+    {
+      "id": "backend-ops-0633",
+      "file": "0633-policy-queueing-queue-worker-contract.js",
+      "name": "0633 Policy Queue Worker Contract",
+      "category": "queueing"
+    },
+    {
+      "id": "backend-ops-0634",
+      "file": "0634-policy-scheduling-scheduled-task-contract.js",
+      "name": "0634 Policy Scheduled Task Contract",
+      "category": "scheduling"
+    },
+    {
+      "id": "backend-ops-0635",
+      "file": "0635-runtime-auth-access-control-contract.js",
+      "name": "0635 Runtime Access Control Contract",
+      "category": "auth"
+    },
+    {
+      "id": "backend-ops-0636",
+      "file": "0636-runtime-api-api-operation-contract.js",
+      "name": "0636 Runtime API Operation Contract",
+      "category": "api"
+    },
+    {
+      "id": "backend-ops-0637",
+      "file": "0637-runtime-firebase-firebase-service-contract.js",
+      "name": "0637 Runtime Firebase Service Contract",
+      "category": "firebase"
+    },
+    {
+      "id": "backend-ops-0638",
+      "file": "0638-runtime-firestore-firestore-data-contract.js",
+      "name": "0638 Runtime Firestore Data Contract",
+      "category": "firestore"
+    },
+    {
+      "id": "backend-ops-0639",
+      "file": "0639-runtime-storage-storage-asset-contract.js",
+      "name": "0639 Runtime Storage Asset Contract",
+      "category": "storage"
+    },
+    {
+      "id": "backend-ops-0640",
+      "file": "0640-runtime-billing-billing-control-contract.js",
+      "name": "0640 Runtime Billing Control Contract",
+      "category": "billing"
+    },
+    {
+      "id": "backend-ops-0641",
+      "file": "0641-runtime-notifications-notification-delivery-contract.js",
+      "name": "0641 Runtime Notification Delivery Contract",
+      "category": "notifications"
+    },
+    {
+      "id": "backend-ops-0642",
+      "file": "0642-runtime-audit-audit-event-contract.js",
+      "name": "0642 Runtime Audit Event Contract",
+      "category": "audit"
+    },
+    {
+      "id": "backend-ops-0643",
+      "file": "0643-runtime-security-security-guardrail-contract.js",
+      "name": "0643 Runtime Security Guardrail Contract",
+      "category": "security"
+    },
+    {
+      "id": "backend-ops-0644",
+      "file": "0644-runtime-deployment-deployment-readiness-contract.js",
+      "name": "0644 Runtime Deployment Readiness Contract",
+      "category": "deployment"
+    },
+    {
+      "id": "backend-ops-0645",
+      "file": "0645-runtime-monitoring-monitoring-signal-contract.js",
+      "name": "0645 Runtime Monitoring Signal Contract",
+      "category": "monitoring"
+    },
+    {
+      "id": "backend-ops-0646",
+      "file": "0646-runtime-health-health-check-contract.js",
+      "name": "0646 Runtime Health Check Contract",
+      "category": "health"
+    },
+    {
+      "id": "backend-ops-0647",
+      "file": "0647-runtime-smoke-testing-smoke-test-contract.js",
+      "name": "0647 Runtime Smoke Test Contract",
+      "category": "smoke-testing"
+    },
+    {
+      "id": "backend-ops-0648",
+      "file": "0648-runtime-validation-validation-rule-contract.js",
+      "name": "0648 Runtime Validation Rule Contract",
+      "category": "validation"
+    },
+    {
+      "id": "backend-ops-0649",
+      "file": "0649-runtime-rate-limit-rate-limit-contract.js",
+      "name": "0649 Runtime Rate Limit Contract",
+      "category": "rate-limit"
+    },
+    {
+      "id": "backend-ops-0650",
+      "file": "0650-runtime-data-retention-data-retention-contract.js",
+      "name": "0650 Runtime Data Retention Contract",
+      "category": "data-retention"
+    },
+    {
+      "id": "backend-ops-0651",
+      "file": "0651-runtime-backup-backup-procedure-contract.js",
+      "name": "0651 Runtime Backup Procedure Contract",
+      "category": "backup"
+    },
+    {
+      "id": "backend-ops-0652",
+      "file": "0652-runtime-recovery-recovery-runbook-contract.js",
+      "name": "0652 Runtime Recovery Runbook Contract",
+      "category": "recovery"
+    },
+    {
+      "id": "backend-ops-0653",
+      "file": "0653-runtime-queueing-queue-worker-contract.js",
+      "name": "0653 Runtime Queue Worker Contract",
+      "category": "queueing"
+    },
+    {
+      "id": "backend-ops-0654",
+      "file": "0654-runtime-scheduling-scheduled-task-contract.js",
+      "name": "0654 Runtime Scheduled Task Contract",
+      "category": "scheduling"
+    },
+    {
+      "id": "backend-ops-0655",
+      "file": "0655-operator-auth-access-control-contract.js",
+      "name": "0655 Operator Access Control Contract",
+      "category": "auth"
+    },
+    {
+      "id": "backend-ops-0656",
+      "file": "0656-operator-api-api-operation-contract.js",
+      "name": "0656 Operator API Operation Contract",
+      "category": "api"
+    },
+    {
+      "id": "backend-ops-0657",
+      "file": "0657-operator-firebase-firebase-service-contract.js",
+      "name": "0657 Operator Firebase Service Contract",
+      "category": "firebase"
+    },
+    {
+      "id": "backend-ops-0658",
+      "file": "0658-operator-firestore-firestore-data-contract.js",
+      "name": "0658 Operator Firestore Data Contract",
+      "category": "firestore"
+    },
+    {
+      "id": "backend-ops-0659",
+      "file": "0659-operator-storage-storage-asset-contract.js",
+      "name": "0659 Operator Storage Asset Contract",
+      "category": "storage"
+    },
+    {
+      "id": "backend-ops-0660",
+      "file": "0660-operator-billing-billing-control-contract.js",
+      "name": "0660 Operator Billing Control Contract",
+      "category": "billing"
+    },
+    {
+      "id": "backend-ops-0661",
+      "file": "0661-operator-notifications-notification-delivery-contract.js",
+      "name": "0661 Operator Notification Delivery Contract",
+      "category": "notifications"
+    },
+    {
+      "id": "backend-ops-0662",
+      "file": "0662-operator-audit-audit-event-contract.js",
+      "name": "0662 Operator Audit Event Contract",
+      "category": "audit"
+    },
+    {
+      "id": "backend-ops-0663",
+      "file": "0663-operator-security-security-guardrail-contract.js",
+      "name": "0663 Operator Security Guardrail Contract",
+      "category": "security"
+    },
+    {
+      "id": "backend-ops-0664",
+      "file": "0664-operator-deployment-deployment-readiness-contract.js",
+      "name": "0664 Operator Deployment Readiness Contract",
+      "category": "deployment"
+    },
+    {
+      "id": "backend-ops-0665",
+      "file": "0665-operator-monitoring-monitoring-signal-contract.js",
+      "name": "0665 Operator Monitoring Signal Contract",
+      "category": "monitoring"
+    },
+    {
+      "id": "backend-ops-0666",
+      "file": "0666-operator-health-health-check-contract.js",
+      "name": "0666 Operator Health Check Contract",
+      "category": "health"
+    },
+    {
+      "id": "backend-ops-0667",
+      "file": "0667-operator-smoke-testing-smoke-test-contract.js",
+      "name": "0667 Operator Smoke Test Contract",
+      "category": "smoke-testing"
+    }
+  ],
+  "skippedExisting": []
+}

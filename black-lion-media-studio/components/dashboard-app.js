@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ClientNav } from "./client-nav";
-import { BlackLionMediaComponentSuite } from "./black-lion-media-suite";
 import { ServiceQuoteBuilder } from "./service-quote-builder";
 import { trackEvent } from "../lib/client-analytics";
 import { fetchJson, postJson } from "../lib/client-api";
@@ -308,7 +307,7 @@ export function DashboardApp({ initialState = null }) {
           <p className="label">Service request</p>
           <h2 className="editorial-heading">Tell Black Lion what you want built.</h2>
           <form className="form active" onSubmit={handleRequest}>
-            <FormSectionCard title="Service setup" copy="Start with the service lane and the timing window.">
+            <FormSectionCard title="Service setup" copy="Start with the branch, child service, and timing window.">
               <label>
                 Service
                 <select
@@ -473,7 +472,6 @@ export function DashboardApp({ initialState = null }) {
           <ValueCardGrid items={workflowItems} />
         </section>
 
-        <BlackLionMediaComponentSuite />
       </main>
     </div>
   );

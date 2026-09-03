@@ -1,16 +1,17 @@
 import Link from "next/link";
-import { LandingMediaPair, LandingOfferMatrix } from "../../components/shared-ui";
+import { LandingMediaPair, LandingOfferMatrix, ShortcutRail } from "../../components/shared-ui";
+import { businessLines } from "../../lib/business-lines";
 
 export const metadata = {
   title: "Work",
-  description: "Black Lion Studios work lanes for creative production, sound, technical support, and client portal coordination.",
+  description: "Black Lion Studios work grouped by Multimedia, Tech Development, Fashion, and client portal coordination.",
   alternates: { canonical: "/work" }
 };
 
 const workItems = [
-  { label: "Photo and video", value: "Production", copy: "Portraits, products, campaigns, reels, events, and branded footage." },
-  { label: "Music and events", value: "Sound", copy: "Beat sessions, DJ services, and creative support for music-driven projects." },
-  { label: "Sites and support", value: "Tech", copy: "Membership sites, updates, troubleshooting, PC setup, and practical help." },
+  { label: "Photos & Video", value: "Black Lion Multimedia", copy: "Production, sound, events, campaigns, DJ services, and beat sessions." },
+  { label: "Software & Web", value: "Black Lion Tech Development", copy: "Membership sites, updates, troubleshooting, PC setup, and practical help." },
+  { label: "Fashion", value: "Black Lion Lion Fashion", copy: "Merch, model sign-up, product visuals, and fashion campaign support." },
   { label: "Client flow", value: "Portal", copy: "Requests, messages, billing context, and scheduling stay tied together." }
 ];
 
@@ -21,12 +22,21 @@ export default function WorkPage() {
         <LandingMediaPair
           image="/ai/sound-atmosphere.png"
           eyebrow="Work"
-          title="Creative and technical projects with a clear handoff."
-          copy="Black Lion Studios organizes each request around the service needed, the schedule, and the next action."
-          items={["Creative production", "Audio and event support", "Membership-site and PC support", "Portal-based follow-up"]}
+          title="Work grouped by branch with a clear handoff."
+          copy="Black Lion Studios organizes each request around Multimedia, Tech Development, or Fashion before it moves into the portal."
+          items={businessLines.map((line) => line.name)}
         />
         <section className="panel">
           <p className="label">Work lanes</p>
+          <ShortcutRail
+            items={businessLines.map((line) => ({
+              href: line.href,
+              label: line.eyebrow,
+              value: line.name,
+              note: line.summary
+            }))}
+            className="ui-shortcut-tight"
+          />
           <LandingOfferMatrix items={workItems} />
           <div className="section-action-row">
             <Link href="/portal" className="button">Start a request</Link>

@@ -3,17 +3,17 @@ import {
   LandingAvailabilityPanel,
   LandingBookingFlow,
   LandingConversionFooter,
-  LandingOfferMatrix,
   LandingProjectBriefPanel,
-  LandingTrustChecklist
+  LandingTrustChecklist,
+  ShortcutRail
 } from "../../components/shared-ui";
+import { businessLines } from "../../lib/business-lines";
 import { getSquareAppointmentBookingUrl } from "../../lib/square-appointments";
-import { serviceCatalog } from "../../lib/services";
 
 export const metadata = {
   title: "Book a Project",
   description:
-    "Start a Black Lion Studios request for photography, video, DJ services, beat sessions, membership sites, PC support, or merch questions.",
+    "Start a Black Lion Studios request through Multimedia, Tech Development, or Fashion.",
   alternates: { canonical: "/book" }
 };
 
@@ -22,12 +22,6 @@ const bookingFlowItems = [
   { step: "02", title: "Send details", copy: "Share timing, budget range, files, and project notes." },
   { step: "03", title: "Keep follow-up together", copy: "Square bookings sync into the studio calendar for review and follow-up." }
 ];
-
-const offerItems = serviceCatalog.map((service) => ({
-  label: service.priceLabel,
-  value: service.name,
-  copy: service.description
-}));
 
 export default function BookPage() {
   const squareBookingUrl = getSquareAppointmentBookingUrl();
@@ -39,11 +33,10 @@ export default function BookPage() {
           <div className="hero-grid">
             <div className="hero-copy">
               <p className="eyebrow brand-signature">Black Lion Studios</p>
-              <h1>Book creative or tech work without a loose message thread.</h1>
+              <h1>Book the right Black Lion branch without a loose message thread.</h1>
               <p>
-                Start a request for photo, video, music, DJ work, membership-site support, PC help,
-                or merch questions. The portal keeps the project details, messages, billing context,
-                and follow-up in one place.
+                Start with Multimedia, Tech Development, or Fashion. The portal keeps project
+                details, messages, billing context, and follow-up in one place.
               </p>
               <div className="hero-actions">
                 <a
@@ -63,7 +56,7 @@ export default function BookPage() {
             <LandingProjectBriefPanel
               title="What to have ready"
               fields={[
-                { label: "Service", value: "Pick one lane or say you need help choosing." },
+                { label: "Branch", value: "Pick Multimedia, Tech Development, Fashion, or say you need help choosing." },
                 { label: "Timing", value: "Ideal date, deadline, or booking window." },
                 { label: "Budget", value: "A range helps the studio recommend the right scope." },
                 { label: "References", value: "Links, files, examples, or notes make follow-up faster." }
@@ -78,9 +71,17 @@ export default function BookPage() {
         </section>
 
         <section className="panel">
-          <p className="label">Services</p>
-          <h2 className="editorial-heading">Choose the lane that fits the job.</h2>
-          <LandingOfferMatrix items={offerItems} />
+          <p className="label">Branches</p>
+          <h2 className="editorial-heading">Choose the branch that fits the job.</h2>
+          <ShortcutRail
+            items={businessLines.map((line) => ({
+              href: line.href,
+              label: line.eyebrow,
+              value: line.name,
+              note: line.summary
+            }))}
+            className="ui-shortcut-tight"
+          />
         </section>
 
         <section className="two-column">
@@ -88,7 +89,7 @@ export default function BookPage() {
             <p className="label">Timing</p>
             <LandingAvailabilityPanel
               title="Normal request windows"
-              items={["Same day questions", "1-3 day tech help", "3-10 day creative scheduling", "2-4 week site support"]}
+              items={["Same day questions", "1-3 day tech help", "3-10 day multimedia scheduling", "2-4 week web support"]}
             />
           </div>
           <div className="panel">

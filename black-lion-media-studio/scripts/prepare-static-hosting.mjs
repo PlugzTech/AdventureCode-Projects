@@ -35,6 +35,25 @@ async function listHtmlFiles(dir, baseDir = dir) {
   return files;
 }
 
+async function listBodyFiles(dir, baseDir = dir) {
+  const entries = await readdir(dir, { withFileTypes: true });
+  const files = [];
+
+  for (const entry of entries) {
+    const sourcePath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...await listBodyFiles(sourcePath, baseDir));
+      continue;
+    }
+
+    if (entry.isFile() && entry.name.endsWith(".body")) {
+      files.push(path.relative(baseDir, sourcePath));
+    }
+  }
+
+  return files;
+}
+
 function mapStaticHtmlTarget(sourceName) {
   if (sourceName === "_not-found.html") {
     return "404.html";
@@ -45,6 +64,10 @@ function mapStaticHtmlTarget(sourceName) {
   }
 
   return sourceName;
+}
+
+function mapStaticBodyTarget(sourceName) {
+  return sourceName.replace(/\.body$/, "");
 }
 
 if (!existsSync(appDir) || !existsSync(nextStaticDir)) {
@@ -60,6 +83,12 @@ await cp(nextStaticDir, path.join(outDir, "_next", "static"), { recursive: true 
 
 for (const sourceName of await listHtmlFiles(appDir)) {
   const targetName = mapStaticHtmlTarget(sourceName);
+  await mkdir(path.dirname(path.join(outDir, targetName)), { recursive: true });
+  await copyIfExists(path.join(appDir, sourceName), path.join(outDir, targetName));
+}
+
+for (const sourceName of await listBodyFiles(appDir)) {
+  const targetName = mapStaticBodyTarget(sourceName);
   await mkdir(path.dirname(path.join(outDir, targetName)), { recursive: true });
   await copyIfExists(path.join(appDir, sourceName), path.join(outDir, targetName));
 }

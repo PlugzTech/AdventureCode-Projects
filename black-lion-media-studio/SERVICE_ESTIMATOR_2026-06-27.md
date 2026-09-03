@@ -34,6 +34,17 @@
 
 Estimator defaults were adjusted using current 2026 public market-rate research for comparable U.S. creative, video, DJ, music production, web, website maintenance, product photography, and PC-support work. The UI shows each sub-service baseline plus a market reference range so users understand the estimate is a planning benchmark, not a final quote.
 
+### 2026-07-01 Benchmark Refresh
+
+- Refreshed public listed starting prices in `lib/services.js` and all Service Estimation micro-service baselines in `components/service-quote-builder.js`.
+- Photography baselines now follow current published portrait, event, product, real-estate, commercial day-rate, and licensing ranges.
+- Videography baselines now follow current short-form branded, event, interview, product-video, social clip, recap, and edit-only production ranges.
+- DJ/event baselines now follow current U.S. wedding/event DJ spend ranges, with the estimator using the median/lower-professional band instead of the previous low starter.
+- Web and membership-support baselines now follow 2026 U.S. agency hourly, maintenance, and ongoing site-cost ranges.
+- PC support baselines now follow current national repair averages and high-end repair/labor ranges.
+- Beat, production, recording, mixing, and mastering baselines now follow current independent producer and audio-engineering ranges.
+- Sources used: ExpertPhotography 2026 photography pricing guide, AD.JUST 2026 video production pricing, Argus HD 2026 event-videography guide, The Knot 2026 wedding DJ/band cost study, Emily Journey 2026 website management pricing, GoDaddy 2026 website maintenance cost guide, Digital Applied 2026 website development pricing, Thumbtack 2026 computer repair prices, Leadde 2026 product-video pricing, and Jobbers 2026 music production/audio engineering guide.
+
 ## Dashboard Workflow
 
 - Dashboard users can build a Service Estimation before submitting a request.

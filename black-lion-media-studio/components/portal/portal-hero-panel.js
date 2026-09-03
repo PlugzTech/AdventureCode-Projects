@@ -8,10 +8,10 @@ export function PortalHeroPanel() {
         <PortalAccessHeader
           eyebrow="Sign-in"
           title="Create your account and turn interest into a real request."
-          copy="Create an account, send your service request, check updates, and talk with Black Lion Studios."
+          copy="Create an account, choose the right branch, send your request, check updates, and talk with Black Lion Studios."
           actions={[
             { href: "/portal", label: "Create access" },
-            { href: "/#services", label: "Review services", variant: "secondary" }
+            { href: "/#services", label: "Review branches", variant: "secondary" }
           ]}
         />
         <PortalModeSummary items={modeItems} />

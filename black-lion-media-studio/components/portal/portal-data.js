@@ -1,6 +1,8 @@
 export const railItems = [
-  { href: "/", label: "Home", value: "Back to the landing page", note: "Review the service offer first" },
-  { href: "/store", label: "Store", value: "Merch catalog", note: "Browse merch before account setup" }
+  { href: "/", label: "Home", value: "Back to the landing page", note: "Review the branch directory first" },
+  { href: "/multimedia", label: "Multimedia", value: "Photos & Video", note: "Photo, video, sound, DJ, and beat sessions" },
+  { href: "/tech-development", label: "Tech", value: "Software & Web", note: "Web development, membership sites, and PC support" },
+  { href: "/fashion", label: "Fashion", value: "Fashion branch", note: "Merch, modeling, and fashion content" }
 ];
 
 export const modeItems = [
@@ -11,7 +13,7 @@ export const modeItems = [
 export const trustItems = [
   "Your request stays connected to your name and contact details.",
   "Messages stay in one place instead of scattered across apps.",
-  "Studio staff can review the service details before replying."
+  "Studio staff can review the branch and service details before replying."
 ];
 
 export const checklistItems = [
@@ -23,9 +25,9 @@ export const checklistItems = [
 export const sidecarTags = ["Email", "Phone", "Client type", "Service choice", "Project goals", "Extra notes"];
 
 export const servicePreview = [
-  { label: "Creative", title: "Photo, video, audio", copy: "Send the details for shoots, edits, music, and creative work." },
-  { label: "Technical", title: "Sites and PC support", copy: "Ask for help with membership sites, setup, troubleshooting, and upgrades." },
-  { label: "Store", title: "Merch and store", copy: "Keep merch questions and order follow-up with your account." }
+  { label: "Multimedia", title: "Black Lion Multimedia", copy: "Send details for shoots, edits, events, DJ work, and beat sessions." },
+  { label: "Tech", title: "Black Lion Tech Development", copy: "Ask for help with software, web, membership sites, setup, troubleshooting, and upgrades." },
+  { label: "Fashion", title: "Black Lion Lion Fashion", copy: "Keep merch, model, product-image, and fashion-campaign questions with your account." }
 ];
 
 export const signinComponentGroups = [
@@ -35,7 +37,7 @@ export const signinComponentGroups = [
     copy: "The basics that make the first request easier to answer.",
     items: [
       { label: "01", title: "Contact details", copy: "Use the name, email, and phone number the studio should use for follow-up." },
-      { label: "02", title: "Service choice", copy: "Pick the first service you need: photo, video, audio, DJ, site help, PC support, or merch." }
+      { label: "02", title: "Branch choice", copy: "Pick Multimedia, Tech Development, Fashion, or the first child service you need." }
     ]
   },
   {

@@ -4,8 +4,8 @@ import { findServiceAdPage } from "../../lib/services";
 const page = findServiceAdPage("/dj-services");
 
 export const metadata = {
-  title: "DJ Services",
-  description: "Book Black Lion Studios DJ services for private events, launches, parties, and activations.",
+  title: "DJ Services | Black Lion Multimedia",
+  description: "Book Black Lion Multimedia DJ services for private events, launches, parties, and activations.",
   alternates: { canonical: "/dj-services" }
 };
 

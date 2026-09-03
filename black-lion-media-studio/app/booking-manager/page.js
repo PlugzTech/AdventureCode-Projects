@@ -4,7 +4,11 @@ import { sanitizeUser } from "../../lib/db";
 import { requireWorkspaceUser } from "../../lib/server-page-auth";
 
 export const metadata = {
-  title: "Booking Manager | Black Lion Studios"
+  title: "Booking Manager | Black Lion Studios",
+  robots: {
+    index: false,
+    follow: false
+  }
 };
 
 export default async function BookingManagerPage() {
@@ -17,6 +21,7 @@ export default async function BookingManagerPage() {
         user: sanitizeUser(session.user),
         metrics: managerData.metrics || {},
         consultationCalendar: managerData.consultationCalendar || null,
+        customerRecords: managerData.customerRecords || [],
         latestRequests: managerData.latestRequests || [],
         modelProfiles: managerData.modelProfiles || []
       }}

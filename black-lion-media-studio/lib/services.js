@@ -2,8 +2,8 @@ export const serviceCatalog = [
   {
     slug: "photography",
     name: "Photography",
-    priceLabel: "Starting at $250",
-    invoiceAmountCents: 25000,
+    priceLabel: "Starting at $350",
+    invoiceAmountCents: 35000,
     description: "Portraits, product sessions, events, and branded visual content.",
     deliverable: "Edited image set with scheduled shoot coordination",
     coverage: "Portrait shoots, event coverage, product photos, and branded content sessions.",
@@ -12,8 +12,8 @@ export const serviceCatalog = [
   {
     slug: "videography",
     name: "Videography",
-    priceLabel: "Starting at $500",
-    invoiceAmountCents: 50000,
+    priceLabel: "Starting at $1,500",
+    invoiceAmountCents: 150000,
     description: "Promotional videos, live captures, reels, and campaign footage.",
     deliverable: "Shot list planning, filming, and edited final delivery",
     coverage: "Promo videos, social reels, interviews, event capture, and branded campaign footage.",
@@ -22,8 +22,8 @@ export const serviceCatalog = [
   {
     slug: "platform-membership-site-building-maintenance",
     name: "Membership Sites & Support",
-    priceLabel: "$250 / month",
-    invoiceAmountCents: 25000,
+    priceLabel: "$350 / month",
+    invoiceAmountCents: 35000,
     description: "Build and update membership websites, private content areas, and support pages.",
     deliverable: "Site setup, update planning, and member access support",
     coverage: "Membership pages, private content access, billing setup help, and ongoing updates.",
@@ -32,8 +32,8 @@ export const serviceCatalog = [
   {
     slug: "dj-services",
     name: "DJ Services",
-    priceLabel: "Starting at $300",
-    invoiceAmountCents: 30000,
+    priceLabel: "Starting at $800",
+    invoiceAmountCents: 80000,
     description: "Event DJ support for private events, parties, launches, and activations.",
     deliverable: "Booking, event coordination, and performance coverage",
     coverage: "Private events, brand activations, launch events, parties, and curated live sets.",
@@ -42,8 +42,8 @@ export const serviceCatalog = [
   {
     slug: "pc-tech-services",
     name: "PC Tech Services",
-    priceLabel: "Starting at $125",
-    invoiceAmountCents: 12500,
+    priceLabel: "Starting at $150",
+    invoiceAmountCents: 15000,
     description: "PC setup, troubleshooting, upgrades, tune-ups, and support.",
     deliverable: "Diagnosis, recommendations, and hands-on help",
     coverage: "Tune-ups, upgrades, software setup, repair guidance, and performance help.",
@@ -52,8 +52,8 @@ export const serviceCatalog = [
   {
     slug: "beat-creation-session",
     name: "Beat Creation Session",
-    priceLabel: "Starting at $200",
-    invoiceAmountCents: 20000,
+    priceLabel: "Starting at $400",
+    invoiceAmountCents: 40000,
     description: "Collaborative beat development sessions for artists, creators, and brands.",
     deliverable: "Live session time and exported creative draft assets",
     coverage: "Collaborative production sessions, idea development, arrangement work, and draft exports.",
@@ -65,6 +65,8 @@ export const serviceAdRoutes = [
   {
     route: "/photography",
     catalogSlug: "photography",
+    branchName: "Black Lion Multimedia",
+    branchHref: "/multimedia",
     audience: "Creators, families, brands, product sellers, and event hosts",
     headline: "Photography that gives the request a clear shot list and delivery path.",
     summary:
@@ -96,6 +98,8 @@ export const serviceAdRoutes = [
   {
     route: "/videography",
     catalogSlug: "videography",
+    branchName: "Black Lion Multimedia",
+    branchHref: "/multimedia",
     audience: "Artists, businesses, event hosts, and campaign teams",
     headline: "Videography requests with the concept, footage needs, and edit goals up front.",
     summary:
@@ -127,6 +131,8 @@ export const serviceAdRoutes = [
   {
     route: "/dj-services",
     catalogSlug: "dj-services",
+    branchName: "Black Lion Multimedia",
+    branchHref: "/multimedia",
     audience: "Private events, parties, activations, launches, and small venues",
     headline: "DJ service requests that line up timing, crowd, equipment, and vibe.",
     summary:
@@ -158,6 +164,8 @@ export const serviceAdRoutes = [
   {
     route: "/pc-tech-support",
     catalogSlug: "pc-tech-services",
+    branchName: "Black Lion Tech Development",
+    branchHref: "/tech-development",
     audience: "Home users, creators, small offices, and practical tech support clients",
     headline: "PC tech support requests that capture the issue before the first follow-up.",
     summary:
@@ -189,6 +197,8 @@ export const serviceAdRoutes = [
   {
     route: "/membership-sites",
     catalogSlug: "platform-membership-site-building-maintenance",
+    branchName: "Black Lion Tech Development",
+    branchHref: "/tech-development",
     audience: "Creators, coaches, private communities, and small businesses",
     headline: "Membership-site support for access, updates, billing flow, and content structure.",
     summary:
@@ -220,6 +230,8 @@ export const serviceAdRoutes = [
   {
     route: "/beat-sessions",
     catalogSlug: "beat-creation-session",
+    branchName: "Black Lion Multimedia",
+    branchHref: "/multimedia",
     audience: "Artists, creators, brands, and music-driven content teams",
     headline: "Beat sessions with creative direction, references, and export needs ready.",
     summary:

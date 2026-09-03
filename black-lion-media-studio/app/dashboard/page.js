@@ -3,7 +3,11 @@ import { buildDashboardData } from "../../lib/dashboard-data";
 import { requireWorkspaceUser } from "../../lib/server-page-auth";
 
 export const metadata = {
-  title: "Client Dashboard | Black Lion Studios"
+  title: "Client Dashboard | Black Lion Studios",
+  robots: {
+    index: false,
+    follow: false
+  }
 };
 
 export default async function DashboardPage() {

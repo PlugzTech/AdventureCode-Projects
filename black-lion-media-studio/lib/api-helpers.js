@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { enforceTrustedOrigin, getAuthenticatedUser } from "./auth";
 import { isBookingManager } from "./booking-manager";
 
+const maxJsonBodyBytes = 64 * 1024;
+
 export function jsonOk(payload, init = {}) {
   return NextResponse.json(payload, init);
 }
@@ -11,9 +13,24 @@ export function jsonError(message, status = 400) {
 }
 
 export async function parseJsonWithSchema(request, schema, parseWithSchema) {
+  const contentType = request.headers.get("content-type") || "";
+  if (!contentType.toLowerCase().includes("application/json")) {
+    return { error: jsonError("Expected application/json request body.", 415) };
+  }
+
+  const contentLength = Number(request.headers.get("content-length") || "0");
+  if (contentLength > maxJsonBodyBytes) {
+    return { error: jsonError("Request body is too large.", 413) };
+  }
+
   let body;
   try {
-    body = await request.json();
+    const rawBody = await request.text();
+    if (Buffer.byteLength(rawBody, "utf8") > maxJsonBodyBytes) {
+      return { error: jsonError("Request body is too large.", 413) };
+    }
+
+    body = JSON.parse(rawBody);
   } catch {
     return { error: jsonError("Invalid JSON body.", 400) };
   }

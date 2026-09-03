@@ -6,6 +6,9 @@ const coreRoutes = [
   "/contact",
   "/work",
   "/portfolio",
+  "/multimedia",
+  "/tech-development",
+  "/fashion",
   "/portal",
   "/store",
   "/faq",
@@ -45,34 +48,69 @@ for (const route of routes) {
 const quoteResponse = await fetch(`${baseUrl}/quote`, { redirect: "manual" });
 assert([307, 308].includes(quoteResponse.status), `/quote returned ${quoteResponse.status}`);
 assert(
-  quoteResponse.headers.get("location")?.includes("/#service-estimation"),
-  "/quote did not redirect to the landing-page Service Estimation section"
+  quoteResponse.headers.get("location")?.includes("/services#service-estimation"),
+  "/quote did not redirect to the services-page Service Estimation section"
 );
 console.log(`/quote ${quoteResponse.status} redirects to ${quoteResponse.headers.get("location")}`);
 
 const home = await (await fetch(baseUrl)).text();
 for (const marker of [
   "Black Lion Studios",
-  "Creative Production, Tech Support, and Merch",
+  "Black Lion Multimedia",
+  "Black Lion Tech Development",
+  "Black Lion Lion Fashion",
   'property="og:title"',
   'property="og:description"',
   'property="og:image"',
   'name="twitter:card"',
   'rel="canonical"',
+  "Photos &amp; Video",
+  "Software &amp; Web",
+  "Fashion",
+  "Choose a branch",
+  "Detailed tools moved to the pages built for that job."
+]) {
+  assert(home.includes(marker), `home missing marker: ${marker}`);
+  console.log(`marker ok: ${marker}`);
+}
+
+for (const marker of [
   "Book appointment",
-  "Create account",
-  "Service Estimation",
   "Build a Service Estimation before you send the request.",
   "Production readiness",
   "I confirm this Service Estimation matches what I am looking for",
   "Travel charge over 30 miles",
   "Revision rounds after 2",
   "50% deposit",
-  "Appointment calendar"
+  "Open booking windows.",
+  "Security posture"
 ]) {
-  assert(home.includes(marker), `home missing marker: ${marker}`);
-  console.log(`marker ok: ${marker}`);
+  assert(!home.includes(marker), `home still contains moved detail: ${marker}`);
+  console.log(`moved detail absent from home: ${marker}`);
 }
+
+const services = await (await fetch(`${baseUrl}/services`)).text();
+for (const marker of [
+  "Build a Service Estimation before you send the request.",
+  "Production readiness",
+  "I confirm this Service Estimation matches what I am looking for",
+  "Travel charge over 30 miles",
+  "Revision rounds after 2",
+  "50% deposit"
+]) {
+  assert(services.includes(marker), `/services missing estimator marker: ${marker}`);
+  console.log(`services estimator marker ok: ${marker}`);
+}
+
+const book = await (await fetch(`${baseUrl}/book`)).text();
+for (const marker of ["Book appointment", "Normal request windows"]) {
+  assert(book.includes(marker), `/book missing booking marker: ${marker}`);
+  console.log(`book marker ok: ${marker}`);
+}
+
+const legal = await (await fetch(`${baseUrl}/legal`)).text();
+assert(legal.includes("Security framework readiness"), "/legal missing compliance marker");
+console.log("legal compliance marker ok");
 
 const expansion = await (await fetch(`${baseUrl}/ad-expansion`)).text();
 for (const marker of ["200 additional", "Campaign Conversion", "Reliability Resilience", "Compliance Trust"]) {
@@ -81,7 +119,7 @@ for (const marker of ["200 additional", "Campaign Conversion", "Reliability Resi
 }
 
 const models = await (await fetch(`${baseUrl}/models`)).text();
-for (const marker of ["Premium review lane", "Built for models who can move with production.", "Application readiness", "Scheduling and job terms", "Scheduling expectations", "Job terms", "Important terms"]) {
+for (const marker of ["Black Lion Lion Fashion model sub-site", "Start application", "Application readiness", "Scheduling and job terms", "Important terms", "Related paths"]) {
   assert(models.includes(marker), `/models missing marker: ${marker}`);
   console.log(`models marker ok: ${marker}`);
 }

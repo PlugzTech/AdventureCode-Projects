@@ -4,8 +4,8 @@ import { findServiceAdPage } from "../../lib/services";
 const page = findServiceAdPage("/membership-sites");
 
 export const metadata = {
-  title: "Membership Sites",
-  description: "Book Black Lion Studios membership site setup, updates, private content support, billing setup help, and ongoing support.",
+  title: "Membership Sites | Black Lion Tech Development",
+  description: "Book Black Lion Tech Development membership site setup, updates, private content support, billing setup help, and ongoing support.",
   alternates: { canonical: "/membership-sites" }
 };
 

@@ -1,0 +1,26 @@
+const component = {
+  "id": "backend-ops-1734",
+  "name": "Notifications Notification Dispatch Rule 4",
+  "category": "notifications",
+  "purpose": "Batch 1734 coordinates backend email or alert delivery for operational milestones.",
+  "inputs": [
+    "recipient profile",
+    "message template",
+    "delivery reason"
+  ],
+  "outputs": [
+    "dispatch record",
+    "delivery channel",
+    "suppression reason"
+  ],
+  "operationalNotes": [
+    "Check opt-out and role relevance before dispatch.",
+    "Record enough metadata to investigate failed sends.",
+    "Catalog-only definition for planning, documentation, and operational reuse; not wired into runtime routes."
+  ],
+  "safetyLevel": "standard",
+  "reusable": true,
+  "source": "Black Lion Media Studio backend/ops component catalog batch 1668-2000"
+};
+
+export default component;

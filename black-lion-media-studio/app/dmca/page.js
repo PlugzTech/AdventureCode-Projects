@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { copyrightClaimSections, lastUpdated } from "../../lib/legal-content";
 
+export const metadata = {
+  title: "Copyright Claims",
+  description:
+    "Copyright-claim and DMCA information for Black Lion Studios, including claim evidence, review expectations, and contact routing."
+};
+
 export default function DMCAPage() {
   return (
     <div className="page-shell">

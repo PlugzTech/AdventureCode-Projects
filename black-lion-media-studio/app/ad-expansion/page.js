@@ -25,7 +25,7 @@ export default function AdExpansionPage() {
           </p>
           <div className="legal-action-row">
             <Link href="/book" className="button">Book</Link>
-            <Link href="/#service-estimation" className="button button-secondary">Service Estimation</Link>
+            <Link href="/services#service-estimation" className="button button-secondary">Service Estimation</Link>
             <Link href="/support" className="button button-secondary">Support</Link>
           </div>
         </section>

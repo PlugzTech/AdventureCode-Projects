@@ -1296,8 +1296,8 @@ Verification after deploy:
 
 Local changes:
 
-- `components/black-lion-media-suite.js` adds 40 dashboard operations modules.
-- `components/dashboard-app.js` renders `BlackLionMediaComponentSuite` after the workflow panel.
+- `components/black-lion-media-suite.js` adds 40 reusable operations modules.
+- 2026-07-01 update: `components/dashboard-app.js` no longer renders `BlackLionMediaComponentSuite`; the dashboard keeps its request, message, billing, and delivery workflow focus while the suite remains available for other operational surfaces.
 - `app/globals.css` adds responsive suite and status-chip styling.
 
 Verification before deploy:

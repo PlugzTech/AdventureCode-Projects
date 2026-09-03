@@ -20,6 +20,7 @@ const emptyState = {
   user: null,
   metrics: {},
   consultationCalendar: null,
+  customerRecords: [],
   latestRequests: [],
   modelProfiles: []
 };
@@ -32,6 +33,14 @@ function formatMoney(amountCents = 0) {
   }).format(amount);
 }
 
+function formatWholeDollars(amount = 0) {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0
+  }).format(Number(amount || 0));
+}
+
 function appendManagerNote(existingNote = "", nextNote = "") {
   return [existingNote, nextNote].map((item) => String(item || "").trim()).filter(Boolean).join("\n");
 }
@@ -42,6 +51,8 @@ export function BookingManagerApp({ initialState = null }) {
   const [loading, setLoading] = useState(!initialState);
   const [managerNotice, setManagerNotice] = useState("");
   const [selectedRequestId, setSelectedRequestId] = useState(initialState?.latestRequests?.[0]?.id || "");
+  const [selectedCustomerId, setSelectedCustomerId] = useState(initialState?.customerRecords?.[0]?.id || "");
+  const [customerSearch, setCustomerSearch] = useState("");
   const [modelSearch, setModelSearch] = useState("");
   const [selectedModelId, setSelectedModelId] = useState(initialState?.modelProfiles?.[0]?.id || "");
   const [savingRequestId, setSavingRequestId] = useState("");
@@ -72,10 +83,12 @@ export function BookingManagerApp({ initialState = null }) {
       user: sessionResult.data.user,
       metrics: managerResult.data.metrics || {},
       consultationCalendar: managerResult.data.consultationCalendar || null,
+      customerRecords: managerResult.data.customerRecords || [],
       latestRequests: managerResult.data.latestRequests || [],
       modelProfiles: managerResult.data.modelProfiles || []
     });
     setSelectedRequestId((current) => current || managerResult.data.latestRequests?.[0]?.id || "");
+    setSelectedCustomerId((current) => current || managerResult.data.customerRecords?.[0]?.id || "");
     setSelectedModelId((current) => current || managerResult.data.modelProfiles?.[0]?.id || "");
     return true;
   }
@@ -184,8 +197,37 @@ export function BookingManagerApp({ initialState = null }) {
     { label: "New requests", value: state.metrics.newRequests ?? 0, note: "Fresh requests to review" },
     { label: "Clients", value: state.metrics.uniqueClients ?? 0, note: "Distinct client accounts in motion" },
     { label: "Consultations", value: state.metrics.consultationQueue ?? 0, note: "Scheduled calls and meetings" },
-    { label: "Square appts", value: state.metrics.appointmentOnlyRequests ?? 0, note: "Appointment-only calendar imports" }
+    { label: "Follow-ups", value: state.metrics.customerFollowUpCount ?? 0, note: "Customer records needing action" },
+    { label: "Open floor", value: formatWholeDollars(state.metrics.openCustomerRevenueFloor ?? 0), note: "Active request budget floor" }
   ];
+  const normalizedCustomerSearch = customerSearch.trim().toLowerCase();
+  const filteredCustomerRecords = state.customerRecords.filter((customer) => {
+    if (!normalizedCustomerSearch) {
+      return true;
+    }
+
+    return [
+      customer.name,
+      customer.email,
+      customer.company,
+      customer.phone,
+      customer.tier,
+      customer.type,
+      customer.lifecycleStage,
+      customer.leadSource,
+      customer.health,
+      customer.highestPriority,
+      customer.latestRequestType,
+      customer.latestRequestStatus,
+      ...(customer.serviceTypes || []),
+      ...(customer.followUpReasons || [])
+    ].some((value) => String(value || "").toLowerCase().includes(normalizedCustomerSearch));
+  });
+  const selectedCustomer =
+    filteredCustomerRecords.find((customer) => customer.id === selectedCustomerId) ||
+    state.customerRecords.find((customer) => customer.id === selectedCustomerId) ||
+    filteredCustomerRecords[0] ||
+    null;
   const normalizedModelSearch = modelSearch.trim().toLowerCase();
   const filteredModelProfiles = state.modelProfiles.filter((model) => {
     if (!normalizedModelSearch) {
@@ -270,6 +312,108 @@ export function BookingManagerApp({ initialState = null }) {
             />
           </section>
         ) : null}
+
+        <section className="two-column manager-grid">
+          <div className="panel">
+            <p className="label">Customers</p>
+            <h2 className="editorial-heading">Customer database</h2>
+            <SupportNotice
+              title="Operational customer rollup"
+              copy="Search customer records by client, company, service, status, priority, billing need, payment need, lead source, and lifecycle stage."
+            />
+            <label className="manager-search-field">
+              Search customers
+              <input
+                type="search"
+                value={customerSearch}
+                onChange={(event) => setCustomerSearch(event.target.value)}
+                placeholder="Name, email, service, payment, lead source..."
+              />
+            </label>
+            <SurfaceGrid className="stack-small">
+              {filteredCustomerRecords.length === 0 ? (
+                <p className="muted">No matching customer records.</p>
+              ) : (
+                filteredCustomerRecords.map((customer) => (
+                  <button
+                    type="button"
+                    className={`select-card ${customer.id === selectedCustomer?.id ? "selected" : ""}`}
+                    key={customer.id}
+                    onClick={() => setSelectedCustomerId(customer.id)}
+                  >
+                    <strong>{customer.name || customer.email || "Unknown customer"}</strong>
+                    <span>{customer.company || customer.email || customer.phone || "No contact detail"}</span>
+                    <span className="muted">
+                      {customer.health} · {customer.activeRequestCount} active · {formatWholeDollars(customer.openBudgetFloor)}
+                    </span>
+                  </button>
+                ))
+              )}
+            </SurfaceGrid>
+          </div>
+
+          <div className="panel">
+            <p className="label">Customer record</p>
+            <h2 className="editorial-heading">Follow-up view</h2>
+            {selectedCustomer ? (
+              <>
+                <SpotlightCard
+                  className="subpanel"
+                  eyebrow={selectedCustomer.health}
+                  title={selectedCustomer.name || selectedCustomer.email || "Customer"}
+                  copy={
+                    selectedCustomer.followUpReasons?.length
+                      ? `Action needed: ${selectedCustomer.followUpReasons.join(", ")}.`
+                      : "No immediate customer follow-up flags from current request data."
+                  }
+                >
+                  <div className="ui-status-chip-row">
+                    <span className={`ui-status-chip ${selectedCustomer.needsFollowUp ? "warning" : "positive"}`}>
+                      {selectedCustomer.needsFollowUp ? "Follow-up" : "Clear"}
+                    </span>
+                    <span className="ui-status-chip">{selectedCustomer.highestPriority} priority</span>
+                    <span className="ui-status-chip">{selectedCustomer.lifecycleStage}</span>
+                  </div>
+                  <DetailPairGrid
+                    className="detail-grid"
+                    items={[
+                      { label: "Email", value: selectedCustomer.email || "Not set" },
+                      { label: "Phone", value: selectedCustomer.phone || "Not set" },
+                      { label: "Company", value: selectedCustomer.company || "Not set" },
+                      { label: "Tier", value: selectedCustomer.tier || "Standard" },
+                      { label: "Lead source", value: selectedCustomer.leadSource || "Website" },
+                      { label: "Service mix", value: selectedCustomer.serviceTypes?.join(", ") || "Not set" },
+                      { label: "Latest request", value: selectedCustomer.latestRequestType || "None" },
+                      { label: "Latest status", value: selectedCustomer.latestRequestStatus || "None" }
+                    ]}
+                  />
+                </SpotlightCard>
+                <SpotlightCard
+                  className="subpanel"
+                  eyebrow="Operations"
+                  title="Revenue, billing, and scheduling"
+                  copy="Use this before sending payment reminders, scheduling notes, or delivery follow-up."
+                >
+                  <DetailPairGrid
+                    className="detail-grid"
+                    items={[
+                      { label: "Total requests", value: selectedCustomer.requestCount },
+                      { label: "Active requests", value: selectedCustomer.activeRequestCount },
+                      { label: "Completed", value: selectedCustomer.completedRequestCount },
+                      { label: "Open budget floor", value: formatWholeDollars(selectedCustomer.openBudgetFloor) },
+                      { label: "Total budget floor", value: formatWholeDollars(selectedCustomer.totalBudgetFloor) },
+                      { label: "Billing follow-ups", value: selectedCustomer.billingFollowUpCount },
+                      { label: "Open payments", value: selectedCustomer.paymentOpenCount },
+                      { label: "Next consultation", value: selectedCustomer.nextConsultationLabel || "Not scheduled" }
+                    ]}
+                  />
+                </SpotlightCard>
+              </>
+            ) : (
+              <p className="muted">Select a customer record.</p>
+            )}
+          </div>
+        </section>
 
         <section className="two-column manager-grid">
           <div className="panel">
